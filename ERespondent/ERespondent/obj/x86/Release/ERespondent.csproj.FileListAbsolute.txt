@@ -1,0 +1,17 @@
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\bin\Release\ERespondent.exe.config
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\bin\Release\ERespondent.exe
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\bin\Release\ERespondent.pdb
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\bin\Release\GridWpf.dll
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\bin\Release\WPFToolkit.dll
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\bin\Release\GridWpf.pdb
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.csprojResolveAssemblyReference.cache
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.AddEditOKPO.resources
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.DirectionEnergySave.resources
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.MainForm.resources
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.OKPO.resources
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.Properties.Resources.resources
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.Table1.resources
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.TypeFuel.resources
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.csproj.GenerateResource.Cache
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.exe
+e:\Install\!КВАНТ\Project\ERespondent\ERespondent\obj\x86\Release\ERespondent.pdb

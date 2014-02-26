@@ -1,0 +1,11 @@
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\bin\Debug\GridWpf.dll
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\bin\Debug\GridWpf.pdb
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\bin\Debug\WPFToolkit.dll
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\UserControl1.baml
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\UserControl1.g.cs
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf_MarkupCompile.cache
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.g.resources
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.Properties.Resources.resources
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.csproj.GenerateResource.Cache
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.dll
+E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.pdb

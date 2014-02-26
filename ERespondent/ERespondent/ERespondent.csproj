@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58ABDF44-DE0F-4FCE-B6AC-D971A5265FFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERespondent</RootNamespace>
+    <AssemblyName>ERespondent</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit, Version=3.5.31016.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddEditOKPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditOKPO.Designer.cs">
+      <DependentUpon>AddEditOKPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="ConnectionDB.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DirectionEnergySave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectionEnergySave.Designer.cs">
+      <DependentUpon>DirectionEnergySave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsDirectSave.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDirectSave.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsTypeFuel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTypeFuel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OKPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OKPO.Designer.cs">
+      <DependentUpon>OKPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="okpoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>okpoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Table1.Designer.cs">
+      <DependentUpon>Table1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeFuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeFuel.Designer.cs">
+      <DependentUpon>TypeFuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_dsOKPO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_dsOKPO.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEditOKPO.resx">
+      <DependentUpon>AddEditOKPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectionEnergySave.resx">
+      <DependentUpon>DirectionEnergySave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OKPO.resx">
+      <DependentUpon>OKPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Table1.resx">
+      <DependentUpon>Table1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypeFuel.resx">
+      <DependentUpon>TypeFuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dsDirectSave.xsc">
+      <DependentUpon>dsDirectSave.xsd</DependentUpon>
+    </None>
+    <None Include="dsDirectSave.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDirectSave.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsDirectSave.xss">
+      <DependentUpon>dsDirectSave.xsd</DependentUpon>
+    </None>
+    <None Include="dsTypeFuel.xsc">
+      <DependentUpon>dsTypeFuel.xsd</DependentUpon>
+    </None>
+    <None Include="dsTypeFuel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTypeFuel.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsTypeFuel.xss">
+      <DependentUpon>dsTypeFuel.xsd</DependentUpon>
+    </None>
+    <None Include="okpoDataSet.xsc">
+      <DependentUpon>okpoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="okpoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>okpoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="okpoDataSet.xss">
+      <DependentUpon>okpoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="_dsOKPO.xsc">
+      <DependentUpon>_dsOKPO.xsd</DependentUpon>
+    </None>
+    <None Include="_dsOKPO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_dsOKPO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_dsOKPO.xss">
+      <DependentUpon>_dsOKPO.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GridWpf\GridWpf.csproj">
+      <Project>{8595F027-960D-4509-8969-E8F3A597195C}</Project>
+      <Name>GridWpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

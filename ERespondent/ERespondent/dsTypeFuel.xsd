@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsTypeFuel" targetNamespace="http://tempuri.org/dsTypeFuel.xsd" xmlns:mstns="http://tempuri.org/dsTypeFuel.xsd" xmlns="http://tempuri.org/dsTypeFuel.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsTypeFuel" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsTypeFuel" msprop:Generator_DataSetName="dsTypeFuel">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TypeFuelEnergy" msprop:Generator_TableClassName="TypeFuelEnergyDataTable" msprop:Generator_TableVarName="tableTypeFuelEnergy" msprop:Generator_TablePropName="TypeFuelEnergy" msprop:Generator_RowDeletingName="TypeFuelEnergyRowDeleting" msprop:Generator_RowChangingName="TypeFuelEnergyRowChanging" msprop:Generator_RowEvHandlerName="TypeFuelEnergyRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeFuelEnergyRowDeleted" msprop:Generator_UserTableName="TypeFuelEnergy" msprop:Generator_RowChangedName="TypeFuelEnergyRowChanged" msprop:Generator_RowEvArgName="TypeFuelEnergyRowChangeEvent" msprop:Generator_RowClassName="TypeFuelEnergyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodeRecord" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnCodeRecord" msprop:Generator_ColumnPropNameInRow="CodeRecord" msprop:Generator_ColumnPropNameInTable="CodeRecordColumn" msprop:Generator_UserColumnName="CodeRecord" type="xs:int" />
+              <xs:element name="CodeTypeFuel" msprop:Generator_ColumnVarNameInTable="columnCodeTypeFuel" msprop:Generator_ColumnPropNameInRow="CodeTypeFuel" msprop:Generator_ColumnPropNameInTable="CodeTypeFuelColumn" msprop:Generator_UserColumnName="CodeTypeFuel" type="xs:int" minOccurs="0" />
+              <xs:element name="TypeFuel" msprop:Generator_ColumnVarNameInTable="columnTypeFuel" msprop:Generator_ColumnPropNameInRow="TypeFuel" msprop:Generator_ColumnPropNameInTable="TypeFuelColumn" msprop:Generator_UserColumnName="TypeFuel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

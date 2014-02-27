@@ -25,8 +25,9 @@ namespace ERespondent
         {
             ScreenResolution();
             //заполянем первый комбобокс
-            FillComboBox(dataGrid1ColumnA, "SELECT CodeDirection, CodeRecord from DestinationSave", "CodeDirection", "CodeRecord");
+           // FillComboBox(dataGrid1ColumnA, "SELECT CodeDirection, CodeRecord from DestinationSave", "CodeDirection", "CodeRecord");
             FillComboBox(dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+        
         }
 
         /// <summary>
@@ -97,9 +98,9 @@ namespace ERespondent
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             //ВЫДРАТЬ ОТСЮДА СОБЫТИЕ НА ИЗМЕНЕНИЕ ИНДЕКСА
             //COMBOBOX ДЛЯ ПОДСТАНОВКИ В ДРУГОЕ ПОЛЕ И "КОМБОБОКС"
-            if (grid.Columns[e.ColumnIndex].Name.Equals("dataGrid1ColumnA"))
+            if (grid.Columns[e.ColumnIndex].Name.Equals("dataGrid1ColumnV"))
             {
-                grid.BeginEdit(true);
+                // grid.BeginEdit(true);
                 ((ComboBox)grid.EditingControl).DroppedDown = true;
                 ((ComboBox)grid.EditingControl).SelectedIndexChanged += new EventHandler(method);
             }
@@ -113,25 +114,67 @@ namespace ERespondent
         /// <param name="e"></param>
         private void method(object sender, EventArgs e)
         {
-            //DataGridView grid = (DataGridView)sender;
-            //получаем индекс строки, чтобы получить индекс ячейки
-            int _rowIndex = grid.CurrentCell.RowIndex;
-            grid.Rows[_rowIndex].Cells["dataGrid1ColumnD"].Value = "sadfsad";
 
+            //DataGridView grid = (DataGridView)sender;          
             SqlConnection _conn = new ConnectionDB().CreateConnection();
             SqlDataAdapter _daMain;
+
             using (_conn)
             {
-                //берем исходя из выбранного элемента в ComboBox код направления(CodeDirection) и...
-                string whereStr = String.Format("where CodeDirection='{0}'", ((ComboBox)grid.EditingControl).SelectedValue.ToString());
-                //...делаем выборкув соответствии с этим условием
-                string queryString = String.Format("select DestinationsSave from DestinationSave " + " {0}", whereStr);
-
-                //SqlCommand comm = new SqlCommand("SELECT DestinationsSave from DestinationSave WHERE CodeDirection =" + grid.CurrentCell.Value + "", _conn);                               
-                SqlCommand comm = new SqlCommand(queryString, _conn);
-                DataTable tb = new DataTable();
-                _daMain = new SqlDataAdapter(comm);
-                _daMain.Fill(tb);
+                string str = null;
+                string whereStr = null;
+                string queryString = null;
+                bool flag = true;              
+                int _rowIndex=0;
+                try
+                {
+                    str = ((ComboBox)grid.EditingControl).SelectedValue.ToString();                   
+                    //узнаем индекс строки, чтобы знать куда подставлять значения их выборки(подставляем код направления и единицы измерения)
+                    _rowIndex = grid.CurrentCell.RowIndex;                    
+                }
+                catch (NullReferenceException ex)
+                {
+                    grid.CancelEdit();
+                    flag = false;
+                    return;
+                }
+                DataTable tb=null;
+                if (flag)
+                {
+                    //берем исходя из выбранного элемента в ComboBox код направления(CodeDirection) и...
+                    whereStr = String.Format("where CodeRecord='{0}'", str);
+                    //...делаем выборкув соответствии с этим условием
+                    queryString = String.Format("select CodeDirection, Unit, DestinationsSave from DestinationSave " + " {0}", whereStr);
+                    //                   
+                    //АДСКИЙ TRY CATCH! Из-за истинно арийских методов реализации редактирования элемента ColumnComboBox!
+                    //З.Ы. При выборе элемента в комбобокс(в колонке комбобоксов), если переключиться на другую ячейку (не комбобокс),
+                    //например текстовую или календарь, то большой брат дает добро жить без исключений. Если выбрали сразу же другую ячейку,
+                    //в которой лежит комбобокс -> тьма! Т.к. по непонятным причинам, не происходит (точнее оно происходит, но возвращает
+                    //не коллекцию Row) какое-то событие, которое достает вот отсюда << ((ComboBox)grid.EditingControl).SelectedValue >>
+                    //код записи, по которому мы достаем данные для подстановки.                    
+                    try
+                    {
+                        SqlCommand comm = new SqlCommand(queryString, _conn);
+                        tb = new DataTable();
+                        _daMain = new SqlDataAdapter(comm);
+                        _daMain.Fill(tb);
+                    }
+                    catch (SqlException ex)
+                    {
+                        //тупо возвращаемся и все работает
+                        return;
+                    }
+                }
+                try
+                {
+                    grid.Rows[_rowIndex].Cells["dataGrid1ColumnA"].Value = tb.Rows[0][0].ToString();
+                    grid.Rows[_rowIndex].Cells["dataGrid1ColumnD"].Value = tb.Rows[0][1].ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Проверьте строку");                    
+                }
+                //grid.SendToBack();         
             }
         }
 
@@ -157,5 +200,17 @@ namespace ERespondent
                 col.ValueMember = valueMember;
             }
         }
+
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            string newString;
+           
+            if (!e.FormattedValue.GetType().ToString().Equals("System.String"))
+            {
+                e.Cancel = true;
+                MessageBox.Show("Ошибка! Ввод отменен!");
+            }
+        }
+
     }
 }

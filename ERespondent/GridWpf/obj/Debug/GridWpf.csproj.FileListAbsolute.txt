@@ -9,3 +9,14 @@ E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.Properties.
 E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.csproj.GenerateResource.Cache
 E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.dll
 E:\Install\!КВАНТ\Project\ERespondent\GridWpf\obj\Debug\GridWpf.pdb
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\bin\Debug\GridWpf.dll
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\bin\Debug\GridWpf.pdb
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\bin\Debug\WPFToolkit.dll
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\UserControl1.baml
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\UserControl1.g.cs
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf_MarkupCompile.cache
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.g.resources
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.Properties.Resources.resources
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.csproj.GenerateResource.Cache
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.dll
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.pdb

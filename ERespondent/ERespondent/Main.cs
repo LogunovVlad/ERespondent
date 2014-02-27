@@ -38,8 +38,8 @@ namespace ERespondent
             int heightScreen = Screen.PrimaryScreen.WorkingArea.Height;
             int widthScreen = Screen.PrimaryScreen.WorkingArea.Width;
             this.Location = new Point(0, 0);
-            this.Height = heightScreen;
-            this.Width = widthScreen;
+            this.Height = 728;// heightScreen;
+            this.Width = 1380;// widthScreen;
         }
 
         private void справочникКодовОКПООрганизацийToolStripMenuItem_Click(object sender, EventArgs e)

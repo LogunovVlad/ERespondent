@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Таблица 1: Выполнение мероприятий по экономии ТЭР");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("РАЗДЕЛ 1", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Таблица 2: Выполнение мероприятий по увеличению использования местных видов топли" +
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Таблица 1: Выполнение мероприятий по экономии ТЭР");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("РАЗДЕЛ 1", new System.Windows.Forms.TreeNode[] {
+            treeNode7});
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Таблица 2: Выполнение мероприятий по увеличению использования местных видов топли" +
         "ва");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("РАЗДЕЛ 2", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Таблица 3: Выполнение программы по энергосбережению ");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("РАЗДЕЛ 3", new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("РАЗДЕЛ 2", new System.Windows.Forms.TreeNode[] {
+            treeNode9});
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Таблица 3: Выполнение программы по энергосбережению ");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("РАЗДЕЛ 3", new System.Windows.Forms.TreeNode[] {
+            treeNode11});
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -265,23 +265,23 @@
             this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "list11";
-            treeNode1.Text = "Таблица 1: Выполнение мероприятий по экономии ТЭР";
-            treeNode2.Name = "nodeRazd1";
-            treeNode2.Text = "РАЗДЕЛ 1";
-            treeNode3.Name = "list21";
-            treeNode3.Text = "Таблица 2: Выполнение мероприятий по увеличению использования местных видов топли" +
+            treeNode7.Name = "list11";
+            treeNode7.Text = "Таблица 1: Выполнение мероприятий по экономии ТЭР";
+            treeNode8.Name = "nodeRazd1";
+            treeNode8.Text = "РАЗДЕЛ 1";
+            treeNode9.Name = "list21";
+            treeNode9.Text = "Таблица 2: Выполнение мероприятий по увеличению использования местных видов топли" +
     "ва";
-            treeNode4.Name = "nodeRazd2";
-            treeNode4.Text = "РАЗДЕЛ 2";
-            treeNode5.Name = "list31";
-            treeNode5.Text = "Таблица 3: Выполнение программы по энергосбережению ";
-            treeNode6.Name = "nodeRazd1";
-            treeNode6.Text = "РАЗДЕЛ 3";
+            treeNode10.Name = "nodeRazd2";
+            treeNode10.Text = "РАЗДЕЛ 2";
+            treeNode11.Name = "list31";
+            treeNode11.Text = "Таблица 3: Выполнение программы по энергосбережению ";
+            treeNode12.Name = "nodeRazd1";
+            treeNode12.Text = "РАЗДЕЛ 3";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode4,
-            treeNode6});
+            treeNode8,
+            treeNode10,
+            treeNode12});
             this.treeView1.Size = new System.Drawing.Size(520, 55);
             this.treeView1.TabIndex = 0;
             // 
@@ -399,8 +399,8 @@
             // 
             // dataGrid1ColumnV
             // 
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGrid1ColumnV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGrid1ColumnV.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid1ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGrid1ColumnV.HeaderText = "В";
             this.dataGrid1ColumnV.Name = "dataGrid1ColumnV";

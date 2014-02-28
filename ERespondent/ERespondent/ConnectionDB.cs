@@ -5,6 +5,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ERespondent
 {
@@ -42,9 +43,10 @@ namespace ERespondent
             catch (Exception ex)
             {
                 //result.Append(ex.Message);
-                throw new Exception("При установлении соединения с SQL Server произошла ошибка, связанная"+
+                MessageBox.Show("При установлении соединения с SQL Server произошла ошибка, связанная"+
                     " с сетью или с определенным экземпляром. Сервер не найден или недоступен. Убедитесь, что"+
-                    " имя экземпляра указано правильно и что на SQL Server разрешены удаленные соединения.", ex);
+                    " имя экземпляра указано правильно и что на SQL Server разрешены удаленные соединения.");
+                Application.Exit();
             }
             //return result.ToString();
             return _connectionMain;

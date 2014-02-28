@@ -25,9 +25,14 @@ namespace ERespondent
         {
             ScreenResolution();
             //заполянем первый комбобокс
-           // FillComboBox(dataGrid1ColumnA, "SELECT CodeDirection, CodeRecord from DestinationSave", "CodeDirection", "CodeRecord");
+            // FillComboBox(dataGrid1ColumnA, "SELECT CodeDirection, CodeRecord from DestinationSave", "CodeDirection", "CodeRecord");
             FillComboBox(dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
-        
+
+
+            /*четные нечетные строки разными цветами
+             * dataGridView1.RowsDefaultCellStyle.BackColor = Color.LightBlue;//Color.Bisque;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;//Color.Beige;*/
+            // dataGridView1.Rows.Add();       
         }
 
         /// <summary>
@@ -95,14 +100,19 @@ namespace ERespondent
         {
             grid = (DataGridView)sender;
 
-            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //ВЫДРАТЬ ОТСЮДА СОБЫТИЕ НА ИЗМЕНЕНИЕ ИНДЕКСА
-            //COMBOBOX ДЛЯ ПОДСТАНОВКИ В ДРУГОЕ ПОЛЕ И "КОМБОБОКС"
-            if (grid.Columns[e.ColumnIndex].Name.Equals("dataGrid1ColumnV"))
+            //если текстБокс, чтобы не вызывать DropDown. (проверка для поля итого)
+            string tt = grid.CurrentCell.EditType.ToString();
+            if (tt.Equals("System.Windows.Forms.DataGridViewComboBoxEditingControl"))
             {
-                // grid.BeginEdit(true);
-                ((ComboBox)grid.EditingControl).DroppedDown = true;
-                ((ComboBox)grid.EditingControl).SelectedIndexChanged += new EventHandler(method);
+                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //ВЫДРАТЬ ОТСЮДА СОБЫТИЕ НА ИЗМЕНЕНИЕ ИНДЕКСА
+                //COMBOBOX ДЛЯ ПОДСТАНОВКИ В ДРУГОЕ ПОЛЕ И "КОМБОБОКС"
+                if (grid.Columns[e.ColumnIndex].Name.Equals("dataGrid1ColumnV"))
+                {
+                    // grid.BeginEdit(true);
+                    ((ComboBox)grid.EditingControl).DroppedDown = true;
+                    ((ComboBox)grid.EditingControl).SelectedIndexChanged += new EventHandler(method);
+                }
             }
         }
 
@@ -114,8 +124,6 @@ namespace ERespondent
         /// <param name="e"></param>
         private void method(object sender, EventArgs e)
         {
-
-            //DataGridView grid = (DataGridView)sender;          
             SqlConnection _conn = new ConnectionDB().CreateConnection();
             SqlDataAdapter _daMain;
 
@@ -124,13 +132,13 @@ namespace ERespondent
                 string str = null;
                 string whereStr = null;
                 string queryString = null;
-                bool flag = true;              
-                int _rowIndex=0;
+                bool flag = true;
+                int _rowIndex = 0;
                 try
                 {
-                    str = ((ComboBox)grid.EditingControl).SelectedValue.ToString();                   
+                    str = ((ComboBox)grid.EditingControl).SelectedValue.ToString();
                     //узнаем индекс строки, чтобы знать куда подставлять значения их выборки(подставляем код направления и единицы измерения)
-                    _rowIndex = grid.CurrentCell.RowIndex;                    
+                    _rowIndex = grid.CurrentCell.RowIndex;
                 }
                 catch (NullReferenceException ex)
                 {
@@ -138,7 +146,7 @@ namespace ERespondent
                     flag = false;
                     return;
                 }
-                DataTable tb=null;
+                DataTable tb = null;
                 if (flag)
                 {
                     //берем исходя из выбранного элемента в ComboBox код направления(CodeDirection) и...
@@ -154,6 +162,8 @@ namespace ERespondent
                     //код записи, по которому мы достаем данные для подстановки.                    
                     try
                     {
+                        ///Переделать выборку (Один раз загружаем в DataTable и с ней работаем)
+                        ///Сейчас каждый раз обращаемся к базе!((
                         SqlCommand comm = new SqlCommand(queryString, _conn);
                         tb = new DataTable();
                         _daMain = new SqlDataAdapter(comm);
@@ -172,7 +182,7 @@ namespace ERespondent
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Проверьте строку");                    
+                    MessageBox.Show("Проверьте строку");
                 }
                 //grid.SendToBack();         
             }
@@ -198,19 +208,70 @@ namespace ERespondent
                 col.DataSource = tb;
                 col.DisplayMember = displayMember;
                 col.ValueMember = valueMember;
+                col.DropDownWidth = 1200;
             }
         }
 
+        /// <summary>
+        /// Проверка правильности ввода в ячейки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
-            string newString;
-           
             if (!e.FormattedValue.GetType().ToString().Equals("System.String"))
             {
                 e.Cancel = true;
                 MessageBox.Show("Ошибка! Ввод отменен!");
             }
         }
+
+        /// <summary>
+        /// Событие на вывод строки "Итого"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void checkBoxTable1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.AllowUserToAddRows = false;
+            int _rowCount = dataGridView1.RowCount;
+            DataGridViewRow _newRow = new DataGridViewRow();
+            if (checkBoxTable1.Checked)
+            {
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                {
+                    _newRow.Cells.Add(new DataGridViewTextBoxCell());
+                }
+                dataGridView1.Rows.InsertRange(_rowCount, _newRow);
+                _rowCount = dataGridView1.RowCount;
+                dataGridView1[2, _rowCount - 1].Value = "Итого";
+                dataGridView1[2, _rowCount - 1].ReadOnly = true;
+                dataGridView1[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopRight;
+                dataGridView1[2, _rowCount - 1].Selected = true;
+
+                dataGridView1[3, _rowCount - 1].Value = "X";
+                dataGridView1[3, _rowCount - 1].ReadOnly = true;
+                dataGridView1[3, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1[3, _rowCount - 1].Style.BackColor = Color.LightGray;
+
+                dataGridView1[4, _rowCount - 1].Value = "X";
+                dataGridView1[4, _rowCount - 1].ReadOnly = true;
+                dataGridView1[4, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1[4, _rowCount - 1].Style.BackColor = Color.LightGray;
+
+                dataGridView1[5, _rowCount - 1].Value = "X";
+                dataGridView1[5, _rowCount - 1].ReadOnly = true;
+                dataGridView1[5, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridView1[5, _rowCount - 1].Style.BackColor = Color.LightGray;
+
+            }
+            else
+            {
+                dataGridView1.Rows.RemoveAt(_rowCount - 1);
+                dataGridView1.AllowUserToAddRows = true;
+            }
+        }
+
 
     }
 }

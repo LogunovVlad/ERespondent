@@ -22,6 +22,7 @@ namespace ERespondent
 
         private void OKPO_Load(object sender, EventArgs e)
         {
+            _connectionOKPO.ConnectionString = ConfigurationManager.ConnectionStrings["ERConn"].ConnectionString;
             //определяем владельца
             _mainForm = this.Owner as MainForm;
 

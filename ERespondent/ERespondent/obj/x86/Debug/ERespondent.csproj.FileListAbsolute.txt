@@ -33,3 +33,4 @@ e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\E
 e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\ERespondent\obj\x86\Debug\ERespondent.TypeFuel.resources
 e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\ERespondent\obj\x86\Debug\ERespondent.csproj.GenerateResource.Cache
 e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\ERespondent\bin\Debug\ClassLibrary1.dll
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\ERespondent\bin\Debug\ClassLibrary1.pdb

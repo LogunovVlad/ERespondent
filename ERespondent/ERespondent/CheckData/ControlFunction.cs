@@ -138,13 +138,13 @@ namespace ERespondent.CheckData
             #region
             for (int i = 6; i < 15; i++)
             {
-                _summ = Convert.ToDouble(grid3[6, grid3.RowCount - 1].Value);
+                _summ = Convert.ToDouble(grid3[i, grid3.RowCount - 1].Value);
                 double total1 = Convert.ToDouble(grid1[i, grid1.RowCount - 1].Value);
                 double total2 = Convert.ToDouble(grid2[i, grid2.RowCount - 1].Value);              
 
                 if (_summ != total1 + total2)
                 {
-                    listError.Add("Ошибка: Сумма данных <Всего по разделу 1> по столбцу"+grid3.Columns[i].HeaderText+" не равна сумме данных строк <Итого> по каждому из подразделов.");
+                    listError.Add("Ошибка: Сумма данных <Всего по разделу 1> по столбцу "+grid3.Columns[i].HeaderText+" не равна сумме данных строк <Итого> по каждому из подразделов.");
                     grid3[i, grid3.RowCount - 1].Style.BackColor = Color.Red;
                 }
                 else
@@ -153,7 +153,6 @@ namespace ERespondent.CheckData
                 }
             }
             #endregion
-
         }
 
         public void ShowListError()

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using ERespondent.CheckData;
 
 namespace ERespondent
 {
@@ -23,10 +24,12 @@ namespace ERespondent
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //определяем разрешение экрана
             ScreenResolution();
-            //заполянем первый комбобокс
-            // FillComboBox(dataGrid1ColumnA, "SELECT CodeDirection, CodeRecord from DestinationSave", "CodeDirection", "CodeRecord");
+            //заполянем первый комбобокс            
             FillComboBox(dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+            FillComboBox(dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+            FillComboBox(dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
 
 
             /*четные нечетные строки разными цветами
@@ -107,7 +110,8 @@ namespace ERespondent
                 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 //ВЫДРАТЬ ОТСЮДА СОБЫТИЕ НА ИЗМЕНЕНИЕ ИНДЕКСА
                 //COMBOBOX ДЛЯ ПОДСТАНОВКИ В ДРУГОЕ ПОЛЕ И "КОМБОБОКС"
-                if (grid.Columns[e.ColumnIndex].Name.Equals("dataGrid1ColumnV"))
+                //if (grid.Columns[e.ColumnIndex].Name.Equals("dataGridColumnV"))
+                if (grid.Columns[e.ColumnIndex].Index == 2)
                 {
                     // grid.BeginEdit(true);
                     ((ComboBox)grid.EditingControl).DroppedDown = true;
@@ -177,8 +181,12 @@ namespace ERespondent
                 }
                 try
                 {
-                    grid.Rows[_rowIndex].Cells["dataGrid1ColumnA"].Value = tb.Rows[0][0].ToString();
-                    grid.Rows[_rowIndex].Cells["dataGrid1ColumnD"].Value = tb.Rows[0][1].ToString();
+                    grid.Rows[_rowIndex].Cells[0].Value = tb.Rows[0][0].ToString();
+                    //чтобы подстановка не попадала в строку "Итого по разделу"
+                    if (!grid.Tag.Equals("Пункт \"По мероприятиям предшествующего года внедрения\""))
+                    {
+                        grid.Rows[_rowIndex].Cells[4].Value = tb.Rows[0][1].ToString();
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -233,45 +241,195 @@ namespace ERespondent
         /// <param name="e"></param>
         private void checkBoxTable1_Click(object sender, EventArgs e)
         {
-            dataGridView1.AllowUserToAddRows = false;
-            int _rowCount = dataGridView1.RowCount;
-            DataGridViewRow _newRow = new DataGridViewRow();
-            if (checkBoxTable1.Checked)
+            DataGridView grid = null;
+            CheckBox c = ((CheckBox)sender);
+            if (c.Name.Equals("checkBoxTable1"))
             {
-                for (int i = 0; i < dataGridView1.ColumnCount; i++)
-                {
-                    _newRow.Cells.Add(new DataGridViewTextBoxCell());
-                }
-                dataGridView1.Rows.InsertRange(_rowCount, _newRow);
-                _rowCount = dataGridView1.RowCount;
-                dataGridView1[2, _rowCount - 1].Value = "Итого";
-                dataGridView1[2, _rowCount - 1].ReadOnly = true;
-                dataGridView1[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopRight;
-                dataGridView1[2, _rowCount - 1].Selected = true;
-
-                dataGridView1[3, _rowCount - 1].Value = "X";
-                dataGridView1[3, _rowCount - 1].ReadOnly = true;
-                dataGridView1[3, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridView1[3, _rowCount - 1].Style.BackColor = Color.LightGray;
-
-                dataGridView1[4, _rowCount - 1].Value = "X";
-                dataGridView1[4, _rowCount - 1].ReadOnly = true;
-                dataGridView1[4, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridView1[4, _rowCount - 1].Style.BackColor = Color.LightGray;
-
-                dataGridView1[5, _rowCount - 1].Value = "X";
-                dataGridView1[5, _rowCount - 1].ReadOnly = true;
-                dataGridView1[5, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridView1[5, _rowCount - 1].Style.BackColor = Color.LightGray;
-
+                grid = dataGridView1;
             }
-            else
+            if (c.Name.Equals("checkBoxTable2"))
             {
-                dataGridView1.Rows.RemoveAt(_rowCount - 1);
-                dataGridView1.AllowUserToAddRows = true;
+                grid = dataGridView2;
+            }
+
+            if (grid != null && grid.RowCount > 1)
+            {
+                grid.AllowUserToAddRows = false;
+                int _rowCount = grid.RowCount;
+                DataGridViewRow _newRow = new DataGridViewRow();
+                if (c.Checked)
+                {
+                    for (int i = 0; i < grid.ColumnCount; i++)
+                    {
+                        _newRow.Cells.Add(new DataGridViewTextBoxCell());
+                    }
+                    grid.Rows.InsertRange(_rowCount, _newRow);
+                    _rowCount = grid.RowCount;
+
+                    grid[2, _rowCount - 1].Value = "Итого";
+                    grid[2, _rowCount - 1].ReadOnly = true;
+                    grid[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopRight;
+                    FillTextBoxX(grid, _rowCount, 3, 6);
+                }
+                else
+                {
+                    grid.Rows.RemoveAt(_rowCount - 1);
+                    grid.AllowUserToAddRows = true;
+                }
             }
         }
 
+        /// <summary>
+        /// Отменяет выделение текущей ячейки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridView grid = ((DataGridView)sender);
+            grid.CurrentCell.Selected = false;
+            grid.Focus();
+        }
 
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void контрольныеФункцииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.EndEdit();
+            dataGridView2.EndEdit();
+            dataGridView3.EndEdit();
+
+            if (dataGridView1.RowCount < 2 || dataGridView2.RowCount < 2 || dataGridView3.RowCount < 2)
+            {
+                MessageBox.Show("Заполните все подразделы!");
+            }
+            else
+            {
+
+                ControlFunction controlObj = new ControlFunction();
+                controlObj.CheckTable(dataGridView1);
+                controlObj.CheckTable(dataGridView2);
+                controlObj.CheckTotalForSection1(dataGridView1, dataGridView2, dataGridView3);
+
+                controlObj.ShowListError();
+            }
+        }
+
+        ///
+        /// dataGridView3
+        /// 
+        #region
+        /// <summary>
+        /// Для datagridView 3 нужно указать столбца которые нельзя редактировать
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView3_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            DataGridView grid = ((DataGridView)sender);
+            int _rowNumber = grid.CurrentRow.Index;
+
+            //!!!!!!!!!!!!!Пустить по циклу
+            grid.Rows[_rowNumber].Cells[4].Value = "X";
+            grid.Rows[_rowNumber].Cells[4].ReadOnly = true;
+            grid.Rows[_rowNumber].Cells[4].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grid.Rows[_rowNumber].Cells[4].Style.BackColor = Color.LightGray;
+
+            grid.Rows[_rowNumber].Cells[5].Value = "X";
+            grid.Rows[_rowNumber].Cells[5].ReadOnly = true;
+            grid.Rows[_rowNumber].Cells[5].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grid.Rows[_rowNumber].Cells[5].Style.BackColor = Color.LightGray;
+
+            for (int cellInd = 7; cellInd < 15; cellInd++)
+            {
+                grid.Rows[_rowNumber].Cells[cellInd].Value = "X";
+                grid.Rows[_rowNumber].Cells[cellInd].ReadOnly = false;
+                grid.Rows[_rowNumber].Cells[cellInd].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grid.Rows[_rowNumber].Cells[cellInd].Style.BackColor = Color.LightGray;
+            }
+
+            grid.CurrentCell.Selected = false;
+            grid.Focus();
+        }
+
+        /// <summary>
+        /// 3-ий checkBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void checkBoxTable3_Click(object sender, EventArgs e)
+        {
+            DataGridView grid = null;
+            grid = dataGridView3;
+            CheckBox c = ((CheckBox)sender);
+
+            if (grid != null && grid.RowCount > 1)
+            {
+                grid.AllowUserToAddRows = false;
+                int _rowCount = grid.RowCount;
+                DataGridViewRow _newRow = new DataGridViewRow();
+                if (c.Checked)
+                {
+                    for (int i = 0; i < grid.ColumnCount; i++)
+                    {
+                        _newRow.Cells.Add(new DataGridViewTextBoxCell());
+                    }
+                    grid.Rows.InsertRange(_rowCount, _newRow);
+                    _rowCount = grid.RowCount;
+                    grid[2, _rowCount - 1].Value = "Итого";
+                    grid[2, _rowCount - 1].ReadOnly = true;
+                    grid[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopRight;
+
+                    FillTextBoxX(grid, _rowCount, 3, 6);
+                    FillTextBoxX(grid, _rowCount, 7, 15);
+
+                    //добавим строку итого по разделу
+                    _rowCount = grid.RowCount;
+                    _newRow = new DataGridViewRow();
+                    for (int i = 0; i < grid.ColumnCount; i++)
+                    {
+                        _newRow.Cells.Add(new DataGridViewTextBoxCell());
+                    }                    
+                    grid.Rows.InsertRange(_rowCount, _newRow);
+                    _rowCount = grid.RowCount;
+                    grid[2, _rowCount - 1].Value = "Всего по разделу I";
+                    grid[2, _rowCount - 1].ReadOnly = true;
+                    grid[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopLeft;
+                    grid[2, _rowCount - 1].Style.BackColor = Color.LightGray;
+                    FillTextBoxX(grid, _rowCount, 3, 6);
+                    //end
+                }
+                else
+                {
+                    grid.Rows.RemoveAt(_rowCount - 1);
+                    grid.Rows.RemoveAt(_rowCount - 2);
+                    grid.AllowUserToAddRows = true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Метод заполняющий ячейки
+        /// </summary>
+        /// <param name="grid">Таблица, в которой заполняются ячейки</param>
+        /// <param name="_rowCount">Количество строк в таблице</param>
+        /// <param name="from">От какой ячейки заполнять</param>
+        /// <param name="to">До какой ячейки заполнять</param>
+        private static void FillTextBoxX(DataGridView grid, int _rowCount, int from, int to)
+        {
+            for (int colInd = from; colInd < to; colInd++)
+            {
+                grid[colInd, _rowCount - 1].Value = "X";
+                grid[colInd, _rowCount - 1].ReadOnly = true;
+                grid[colInd, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grid[colInd, _rowCount - 1].Style.BackColor = Color.LightGray;
+            }
+        }
+
+        #endregion
     }
 }
+

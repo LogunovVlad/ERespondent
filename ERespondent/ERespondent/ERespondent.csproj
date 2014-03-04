@@ -67,6 +67,13 @@
     <Compile Include="AddEditOKPO.Designer.cs">
       <DependentUpon>AddEditOKPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="CheckData\CheckProtocol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckData\CheckProtocol.Designer.cs">
+      <DependentUpon>CheckProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckData\ControlFunction.cs" />
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="ConnectionDB.cs" />
     <Compile Include="DataSet1.Designer.cs">
@@ -129,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="AddEditOKPO.resx">
       <DependentUpon>AddEditOKPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckData\CheckProtocol.resx">
+      <DependentUpon>CheckProtocol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DirectionEnergySave.resx">
       <DependentUpon>DirectionEnergySave.cs</DependentUpon>
@@ -231,9 +241,7 @@
       <Name>GridWpf</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Control\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

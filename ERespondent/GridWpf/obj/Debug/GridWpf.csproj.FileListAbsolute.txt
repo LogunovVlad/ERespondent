@@ -20,3 +20,4 @@ e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\G
 e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.csproj.GenerateResource.Cache
 e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.dll
 e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.pdb
+e:\Учеба\Лабораторные\5 курс\Практика\ERespondent\GridWpf\obj\Debug\GridWpf.csprojResolveAssemblyReference.cache

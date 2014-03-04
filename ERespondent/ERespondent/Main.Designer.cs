@@ -42,7 +42,11 @@ namespace ERespondent
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.функцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.контрольныеФункцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.экспортВExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникКодовОКПООрганизацийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.данныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,47 +64,49 @@ namespace ERespondent
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid1ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGrid1ColumnG = new ClassLibrary1.CalendarColumn();
+            this.dataGrid1ColumnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid1Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.checkBoxTable1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.checkBoxTable2 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGrid2ColumnG = new ClassLibrary1.CalendarColumn();
+            this.dataGrid2ColumnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid2Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.checkBoxTable3 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.elementHost2 = new System.Windows.Forms.Integration.ElementHost();
@@ -119,21 +125,21 @@ namespace ERespondent
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGrid1ColumnG = new ClassLibrary1.CalendarColumn();
-            this.dataGrid1ColumnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGrid1Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGrid3ColumnG = new ClassLibrary1.CalendarColumn();
+            this.dataGrid3ColumnD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGrid3Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.MenuPanel.SuspendLayout();
@@ -158,6 +164,7 @@ namespace ERespondent
             this.MainMenuStrip.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
+            this.функцииToolStripMenuItem,
             this.правкаToolStripMenuItem,
             this.данныеToolStripMenuItem,
             this.настройкиToolStripMenuItem,
@@ -171,16 +178,46 @@ namespace ERespondent
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьКакToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // сохранитьКакToolStripMenuItem
+            // 
+            this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.сохранитьКакToolStripMenuItem.Text = "Сохранить как...";
+            // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
+            // 
+            // функцииToolStripMenuItem
+            // 
+            this.функцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.контрольныеФункцииToolStripMenuItem,
+            this.экспортВExcelToolStripMenuItem});
+            this.функцииToolStripMenuItem.Name = "функцииToolStripMenuItem";
+            this.функцииToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.функцииToolStripMenuItem.Text = "Функции";
+            // 
+            // контрольныеФункцииToolStripMenuItem
+            // 
+            this.контрольныеФункцииToolStripMenuItem.Name = "контрольныеФункцииToolStripMenuItem";
+            this.контрольныеФункцииToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.контрольныеФункцииToolStripMenuItem.Text = "Контрольные функции";
+            this.контрольныеФункцииToolStripMenuItem.Click += new System.EventHandler(this.контрольныеФункцииToolStripMenuItem_Click);
+            // 
+            // экспортВExcelToolStripMenuItem
+            // 
+            this.экспортВExcelToolStripMenuItem.Name = "экспортВExcelToolStripMenuItem";
+            this.экспортВExcelToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.экспортВExcelToolStripMenuItem.Text = "Экспорт в Excel";
             // 
             // правкаToolStripMenuItem
             // 
@@ -203,8 +240,8 @@ namespace ERespondent
             this.переченьОсновныхНаправленийЭнергосбереженияToolStripMenuItem,
             this.видыТопливаИЭнергииToolStripMenuItem});
             this.данныеToolStripMenuItem.Name = "данныеToolStripMenuItem";
-            this.данныеToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.данныеToolStripMenuItem.Text = "Данные";
+            this.данныеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.данныеToolStripMenuItem.Text = "Справочники";
             // 
             // переченьОсновныхНаправленийЭнергосбереженияToolStripMenuItem
             // 
@@ -381,10 +418,113 @@ namespace ERespondent
             this.dataGridView1.Location = new System.Drawing.Point(0, 17);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(1202, 177);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.Tag = "Пункт \"По плану мероприятий отчетного года\"";
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
+            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            // 
+            // dataGrid1ColumnA
+            // 
+            this.dataGrid1ColumnA.HeaderText = "А";
+            this.dataGrid1ColumnA.Name = "dataGrid1ColumnA";
+            this.dataGrid1ColumnA.ReadOnly = true;
+            this.dataGrid1ColumnA.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid1ColumnA.Width = 55;
+            // 
+            // dataGrid1ColumnB
+            // 
+            this.dataGrid1ColumnB.HeaderText = "Б";
+            this.dataGrid1ColumnB.Name = "dataGrid1ColumnB";
+            this.dataGrid1ColumnB.Width = 53;
+            // 
+            // dataGrid1ColumnV
+            // 
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGrid1ColumnV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGrid1ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGrid1ColumnV.HeaderText = "В";
+            this.dataGrid1ColumnV.Name = "dataGrid1ColumnV";
+            this.dataGrid1ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid1ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGrid1ColumnV.Width = 200;
+            // 
+            // dataGrid1ColumnG
+            // 
+            this.dataGrid1ColumnG.HeaderText = "Г";
+            this.dataGrid1ColumnG.Name = "dataGrid1ColumnG";
+            this.dataGrid1ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid1ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGrid1ColumnG.Width = 140;
+            // 
+            // dataGrid1ColumnD
+            // 
+            this.dataGrid1ColumnD.HeaderText = "Д";
+            this.dataGrid1ColumnD.Name = "dataGrid1ColumnD";
+            this.dataGrid1ColumnD.ReadOnly = true;
+            this.dataGrid1ColumnD.Width = 90;
+            // 
+            // dataGrid1Column1
+            // 
+            this.dataGrid1Column1.HeaderText = "1";
+            this.dataGrid1Column1.Name = "dataGrid1Column1";
+            this.dataGrid1Column1.Width = 76;
+            // 
+            // dataGrid1Column2
+            // 
+            this.dataGrid1Column2.HeaderText = "2";
+            this.dataGrid1Column2.Name = "dataGrid1Column2";
+            this.dataGrid1Column2.Width = 83;
+            // 
+            // dataGrid1Column3
+            // 
+            this.dataGrid1Column3.HeaderText = "3";
+            this.dataGrid1Column3.Name = "dataGrid1Column3";
+            this.dataGrid1Column3.Width = 70;
+            // 
+            // dataGrid1Column4
+            // 
+            this.dataGrid1Column4.HeaderText = "4";
+            this.dataGrid1Column4.Name = "dataGrid1Column4";
+            this.dataGrid1Column4.Width = 104;
+            // 
+            // dataGrid1Column5
+            // 
+            this.dataGrid1Column5.HeaderText = "5";
+            this.dataGrid1Column5.Name = "dataGrid1Column5";
+            this.dataGrid1Column5.Width = 67;
+            // 
+            // dataGrid1Column6
+            // 
+            this.dataGrid1Column6.HeaderText = "6";
+            this.dataGrid1Column6.Name = "dataGrid1Column6";
+            this.dataGrid1Column6.Width = 72;
+            // 
+            // dataGrid1Column7
+            // 
+            this.dataGrid1Column7.HeaderText = "7";
+            this.dataGrid1Column7.Name = "dataGrid1Column7";
+            this.dataGrid1Column7.Width = 95;
+            // 
+            // dataGrid1Column8
+            // 
+            this.dataGrid1Column8.HeaderText = "8";
+            this.dataGrid1Column8.Name = "dataGrid1Column8";
+            this.dataGrid1Column8.Width = 78;
+            // 
+            // dataGrid1Column9
+            // 
+            this.dataGrid1Column9.HeaderText = "9";
+            this.dataGrid1Column9.Name = "dataGrid1Column9";
+            this.dataGrid1Column9.Width = 82;
+            // 
+            // dataGrid1Column10
+            // 
+            this.dataGrid1Column10.HeaderText = "10";
+            this.dataGrid1Column10.Name = "dataGrid1Column10";
+            this.dataGrid1Column10.Width = 65;
             // 
             // panel7
             // 
@@ -434,12 +574,26 @@ namespace ERespondent
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.Controls.Add(this.checkBoxTable2);
             this.panel8.Controls.Add(this.label4);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1202, 19);
             this.panel8.TabIndex = 10;
+            // 
+            // checkBoxTable2
+            // 
+            this.checkBoxTable2.AutoSize = true;
+            this.checkBoxTable2.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxTable2.ForeColor = System.Drawing.Color.White;
+            this.checkBoxTable2.Location = new System.Drawing.Point(1, 2);
+            this.checkBoxTable2.Name = "checkBoxTable2";
+            this.checkBoxTable2.Size = new System.Drawing.Size(157, 17);
+            this.checkBoxTable2.TabIndex = 3;
+            this.checkBoxTable2.Text = "Вывести колонку \"Итого\"";
+            this.checkBoxTable2.UseVisualStyleBackColor = false;
+            this.checkBoxTable2.Click += new System.EventHandler(this.checkBoxTable1_Click);
             // 
             // label4
             // 
@@ -457,117 +611,126 @@ namespace ERespondent
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
+            this.dataGrid2ColumnA,
+            this.dataGrid2ColumnB,
+            this.dataGrid2ColumnV,
+            this.dataGrid2ColumnG,
+            this.dataGrid2ColumnD,
+            this.dataGrid2Column1,
+            this.dataGrid2Column2,
+            this.dataGrid2Column3,
+            this.dataGrid2Column4,
+            this.dataGrid2Column5,
+            this.dataGrid2Column6,
+            this.dataGrid2Column7,
+            this.dataGrid2Column8,
+            this.dataGrid2Column9,
+            this.dataGrid2Column10});
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView2.Location = new System.Drawing.Point(0, 17);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.Size = new System.Drawing.Size(1202, 177);
             this.dataGridView2.TabIndex = 8;
+            this.dataGridView2.Tag = "Пункт \"Дополнительные мероприятия\"";
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGrid2ColumnA
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "А";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 55;
+            this.dataGrid2ColumnA.HeaderText = "А";
+            this.dataGrid2ColumnA.Name = "dataGrid2ColumnA";
+            this.dataGrid2ColumnA.Width = 55;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGrid2ColumnB
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Б";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 53;
+            this.dataGrid2ColumnB.HeaderText = "Б";
+            this.dataGrid2ColumnB.Name = "dataGrid2ColumnB";
+            this.dataGrid2ColumnB.Width = 53;
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGrid2ColumnV
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "В";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 200;
+            this.dataGrid2ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGrid2ColumnV.HeaderText = "В";
+            this.dataGrid2ColumnV.Name = "dataGrid2ColumnV";
+            this.dataGrid2ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid2ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGrid2ColumnV.Width = 200;
             // 
-            // dataGridViewTextBoxColumn4
+            // dataGrid2ColumnG
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Г";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 140;
+            this.dataGrid2ColumnG.HeaderText = "Г";
+            this.dataGrid2ColumnG.Name = "dataGrid2ColumnG";
+            this.dataGrid2ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid2ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGrid2ColumnG.Width = 140;
             // 
-            // dataGridViewTextBoxColumn5
+            // dataGrid2ColumnD
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Д";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 90;
+            this.dataGrid2ColumnD.HeaderText = "Д";
+            this.dataGrid2ColumnD.Name = "dataGrid2ColumnD";
+            this.dataGrid2ColumnD.Width = 90;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGrid2Column1
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "1";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 76;
+            this.dataGrid2Column1.HeaderText = "1";
+            this.dataGrid2Column1.Name = "dataGrid2Column1";
+            this.dataGrid2Column1.Width = 76;
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGrid2Column2
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "2";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 83;
+            this.dataGrid2Column2.HeaderText = "2";
+            this.dataGrid2Column2.Name = "dataGrid2Column2";
+            this.dataGrid2Column2.Width = 83;
             // 
-            // dataGridViewTextBoxColumn8
+            // dataGrid2Column3
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "3";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 70;
+            this.dataGrid2Column3.HeaderText = "3";
+            this.dataGrid2Column3.Name = "dataGrid2Column3";
+            this.dataGrid2Column3.Width = 70;
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGrid2Column4
             // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "4";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 104;
+            this.dataGrid2Column4.HeaderText = "4";
+            this.dataGrid2Column4.Name = "dataGrid2Column4";
+            this.dataGrid2Column4.Width = 104;
             // 
-            // dataGridViewTextBoxColumn10
+            // dataGrid2Column5
             // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "5";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 67;
+            this.dataGrid2Column5.HeaderText = "5";
+            this.dataGrid2Column5.Name = "dataGrid2Column5";
+            this.dataGrid2Column5.Width = 67;
             // 
-            // dataGridViewTextBoxColumn11
+            // dataGrid2Column6
             // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "6";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 72;
+            this.dataGrid2Column6.HeaderText = "6";
+            this.dataGrid2Column6.Name = "dataGrid2Column6";
+            this.dataGrid2Column6.Width = 72;
             // 
-            // dataGridViewTextBoxColumn12
+            // dataGrid2Column7
             // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "7";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 95;
+            this.dataGrid2Column7.HeaderText = "7";
+            this.dataGrid2Column7.Name = "dataGrid2Column7";
+            this.dataGrid2Column7.Width = 95;
             // 
-            // dataGridViewTextBoxColumn13
+            // dataGrid2Column8
             // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "8";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 78;
+            this.dataGrid2Column8.HeaderText = "8";
+            this.dataGrid2Column8.Name = "dataGrid2Column8";
+            this.dataGrid2Column8.Width = 78;
             // 
-            // dataGridViewTextBoxColumn14
+            // dataGrid2Column9
             // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "9";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 82;
+            this.dataGrid2Column9.HeaderText = "9";
+            this.dataGrid2Column9.Name = "dataGrid2Column9";
+            this.dataGrid2Column9.Width = 82;
             // 
-            // dataGridViewTextBoxColumn15
+            // dataGrid2Column10
             // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "10";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 65;
+            this.dataGrid2Column10.HeaderText = "10";
+            this.dataGrid2Column10.Name = "dataGrid2Column10";
+            this.dataGrid2Column10.Width = 65;
             // 
             // panel6
             // 
@@ -582,12 +745,26 @@ namespace ERespondent
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Controls.Add(this.checkBoxTable3);
             this.panel9.Controls.Add(this.label2);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1202, 19);
             this.panel9.TabIndex = 11;
+            // 
+            // checkBoxTable3
+            // 
+            this.checkBoxTable3.AutoSize = true;
+            this.checkBoxTable3.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxTable3.ForeColor = System.Drawing.Color.White;
+            this.checkBoxTable3.Location = new System.Drawing.Point(3, 2);
+            this.checkBoxTable3.Name = "checkBoxTable3";
+            this.checkBoxTable3.Size = new System.Drawing.Size(157, 17);
+            this.checkBoxTable3.TabIndex = 4;
+            this.checkBoxTable3.Text = "Вывести колонку \"Итого\"";
+            this.checkBoxTable3.UseVisualStyleBackColor = false;
+            this.checkBoxTable3.Click += new System.EventHandler(this.checkBoxTable3_Click);
             // 
             // label2
             // 
@@ -605,117 +782,31 @@ namespace ERespondent
             this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30});
+            this.dataGrid3ColumnA,
+            this.dataGrid3ColumnB,
+            this.dataGrid3ColumnV,
+            this.dataGrid3ColumnG,
+            this.dataGrid3ColumnD,
+            this.dataGrid3Column1,
+            this.dataGrid3Column2,
+            this.dataGrid3Column3,
+            this.dataGrid3Column4,
+            this.dataGrid3Column5,
+            this.dataGrid3Column6,
+            this.dataGrid3Column7,
+            this.dataGrid3Column8,
+            this.dataGrid3Column9,
+            this.dataGrid3Column10});
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView3.Location = new System.Drawing.Point(0, 14);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.Size = new System.Drawing.Size(1202, 180);
             this.dataGridView3.TabIndex = 8;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "А";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Б";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 53;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.HeaderText = "В";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "Г";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.HeaderText = "Д";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "1";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Width = 76;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.HeaderText = "2";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Width = 83;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.HeaderText = "3";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.HeaderText = "4";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.HeaderText = "5";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Width = 67;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.HeaderText = "6";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.Width = 72;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.HeaderText = "7";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Width = 95;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.HeaderText = "8";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.Width = 78;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.HeaderText = "9";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.HeaderText = "10";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.Width = 65;
+            this.dataGridView3.Tag = "Пункт \"По мероприятиям предшествующего года внедрения\"";
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView3.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView3_RowsAdded);
             // 
             // panel3
             // 
@@ -829,105 +920,110 @@ namespace ERespondent
             this.Column15.Name = "Column15";
             this.Column15.Width = 65;
             // 
-            // dataGrid1ColumnA
+            // dataGrid3ColumnA
             // 
-            this.dataGrid1ColumnA.HeaderText = "А";
-            this.dataGrid1ColumnA.Name = "dataGrid1ColumnA";
-            this.dataGrid1ColumnA.ReadOnly = true;
-            this.dataGrid1ColumnA.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid1ColumnA.Width = 55;
+            this.dataGrid3ColumnA.HeaderText = "А";
+            this.dataGrid3ColumnA.Name = "dataGrid3ColumnA";
+            this.dataGrid3ColumnA.Width = 55;
             // 
-            // dataGrid1ColumnB
+            // dataGrid3ColumnB
             // 
-            this.dataGrid1ColumnB.HeaderText = "Б";
-            this.dataGrid1ColumnB.Name = "dataGrid1ColumnB";
-            this.dataGrid1ColumnB.Width = 53;
+            this.dataGrid3ColumnB.HeaderText = "Б";
+            this.dataGrid3ColumnB.Name = "dataGrid3ColumnB";
+            this.dataGrid3ColumnB.Width = 53;
             // 
-            // dataGrid1ColumnV
+            // dataGrid3ColumnV
             // 
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGrid1ColumnV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGrid1ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGrid1ColumnV.HeaderText = "В";
-            this.dataGrid1ColumnV.Name = "dataGrid1ColumnV";
-            this.dataGrid1ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid1ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGrid1ColumnV.Width = 200;
+            this.dataGrid3ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGrid3ColumnV.HeaderText = "В";
+            this.dataGrid3ColumnV.Name = "dataGrid3ColumnV";
+            this.dataGrid3ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid3ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGrid3ColumnV.Width = 200;
             // 
-            // dataGrid1ColumnG
+            // dataGrid3ColumnG
             // 
-            this.dataGrid1ColumnG.HeaderText = "Г";
-            this.dataGrid1ColumnG.Name = "dataGrid1ColumnG";
-            this.dataGrid1ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid1ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGrid1ColumnG.Width = 140;
+            this.dataGrid3ColumnG.HeaderText = "Г";
+            this.dataGrid3ColumnG.Name = "dataGrid3ColumnG";
+            this.dataGrid3ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid3ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGrid3ColumnG.Width = 140;
             // 
-            // dataGrid1ColumnD
+            // dataGrid3ColumnD
             // 
-            this.dataGrid1ColumnD.HeaderText = "Д";
-            this.dataGrid1ColumnD.Name = "dataGrid1ColumnD";
-            this.dataGrid1ColumnD.ReadOnly = true;
-            this.dataGrid1ColumnD.Width = 90;
+            this.dataGrid3ColumnD.HeaderText = "Д";
+            this.dataGrid3ColumnD.Name = "dataGrid3ColumnD";
+            this.dataGrid3ColumnD.ReadOnly = true;
+            this.dataGrid3ColumnD.Width = 90;
             // 
-            // dataGrid1Column1
+            // dataGrid3Column1
             // 
-            this.dataGrid1Column1.HeaderText = "1";
-            this.dataGrid1Column1.Name = "dataGrid1Column1";
-            this.dataGrid1Column1.Width = 76;
+            this.dataGrid3Column1.HeaderText = "1";
+            this.dataGrid3Column1.Name = "dataGrid3Column1";
+            this.dataGrid3Column1.ReadOnly = true;
+            this.dataGrid3Column1.Width = 76;
             // 
-            // dataGrid1Column2
+            // dataGrid3Column2
             // 
-            this.dataGrid1Column2.HeaderText = "2";
-            this.dataGrid1Column2.Name = "dataGrid1Column2";
-            this.dataGrid1Column2.Width = 83;
+            this.dataGrid3Column2.HeaderText = "2";
+            this.dataGrid3Column2.Name = "dataGrid3Column2";
+            this.dataGrid3Column2.Width = 83;
             // 
-            // dataGrid1Column3
+            // dataGrid3Column3
             // 
-            this.dataGrid1Column3.HeaderText = "3";
-            this.dataGrid1Column3.Name = "dataGrid1Column3";
-            this.dataGrid1Column3.Width = 70;
+            this.dataGrid3Column3.HeaderText = "3";
+            this.dataGrid3Column3.Name = "dataGrid3Column3";
+            this.dataGrid3Column3.ReadOnly = true;
+            this.dataGrid3Column3.Width = 70;
             // 
-            // dataGrid1Column4
+            // dataGrid3Column4
             // 
-            this.dataGrid1Column4.HeaderText = "4";
-            this.dataGrid1Column4.Name = "dataGrid1Column4";
-            this.dataGrid1Column4.Width = 104;
+            this.dataGrid3Column4.HeaderText = "4";
+            this.dataGrid3Column4.Name = "dataGrid3Column4";
+            this.dataGrid3Column4.ReadOnly = true;
+            this.dataGrid3Column4.Width = 104;
             // 
-            // dataGrid1Column5
+            // dataGrid3Column5
             // 
-            this.dataGrid1Column5.HeaderText = "5";
-            this.dataGrid1Column5.Name = "dataGrid1Column5";
-            this.dataGrid1Column5.Width = 67;
+            this.dataGrid3Column5.HeaderText = "5";
+            this.dataGrid3Column5.Name = "dataGrid3Column5";
+            this.dataGrid3Column5.ReadOnly = true;
+            this.dataGrid3Column5.Width = 67;
             // 
-            // dataGrid1Column6
+            // dataGrid3Column6
             // 
-            this.dataGrid1Column6.HeaderText = "6";
-            this.dataGrid1Column6.Name = "dataGrid1Column6";
-            this.dataGrid1Column6.Width = 72;
+            this.dataGrid3Column6.HeaderText = "6";
+            this.dataGrid3Column6.Name = "dataGrid3Column6";
+            this.dataGrid3Column6.ReadOnly = true;
+            this.dataGrid3Column6.Width = 72;
             // 
-            // dataGrid1Column7
+            // dataGrid3Column7
             // 
-            this.dataGrid1Column7.HeaderText = "7";
-            this.dataGrid1Column7.Name = "dataGrid1Column7";
-            this.dataGrid1Column7.Width = 95;
+            this.dataGrid3Column7.HeaderText = "7";
+            this.dataGrid3Column7.Name = "dataGrid3Column7";
+            this.dataGrid3Column7.ReadOnly = true;
+            this.dataGrid3Column7.Width = 95;
             // 
-            // dataGrid1Column8
+            // dataGrid3Column8
             // 
-            this.dataGrid1Column8.HeaderText = "8";
-            this.dataGrid1Column8.Name = "dataGrid1Column8";
-            this.dataGrid1Column8.Width = 78;
+            this.dataGrid3Column8.HeaderText = "8";
+            this.dataGrid3Column8.Name = "dataGrid3Column8";
+            this.dataGrid3Column8.ReadOnly = true;
+            this.dataGrid3Column8.Width = 78;
             // 
-            // dataGrid1Column9
+            // dataGrid3Column9
             // 
-            this.dataGrid1Column9.HeaderText = "9";
-            this.dataGrid1Column9.Name = "dataGrid1Column9";
-            this.dataGrid1Column9.Width = 82;
+            this.dataGrid3Column9.HeaderText = "9";
+            this.dataGrid3Column9.Name = "dataGrid3Column9";
+            this.dataGrid3Column9.ReadOnly = true;
+            this.dataGrid3Column9.Width = 82;
             // 
-            // dataGrid1Column10
+            // dataGrid3Column10
             // 
-            this.dataGrid1Column10.HeaderText = "10";
-            this.dataGrid1Column10.Name = "dataGrid1Column10";
-            this.dataGrid1Column10.Width = 65;
+            this.dataGrid3Column10.HeaderText = "10";
+            this.dataGrid3Column10.Name = "dataGrid3Column10";
+            this.dataGrid3Column10.ReadOnly = true;
+            this.dataGrid3Column10.Width = 65;
             // 
             // MainForm
             // 
@@ -1002,36 +1098,6 @@ namespace ERespondent
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel9;
@@ -1067,6 +1133,42 @@ namespace ERespondent
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid1Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid1Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid1Column10;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьКакToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem функцииToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem контрольныеФункцииToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem экспортВExcelToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2ColumnA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2ColumnB;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGrid2ColumnV;
+        private CalendarColumn dataGrid2ColumnG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2ColumnD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid2Column10;
+        private System.Windows.Forms.CheckBox checkBoxTable2;
+        private System.Windows.Forms.CheckBox checkBoxTable3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3ColumnA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3ColumnB;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGrid3ColumnV;
+        private CalendarColumn dataGrid3ColumnG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3ColumnD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGrid3Column10;
     }
 }
 

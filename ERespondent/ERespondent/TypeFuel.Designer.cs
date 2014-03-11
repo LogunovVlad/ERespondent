@@ -1,4 +1,5 @@
-﻿namespace ERespondent
+﻿using ERespondent.DataSet;
+namespace ERespondent
 {
     partial class TypeFuel
     {
@@ -33,7 +34,7 @@
             this.codeRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeTypeFuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeFuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsTypeFuel = new ERespondent.dsTypeFuel();
+            this.dsTypeFuel = new ERespondent.DataSet.dsTypeFuel();
             this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();

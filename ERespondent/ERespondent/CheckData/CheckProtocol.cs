@@ -21,7 +21,8 @@ namespace ERespondent.CheckData
         private void CheckProtocol_Load(object sender, EventArgs e)
         {
             richTextBox1.ReadOnly = true;
-            richTextBox1.Text += "Список ошибок:\n";                    
+            richTextBox1.Text += "Список ошибок:\n";
+            richTextBox1.Text += "РАЗДЕЛ 1: ВЫПОЛНЕНИЕ МЕРОПРИЯТИЙ ПО ЭКОНОМИИ ТОПЛИВНО-ЭНЕРГЕТИЧЕСКИХ РЕСУРСОВ (ТЭР)\n";
             if (list.Count!=0)
             {
                 foreach (string itemError in list)

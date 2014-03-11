@@ -58,10 +58,10 @@ namespace ERespondent.CheckData
                     }
                 }
             }
-            else
-            {
-                listError.Add(grid.Tag.ToString() + " не заполнен!\n");
-            }
+            //else
+            //{
+            //    listError.Add(grid.Tag.ToString() + " не заполнен!\n");
+            //}
         }
 
         /// <summary>
@@ -116,43 +116,47 @@ namespace ERespondent.CheckData
         public void CheckTotalForSection1(DataGridView grid1, DataGridView grid2, DataGridView grid3)
         {
             int _rowCount = grid3.RowCount;
-            double _summ = 0;
-            for (int i = 0; i < _rowCount - 2; i++)
+            //проверка запускается, если в таблице есть записи
+            if (_rowCount > 2)
             {
-                _summ += Convert.ToDouble(grid3[6, i].Value);
-            }
-            //итого по подраздеру 3 раздела 1
-            if (Convert.ToDouble(grid3[6, _rowCount - 2].Value) != _summ)
-            {
-                listError.Add("\n<<" + grid3.Tag.ToString() + ">>");
-                listError.Add("Ошибка: В строке <Итого> сумма не соответствует сумме по соответствующим столбцам!");
-                grid3[6, _rowCount - 2].Style.BackColor = Color.Red;
-            }
-            else
-            {
-                grid3[6, _rowCount - 2].Style.BackColor = Color.White;
-            }
-            //end
-
-            //итого по разделу 1 - Экономия ТЭР
-            #region
-            for (int i = 6; i < 15; i++)
-            {
-                _summ = Convert.ToDouble(grid3[i, grid3.RowCount - 1].Value);
-                double total1 = Convert.ToDouble(grid1[i, grid1.RowCount - 1].Value);
-                double total2 = Convert.ToDouble(grid2[i, grid2.RowCount - 1].Value);              
-
-                if (_summ != total1 + total2)
+                double _summ = 0;
+                for (int i = 0; i < _rowCount - 2; i++)
                 {
-                    listError.Add("Ошибка: Сумма данных <Всего по разделу 1> по столбцу "+grid3.Columns[i].HeaderText+" не равна сумме данных строк <Итого> по каждому из подразделов.");
-                    grid3[i, grid3.RowCount - 1].Style.BackColor = Color.Red;
+                    _summ += Convert.ToDouble(grid3[6, i].Value);
+                }
+                //итого по подраздеру 3 раздела 1
+                if (Convert.ToDouble(grid3[6, _rowCount - 2].Value) != _summ)
+                {
+                    listError.Add("\n<<" + grid3.Tag.ToString() + ">>");
+                    listError.Add("Ошибка: В строке <Итого> сумма не соответствует сумме по соответствующим столбцам!");
+                    grid3[6, _rowCount - 2].Style.BackColor = Color.Red;
                 }
                 else
                 {
-                    grid3[i, grid3.RowCount - 1].Style.BackColor = Color.White;
+                    grid3[6, _rowCount - 2].Style.BackColor = Color.White;
                 }
+                //end
+
+                //итого по разделу 1 - Экономия ТЭР
+                #region
+                for (int i = 6; i < 15; i++)
+                {
+                    _summ = Convert.ToDouble(grid3[i, grid3.RowCount - 1].Value);
+                    double total1 = Convert.ToDouble(grid1[i, grid1.RowCount - 1].Value);
+                    double total2 = Convert.ToDouble(grid2[i, grid2.RowCount - 1].Value);
+
+                    if (_summ != total1 + total2)
+                    {
+                        listError.Add("Ошибка: Сумма данных <Всего по разделу 1> по столбцу " + grid3.Columns[i].HeaderText + " не равна сумме данных строк <Итого> по каждому из подразделов.");
+                        grid3[i, grid3.RowCount - 1].Style.BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        grid3[i, grid3.RowCount - 1].Style.BackColor = Color.White;
+                    }
+                }
+                #endregion
             }
-            #endregion
         }
 
         public void ShowListError()

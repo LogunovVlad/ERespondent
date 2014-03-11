@@ -1,4 +1,5 @@
-﻿namespace ERespondent
+﻿using ERespondent.DataSet;
+namespace ERespondent
 {
     partial class DirectionEnergySave
     {
@@ -34,7 +35,7 @@
             this.codeDirectionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationsSaveDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsDirectSave = new ERespondent.dsDirectSave();
+            this.dsDirectSave = new ERespondent.DataSet.dsDirectSave();
             this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlDirectionConnection = new System.Data.SqlClient.SqlConnection();
             this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();

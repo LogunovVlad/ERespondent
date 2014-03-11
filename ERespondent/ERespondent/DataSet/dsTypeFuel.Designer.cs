@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ERespondent {
+namespace ERespondent.DataSet {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace ERespondent {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsDirectSave")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsTypeFuel")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsDirectSave : global::System.Data.DataSet {
+    public partial class dsTypeFuel : global::System.Data.DataSet {
         
-        private DestinationSaveDataTable tableDestinationSave;
+        private TypeFuelEnergyDataTable tableTypeFuelEnergy;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public dsDirectSave() {
+        public dsTypeFuel() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ERespondent {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected dsDirectSave(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsTypeFuel(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ERespondent {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DestinationSave"] != null)) {
-                    base.Tables.Add(new DestinationSaveDataTable(ds.Tables["DestinationSave"]));
+                if ((ds.Tables["TypeFuelEnergy"] != null)) {
+                    base.Tables.Add(new TypeFuelEnergyDataTable(ds.Tables["TypeFuelEnergy"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ERespondent {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DestinationSaveDataTable DestinationSave {
+        public TypeFuelEnergyDataTable TypeFuelEnergy {
             get {
-                return this.tableDestinationSave;
+                return this.tableTypeFuelEnergy;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsDirectSave cln = ((dsDirectSave)(base.Clone()));
+            dsTypeFuel cln = ((dsTypeFuel)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ERespondent {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DestinationSave"] != null)) {
-                    base.Tables.Add(new DestinationSaveDataTable(ds.Tables["DestinationSave"]));
+                if ((ds.Tables["TypeFuelEnergy"] != null)) {
+                    base.Tables.Add(new TypeFuelEnergyDataTable(ds.Tables["TypeFuelEnergy"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDestinationSave = ((DestinationSaveDataTable)(base.Tables["DestinationSave"]));
+            this.tableTypeFuelEnergy = ((TypeFuelEnergyDataTable)(base.Tables["TypeFuelEnergy"]));
             if ((initTable == true)) {
-                if ((this.tableDestinationSave != null)) {
-                    this.tableDestinationSave.InitVars();
+                if ((this.tableTypeFuelEnergy != null)) {
+                    this.tableTypeFuelEnergy.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsDirectSave";
+            this.DataSetName = "dsTypeFuel";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsDirectSave.xsd";
+            this.Namespace = "http://tempuri.org/dsTypeFuel.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDestinationSave = new DestinationSaveDataTable();
-            base.Tables.Add(this.tableDestinationSave);
+            this.tableTypeFuelEnergy = new TypeFuelEnergyDataTable();
+            base.Tables.Add(this.tableTypeFuelEnergy);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDestinationSave() {
+        private bool ShouldSerializeTypeFuelEnergy() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsDirectSave ds = new dsDirectSave();
+            dsTypeFuel ds = new dsTypeFuel();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,27 +270,25 @@ namespace ERespondent {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DestinationSaveRowChangeEventHandler(object sender, DestinationSaveRowChangeEvent e);
+        public delegate void TypeFuelEnergyRowChangeEventHandler(object sender, TypeFuelEnergyRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DestinationSaveDataTable : global::System.Data.TypedTableBase<DestinationSaveRow> {
+        public partial class TypeFuelEnergyDataTable : global::System.Data.TypedTableBase<TypeFuelEnergyRow> {
             
             private global::System.Data.DataColumn columnCodeRecord;
             
-            private global::System.Data.DataColumn columnCodeDirection;
+            private global::System.Data.DataColumn columnCodeTypeFuel;
             
-            private global::System.Data.DataColumn columnDestinationsSave;
-            
-            private global::System.Data.DataColumn columnUnit;
+            private global::System.Data.DataColumn columnTypeFuel;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveDataTable() {
-                this.TableName = "DestinationSave";
+            public TypeFuelEnergyDataTable() {
+                this.TableName = "TypeFuelEnergy";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +296,7 @@ namespace ERespondent {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DestinationSaveDataTable(global::System.Data.DataTable table) {
+            internal TypeFuelEnergyDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,7 +313,7 @@ namespace ERespondent {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DestinationSaveDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TypeFuelEnergyDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -330,25 +328,17 @@ namespace ERespondent {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CodeDirectionColumn {
+            public global::System.Data.DataColumn CodeTypeFuelColumn {
                 get {
-                    return this.columnCodeDirection;
+                    return this.columnCodeTypeFuel;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DestinationsSaveColumn {
+            public global::System.Data.DataColumn TypeFuelColumn {
                 get {
-                    return this.columnDestinationsSave;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UnitColumn {
-                get {
-                    return this.columnUnit;
+                    return this.columnTypeFuel;
                 }
             }
             
@@ -363,48 +353,47 @@ namespace ERespondent {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow this[int index] {
+            public TypeFuelEnergyRow this[int index] {
                 get {
-                    return ((DestinationSaveRow)(this.Rows[index]));
+                    return ((TypeFuelEnergyRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowChanging;
+            public event TypeFuelEnergyRowChangeEventHandler TypeFuelEnergyRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowChanged;
+            public event TypeFuelEnergyRowChangeEventHandler TypeFuelEnergyRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowDeleting;
+            public event TypeFuelEnergyRowChangeEventHandler TypeFuelEnergyRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowDeleted;
+            public event TypeFuelEnergyRowChangeEventHandler TypeFuelEnergyRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDestinationSaveRow(DestinationSaveRow row) {
+            public void AddTypeFuelEnergyRow(TypeFuelEnergyRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow AddDestinationSaveRow(int CodeDirection, string DestinationsSave, string Unit) {
-                DestinationSaveRow rowDestinationSaveRow = ((DestinationSaveRow)(this.NewRow()));
+            public TypeFuelEnergyRow AddTypeFuelEnergyRow(int CodeTypeFuel, string TypeFuel) {
+                TypeFuelEnergyRow rowTypeFuelEnergyRow = ((TypeFuelEnergyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        CodeDirection,
-                        DestinationsSave,
-                        Unit};
-                rowDestinationSaveRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDestinationSaveRow);
-                return rowDestinationSaveRow;
+                        CodeTypeFuel,
+                        TypeFuel};
+                rowTypeFuelEnergyRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTypeFuelEnergyRow);
+                return rowTypeFuelEnergyRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DestinationSaveDataTable cln = ((DestinationSaveDataTable)(base.Clone()));
+                TypeFuelEnergyDataTable cln = ((TypeFuelEnergyDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,16 +401,15 @@ namespace ERespondent {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DestinationSaveDataTable();
+                return new TypeFuelEnergyDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnCodeRecord = base.Columns["CodeRecord"];
-                this.columnCodeDirection = base.Columns["CodeDirection"];
-                this.columnDestinationsSave = base.Columns["DestinationsSave"];
-                this.columnUnit = base.Columns["Unit"];
+                this.columnCodeTypeFuel = base.Columns["CodeTypeFuel"];
+                this.columnTypeFuel = base.Columns["TypeFuel"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -429,43 +417,40 @@ namespace ERespondent {
             private void InitClass() {
                 this.columnCodeRecord = new global::System.Data.DataColumn("CodeRecord", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodeRecord);
-                this.columnCodeDirection = new global::System.Data.DataColumn("CodeDirection", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodeDirection);
-                this.columnDestinationsSave = new global::System.Data.DataColumn("DestinationsSave", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDestinationsSave);
-                this.columnUnit = new global::System.Data.DataColumn("Unit", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnit);
+                this.columnCodeTypeFuel = new global::System.Data.DataColumn("CodeTypeFuel", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodeTypeFuel);
+                this.columnTypeFuel = new global::System.Data.DataColumn("TypeFuel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTypeFuel);
                 this.columnCodeRecord.AutoIncrement = true;
                 this.columnCodeRecord.AllowDBNull = false;
                 this.columnCodeRecord.ReadOnly = true;
-                this.columnDestinationsSave.MaxLength = 250;
-                this.columnUnit.MaxLength = 30;
+                this.columnTypeFuel.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow NewDestinationSaveRow() {
-                return ((DestinationSaveRow)(this.NewRow()));
+            public TypeFuelEnergyRow NewTypeFuelEnergyRow() {
+                return ((TypeFuelEnergyRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DestinationSaveRow(builder);
+                return new TypeFuelEnergyRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DestinationSaveRow);
+                return typeof(TypeFuelEnergyRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DestinationSaveRowChanged != null)) {
-                    this.DestinationSaveRowChanged(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.TypeFuelEnergyRowChanged != null)) {
+                    this.TypeFuelEnergyRowChanged(this, new TypeFuelEnergyRowChangeEvent(((TypeFuelEnergyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -473,8 +458,8 @@ namespace ERespondent {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DestinationSaveRowChanging != null)) {
-                    this.DestinationSaveRowChanging(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.TypeFuelEnergyRowChanging != null)) {
+                    this.TypeFuelEnergyRowChanging(this, new TypeFuelEnergyRowChangeEvent(((TypeFuelEnergyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -482,8 +467,8 @@ namespace ERespondent {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DestinationSaveRowDeleted != null)) {
-                    this.DestinationSaveRowDeleted(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.TypeFuelEnergyRowDeleted != null)) {
+                    this.TypeFuelEnergyRowDeleted(this, new TypeFuelEnergyRowChangeEvent(((TypeFuelEnergyRow)(e.Row)), e.Action));
                 }
             }
             
@@ -491,14 +476,14 @@ namespace ERespondent {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DestinationSaveRowDeleting != null)) {
-                    this.DestinationSaveRowDeleting(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.TypeFuelEnergyRowDeleting != null)) {
+                    this.TypeFuelEnergyRowDeleting(this, new TypeFuelEnergyRowChangeEvent(((TypeFuelEnergyRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDestinationSaveRow(DestinationSaveRow row) {
+            public void RemoveTypeFuelEnergyRow(TypeFuelEnergyRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -507,7 +492,7 @@ namespace ERespondent {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsDirectSave ds = new dsDirectSave();
+                dsTypeFuel ds = new dsTypeFuel();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -525,7 +510,7 @@ namespace ERespondent {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DestinationSaveDataTable";
+                attribute2.FixedValue = "TypeFuelEnergyDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -569,111 +554,82 @@ namespace ERespondent {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DestinationSaveRow : global::System.Data.DataRow {
+        public partial class TypeFuelEnergyRow : global::System.Data.DataRow {
             
-            private DestinationSaveDataTable tableDestinationSave;
+            private TypeFuelEnergyDataTable tableTypeFuelEnergy;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DestinationSaveRow(global::System.Data.DataRowBuilder rb) : 
+            internal TypeFuelEnergyRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDestinationSave = ((DestinationSaveDataTable)(this.Table));
+                this.tableTypeFuelEnergy = ((TypeFuelEnergyDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int CodeRecord {
                 get {
-                    return ((int)(this[this.tableDestinationSave.CodeRecordColumn]));
+                    return ((int)(this[this.tableTypeFuelEnergy.CodeRecordColumn]));
                 }
                 set {
-                    this[this.tableDestinationSave.CodeRecordColumn] = value;
+                    this[this.tableTypeFuelEnergy.CodeRecordColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CodeDirection {
+            public int CodeTypeFuel {
                 get {
                     try {
-                        return ((int)(this[this.tableDestinationSave.CodeDirectionColumn]));
+                        return ((int)(this[this.tableTypeFuelEnergy.CodeTypeFuelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'CodeDirection\' в таблице \'DestinationSave\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'CodeTypeFuel\' в таблице \'TypeFuelEnergy\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDestinationSave.CodeDirectionColumn] = value;
+                    this[this.tableTypeFuelEnergy.CodeTypeFuelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DestinationsSave {
+            public string TypeFuel {
                 get {
                     try {
-                        return ((string)(this[this.tableDestinationSave.DestinationsSaveColumn]));
+                        return ((string)(this[this.tableTypeFuelEnergy.TypeFuelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'DestinationsSave\' в таблице \'DestinationSave\' равно DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'TypeFuel\' в таблице \'TypeFuelEnergy\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDestinationSave.DestinationsSaveColumn] = value;
+                    this[this.tableTypeFuelEnergy.TypeFuelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Unit {
-                get {
-                    try {
-                        return ((string)(this[this.tableDestinationSave.UnitColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Unit\' в таблице \'DestinationSave\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDestinationSave.UnitColumn] = value;
-                }
+            public bool IsCodeTypeFuelNull() {
+                return this.IsNull(this.tableTypeFuelEnergy.CodeTypeFuelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCodeDirectionNull() {
-                return this.IsNull(this.tableDestinationSave.CodeDirectionColumn);
+            public void SetCodeTypeFuelNull() {
+                this[this.tableTypeFuelEnergy.CodeTypeFuelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCodeDirectionNull() {
-                this[this.tableDestinationSave.CodeDirectionColumn] = global::System.Convert.DBNull;
+            public bool IsTypeFuelNull() {
+                return this.IsNull(this.tableTypeFuelEnergy.TypeFuelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDestinationsSaveNull() {
-                return this.IsNull(this.tableDestinationSave.DestinationsSaveColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDestinationsSaveNull() {
-                this[this.tableDestinationSave.DestinationsSaveColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsUnitNull() {
-                return this.IsNull(this.tableDestinationSave.UnitColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetUnitNull() {
-                this[this.tableDestinationSave.UnitColumn] = global::System.Convert.DBNull;
+            public void SetTypeFuelNull() {
+                this[this.tableTypeFuelEnergy.TypeFuelColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -681,22 +637,22 @@ namespace ERespondent {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DestinationSaveRowChangeEvent : global::System.EventArgs {
+        public class TypeFuelEnergyRowChangeEvent : global::System.EventArgs {
             
-            private DestinationSaveRow eventRow;
+            private TypeFuelEnergyRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRowChangeEvent(DestinationSaveRow row, global::System.Data.DataRowAction action) {
+            public TypeFuelEnergyRowChangeEvent(TypeFuelEnergyRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow Row {
+            public TypeFuelEnergyRow Row {
                 get {
                     return this.eventRow;
                 }

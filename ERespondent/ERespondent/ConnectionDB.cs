@@ -40,7 +40,7 @@ namespace ERespondent
                              "Версия сервера: " + _connectionMain.ServerVersion);
                 }               
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //result.Append(ex.Message);
                 MessageBox.Show("При установлении соединения с SQL Server произошла ошибка, связанная"+

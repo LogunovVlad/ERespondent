@@ -1,4 +1,5 @@
-﻿namespace ERespondent
+﻿using ERespondent.DataSet;
+namespace ERespondent
 {
     partial class OKPO
     {
@@ -42,7 +43,7 @@
             this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
             this._daOKPO = new System.Data.SqlClient.SqlDataAdapter();
-            this._dsOKPO = new ERespondent._dsOKPO();
+            this._dsOKPO = new ERespondent.DataSet._dsOKPO();
             this.codeOKPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameOrganizationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeRecordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();

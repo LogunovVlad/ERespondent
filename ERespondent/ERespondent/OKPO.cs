@@ -127,7 +127,7 @@ namespace ERespondent
 
                 _daOKPO.Update(_dsOKPO);
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Нет записей для удаления!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }

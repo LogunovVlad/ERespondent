@@ -32,7 +32,7 @@ namespace ERespondent
                     txtName.Text = formOKPO.dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     btnOk.Click += new EventHandler(ClickEdit);
                 }
-                catch (NullReferenceException ex)
+                catch (NullReferenceException)
                 {
                     MessageBox.Show("Не выбрана запись для редактирования!", "Ошибка редактирования!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }

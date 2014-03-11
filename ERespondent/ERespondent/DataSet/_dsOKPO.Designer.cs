@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ERespondent {
+namespace ERespondent.DataSet {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace ERespondent {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("_dsOKPO")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet1 : global::System.Data.DataSet {
+    public partial class _dsOKPO : global::System.Data.DataSet {
         
-        private DestinationSaveDataTable tableDestinationSave;
+        private OKPODataTable tableOKPO;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSet1() {
+        public _dsOKPO() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ERespondent {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected _dsOKPO(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ERespondent {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["DestinationSave"] != null)) {
-                    base.Tables.Add(new DestinationSaveDataTable(ds.Tables["DestinationSave"]));
+                if ((ds.Tables["OKPO"] != null)) {
+                    base.Tables.Add(new OKPODataTable(ds.Tables["OKPO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ERespondent {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DestinationSaveDataTable DestinationSave {
+        public OKPODataTable OKPO {
             get {
-                return this.tableDestinationSave;
+                return this.tableOKPO;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet1 cln = ((DataSet1)(base.Clone()));
+            _dsOKPO cln = ((_dsOKPO)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ERespondent {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["DestinationSave"] != null)) {
-                    base.Tables.Add(new DestinationSaveDataTable(ds.Tables["DestinationSave"]));
+                if ((ds.Tables["OKPO"] != null)) {
+                    base.Tables.Add(new OKPODataTable(ds.Tables["OKPO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableDestinationSave = ((DestinationSaveDataTable)(base.Tables["DestinationSave"]));
+            this.tableOKPO = ((OKPODataTable)(base.Tables["OKPO"]));
             if ((initTable == true)) {
-                if ((this.tableDestinationSave != null)) {
-                    this.tableDestinationSave.InitVars();
+                if ((this.tableOKPO != null)) {
+                    this.tableOKPO.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet1";
+            this.DataSetName = "_dsOKPO";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/_dsOKPO.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableDestinationSave = new DestinationSaveDataTable();
-            base.Tables.Add(this.tableDestinationSave);
+            this.tableOKPO = new OKPODataTable();
+            base.Tables.Add(this.tableOKPO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDestinationSave() {
+        private bool ShouldSerializeOKPO() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ERespondent {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet1 ds = new DataSet1();
+            _dsOKPO ds = new _dsOKPO();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,21 +270,25 @@ namespace ERespondent {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DestinationSaveRowChangeEventHandler(object sender, DestinationSaveRowChangeEvent e);
+        public delegate void OKPORowChangeEventHandler(object sender, OKPORowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DestinationSaveDataTable : global::System.Data.TypedTableBase<DestinationSaveRow> {
+        public partial class OKPODataTable : global::System.Data.TypedTableBase<OKPORow> {
             
-            private global::System.Data.DataColumn columnCodeDirection;
+            private global::System.Data.DataColumn columnCodeOKPO;
+            
+            private global::System.Data.DataColumn columnNameOrganization;
+            
+            private global::System.Data.DataColumn columnCodeRecord;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveDataTable() {
-                this.TableName = "DestinationSave";
+            public OKPODataTable() {
+                this.TableName = "OKPO";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -292,7 +296,7 @@ namespace ERespondent {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DestinationSaveDataTable(global::System.Data.DataTable table) {
+            internal OKPODataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -309,16 +313,32 @@ namespace ERespondent {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DestinationSaveDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected OKPODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CodeDirectionColumn {
+            public global::System.Data.DataColumn CodeOKPOColumn {
                 get {
-                    return this.columnCodeDirection;
+                    return this.columnCodeOKPO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameOrganizationColumn {
+                get {
+                    return this.columnNameOrganization;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodeRecordColumn {
+                get {
+                    return this.columnCodeRecord;
                 }
             }
             
@@ -333,45 +353,54 @@ namespace ERespondent {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow this[int index] {
+            public OKPORow this[int index] {
                 get {
-                    return ((DestinationSaveRow)(this.Rows[index]));
+                    return ((OKPORow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowChanging;
+            public event OKPORowChangeEventHandler OKPORowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowChanged;
+            public event OKPORowChangeEventHandler OKPORowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowDeleting;
+            public event OKPORowChangeEventHandler OKPORowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DestinationSaveRowChangeEventHandler DestinationSaveRowDeleted;
+            public event OKPORowChangeEventHandler OKPORowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDestinationSaveRow(DestinationSaveRow row) {
+            public void AddOKPORow(OKPORow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow AddDestinationSaveRow(int CodeDirection) {
-                DestinationSaveRow rowDestinationSaveRow = ((DestinationSaveRow)(this.NewRow()));
+            public OKPORow AddOKPORow(double CodeOKPO, string NameOrganization) {
+                OKPORow rowOKPORow = ((OKPORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CodeDirection};
-                rowDestinationSaveRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDestinationSaveRow);
-                return rowDestinationSaveRow;
+                        CodeOKPO,
+                        NameOrganization,
+                        null};
+                rowOKPORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOKPORow);
+                return rowOKPORow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public OKPORow FindByCodeRecord(int CodeRecord) {
+                return ((OKPORow)(this.Rows.Find(new object[] {
+                            CodeRecord})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DestinationSaveDataTable cln = ((DestinationSaveDataTable)(base.Clone()));
+                OKPODataTable cln = ((OKPODataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -379,46 +408,59 @@ namespace ERespondent {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DestinationSaveDataTable();
+                return new OKPODataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnCodeDirection = base.Columns["CodeDirection"];
+                this.columnCodeOKPO = base.Columns["CodeOKPO"];
+                this.columnNameOrganization = base.Columns["NameOrganization"];
+                this.columnCodeRecord = base.Columns["CodeRecord"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnCodeDirection = new global::System.Data.DataColumn("CodeDirection", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodeDirection);
+                this.columnCodeOKPO = new global::System.Data.DataColumn("CodeOKPO", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodeOKPO);
+                this.columnNameOrganization = new global::System.Data.DataColumn("NameOrganization", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNameOrganization);
+                this.columnCodeRecord = new global::System.Data.DataColumn("CodeRecord", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodeRecord);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCodeRecord}, true));
+                this.columnNameOrganization.MaxLength = 2147483647;
+                this.columnCodeRecord.AutoIncrement = true;
+                this.columnCodeRecord.AllowDBNull = false;
+                this.columnCodeRecord.ReadOnly = true;
+                this.columnCodeRecord.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow NewDestinationSaveRow() {
-                return ((DestinationSaveRow)(this.NewRow()));
+            public OKPORow NewOKPORow() {
+                return ((OKPORow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DestinationSaveRow(builder);
+                return new OKPORow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DestinationSaveRow);
+                return typeof(OKPORow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DestinationSaveRowChanged != null)) {
-                    this.DestinationSaveRowChanged(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.OKPORowChanged != null)) {
+                    this.OKPORowChanged(this, new OKPORowChangeEvent(((OKPORow)(e.Row)), e.Action));
                 }
             }
             
@@ -426,8 +468,8 @@ namespace ERespondent {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DestinationSaveRowChanging != null)) {
-                    this.DestinationSaveRowChanging(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.OKPORowChanging != null)) {
+                    this.OKPORowChanging(this, new OKPORowChangeEvent(((OKPORow)(e.Row)), e.Action));
                 }
             }
             
@@ -435,8 +477,8 @@ namespace ERespondent {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DestinationSaveRowDeleted != null)) {
-                    this.DestinationSaveRowDeleted(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.OKPORowDeleted != null)) {
+                    this.OKPORowDeleted(this, new OKPORowChangeEvent(((OKPORow)(e.Row)), e.Action));
                 }
             }
             
@@ -444,14 +486,14 @@ namespace ERespondent {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DestinationSaveRowDeleting != null)) {
-                    this.DestinationSaveRowDeleting(this, new DestinationSaveRowChangeEvent(((DestinationSaveRow)(e.Row)), e.Action));
+                if ((this.OKPORowDeleting != null)) {
+                    this.OKPORowDeleting(this, new OKPORowChangeEvent(((OKPORow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDestinationSaveRow(DestinationSaveRow row) {
+            public void RemoveOKPORow(OKPORow row) {
                 this.Rows.Remove(row);
             }
             
@@ -460,7 +502,7 @@ namespace ERespondent {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                _dsOKPO ds = new _dsOKPO();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -478,7 +520,7 @@ namespace ERespondent {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DestinationSaveDataTable";
+                attribute2.FixedValue = "OKPODataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -522,43 +564,82 @@ namespace ERespondent {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DestinationSaveRow : global::System.Data.DataRow {
+        public partial class OKPORow : global::System.Data.DataRow {
             
-            private DestinationSaveDataTable tableDestinationSave;
+            private OKPODataTable tableOKPO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DestinationSaveRow(global::System.Data.DataRowBuilder rb) : 
+            internal OKPORow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDestinationSave = ((DestinationSaveDataTable)(this.Table));
+                this.tableOKPO = ((OKPODataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CodeDirection {
+            public double CodeOKPO {
                 get {
                     try {
-                        return ((int)(this[this.tableDestinationSave.CodeDirectionColumn]));
+                        return ((double)(this[this.tableOKPO.CodeOKPOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'CodeDirection\' в таблице \'DestinationSave\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'CodeOKPO\' в таблице \'OKPO\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDestinationSave.CodeDirectionColumn] = value;
+                    this[this.tableOKPO.CodeOKPOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsCodeDirectionNull() {
-                return this.IsNull(this.tableDestinationSave.CodeDirectionColumn);
+            public string NameOrganization {
+                get {
+                    try {
+                        return ((string)(this[this.tableOKPO.NameOrganizationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'NameOrganization\' в таблице \'OKPO\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOKPO.NameOrganizationColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetCodeDirectionNull() {
-                this[this.tableDestinationSave.CodeDirectionColumn] = global::System.Convert.DBNull;
+            public int CodeRecord {
+                get {
+                    return ((int)(this[this.tableOKPO.CodeRecordColumn]));
+                }
+                set {
+                    this[this.tableOKPO.CodeRecordColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodeOKPONull() {
+                return this.IsNull(this.tableOKPO.CodeOKPOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodeOKPONull() {
+                this[this.tableOKPO.CodeOKPOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNameOrganizationNull() {
+                return this.IsNull(this.tableOKPO.NameOrganizationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameOrganizationNull() {
+                this[this.tableOKPO.NameOrganizationColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -566,22 +647,22 @@ namespace ERespondent {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DestinationSaveRowChangeEvent : global::System.EventArgs {
+        public class OKPORowChangeEvent : global::System.EventArgs {
             
-            private DestinationSaveRow eventRow;
+            private OKPORow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRowChangeEvent(DestinationSaveRow row, global::System.Data.DataRowAction action) {
+            public OKPORowChangeEvent(OKPORow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DestinationSaveRow Row {
+            public OKPORow Row {
                 get {
                     return this.eventRow;
                 }

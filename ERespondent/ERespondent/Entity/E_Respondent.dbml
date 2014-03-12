@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="E_Respondent" Class="E_RespondentDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=S2\S2_2K8;Initial Catalog=E_Respondent;Integrated Security=True" SettingsObjectName="ERespondent.Properties.Settings" SettingsPropertyName="E_RespondentConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TypeFuelEnergy" Member="TypeFuelEnergy">
-    <Type Name="TypeFuelEnergy">
+  <Table Name="dbo.DestinationSave" Member="DestinationSave">
+    <Type Name="DestinationSave">
       <Column Name="CodeRecord" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CodeTypeFuel" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TypeFuel" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CodeDirection" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DestinationsSave" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Unit" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>

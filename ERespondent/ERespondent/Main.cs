@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using ERespondent.CheckData;
 using ERespondent.UtilityFunction;
+using ERespondent.Entity;
 
 namespace ERespondent
 {
@@ -22,28 +23,38 @@ namespace ERespondent
         private DirectionEnergySave _formDirEnSave;
         private TypeFuel _formTypeFuel;
         private OKPO _okpoForm;
+        private E_RespondentDataContext _db;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             //определяем разрешение экрана
             ScreenResolution();
-            //заполянем первый комбобокс            
-            FillComboBox(Section1_dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
-            FillComboBox(Section1_dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
-            FillComboBox(Section1_dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+
+            //заполянем первый комбобоксы для первого раздела            
+            try
+            {
+                FillComboBox(Section1_dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+                FillComboBox(Section1_dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+                FillComboBox(Section1_dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+            }
+            catch (SqlException)
+            { MessageBox.Show("Ошибка сервера!"); }
+            //заполянем первый комбобоксы для второго раздела 
 
             /*четные нечетные строки разными цветами
              * dataGridView1.RowsDefaultCellStyle.BackColor = Color.LightBlue;//Color.Bisque;
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;//Color.Beige;*/
             // dataGridView1.Rows.Add();  
+
+            //для первого раздела
             Section1_dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridView1_ColumnWidthChanged);
 
-
-            dataGridViewSection2Header2_1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
-            dataGridViewSection2Header2_2.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);            
+            //для второго раздела
+            Section2_dataGridViewHeader2_1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
+            Section2_dataGridViewHeader2_2.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
             Section2_dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
             Section2_dataGridView2.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
-            Section2_dataGridView3.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
+            Section2_dataGridView3.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);           
         }
 
         /// <summary>
@@ -58,14 +69,9 @@ namespace ERespondent
             this.Width = 1380;// widthScreen;
         }
 
-        ///
-        ///РАЗДЕЛ 1(tab1)
-        ///                  
-        #region
-        ///
-        /// datagridView1 - По плану мероприятий отчетного года
-        /// datagridView2 - Дополнительные мероприятия     
-        #region
+        #region РАЗДЕЛ 1(tab1)
+
+        #region datagridView1 - По плану мероприятий отчетного года; datagridView2 - Дополнительные мероприятия
         /// <summary>
         /// Событие. Происходит при клике-нажатии на ячейку
         /// Выбор ячейки с в таблице(для того, что бы comboBox раскрывался сразу)
@@ -107,12 +113,6 @@ namespace ERespondent
             {
                 grid = Section1_dataGridView2;
             }
-            //Если включена строка итого - добавлять больше нельзя
-            //if (c.Checked)
-            //{ strip.Items["add"].Enabled = false; }
-            //else
-            //{ strip.Items["add"].Enabled = true; }
-            //end
 
             if (grid.RowCount > 1)
             {
@@ -211,10 +211,7 @@ namespace ERespondent
         }
         #endregion
 
-        ///
-        /// dataGridView3
-        ///                 
-        #region
+        #region dataGridView3
         /// <summary>
         /// Для datagridView 3 нужно указать столбца которые нельзя редактировать
         /// </summary>
@@ -326,10 +323,7 @@ namespace ERespondent
         }
         #endregion
 
-        ///
-        ///Главное меню
-        ///
-        #region
+        #region Главное меню
         private void справочникКодовОКПООрганизацийToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _okpoForm = new OKPO();
@@ -396,10 +390,7 @@ namespace ERespondent
         }
         #endregion
 
-        ///
-        ///Работа с ячейками таблицы
-        ///
-        #region
+        #region Работа с ячейками таблицы
         /// <summary>
         /// Обработчик выбора значения в комбобокс
         /// и подстановки в 
@@ -407,7 +398,7 @@ namespace ERespondent
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void method(object sender, EventArgs e)
-        {
+        {       
             SqlConnection _conn = new ConnectionDB().CreateConnection();
             SqlDataAdapter _daMain;
 
@@ -468,12 +459,12 @@ namespace ERespondent
                         grid.Rows[_rowIndex].Cells[4].Value = tb.Rows[0][1].ToString();
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Проверьте строку");
+                    MessageBox.Show("Проверьте строку\n" + ex.StackTrace);
                 }
-                //grid.SendToBack();         
-            }
+                //grid.SendToBack();                       
+            }                        
         }
 
         /// <summary>
@@ -519,10 +510,7 @@ namespace ERespondent
         }
         #endregion
 
-        /// 
-        /// Контекстное меню таблицы 1 и 2 !!!!!!!!Переделать   
-        ///     
-        #region
+        #region Контекстное меню таблицы 1 и 2 !!!!!!!!Переделать
 
         private DataGridView gridContext = null;
         private ContextMenuStrip strip;
@@ -598,11 +586,7 @@ namespace ERespondent
         #endregion
 
 
-
-        ///
-        ///РАЗДЕЛ 2(tab2)
-        ///
-        #region
+        #region РАЗДЕЛ 2(tab2)
         /// <summary>
         /// Собатие, которое происходит при изменении размера столбца,
         /// при этом все связанные с этой колонкой столбцы тоже меняют размер
@@ -614,13 +598,71 @@ namespace ERespondent
             int indexCol = e.Column.Index;
             int newWidth = e.Column.Width;
 
-            dataGridViewSection2Header2_1.Columns[indexCol].Width = newWidth;
-            dataGridViewSection2Header2_2.Columns[indexCol].Width = newWidth;
+            Section2_dataGridViewHeader2_1.Columns[indexCol].Width = newWidth;
+            Section2_dataGridViewHeader2_2.Columns[indexCol].Width = newWidth;
             Section2_dataGridView1.Columns[indexCol].Width = newWidth;
             Section2_dataGridView2.Columns[indexCol].Width = newWidth;
             Section2_dataGridView3.Columns[indexCol].Width = newWidth;
         }
+
+        #region Таблица 1
+        /// <summary>
+        /// Событие происходит когда выбрали вторую кладку (РАЗДЕЛ 2)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((TabControl)sender).SelectedIndex == 1)
+            {
+                /*BindingSource bs = new BindingSource();
+                bs.DataSource = packFill;*/
+                _db = new E_RespondentDataContext();
+                var packFill = from c in _db.DestinationSave
+                               select c;
+                Section2_dataGrid1ColumnV.DataSource = packFill;
+                Section2_dataGrid1ColumnV.DisplayMember = "DestinationsSave";
+                Section2_dataGrid1ColumnV.ValueMember = "Coderecord";
+                Section2_dataGrid1ColumnV.DropDownWidth = 1200;
+
+            }
+        }
+
+        private DataGridView _gridSection2;
+        /// <summary>
+        /// Событие, которое происходит по нажатию на ячейку dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Section2_dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _gridSection2 = ((DataGridView)sender);
+            if (e.ColumnIndex == 2)
+            {
+                ((ComboBox)_gridSection2.EditingControl).DroppedDown = true;
+                ((ComboBox)_gridSection2.EditingControl).SelectionChangeCommitted += new EventHandler(Section2_SelectedIndexChanged);
+            }
+        }
+        
+        /// <summary>
+        /// Подстановка "Код" и "Единицы измерения" при выборе из ComboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Section2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _db = new E_RespondentDataContext();
+            int index = Convert.ToInt32(((ComboBox)sender).SelectedValue);
+            DestinationSave row = (from c in _db.DestinationSave
+                                   where c.CodeRecord == index
+                                   select c).Single<DestinationSave>();
+            _gridSection2.CurrentRow.Cells[0].Value = row.CodeDirection;
+            _gridSection2.CurrentRow.Cells[6].Value = row.Unit;
+        }
         #endregion
+
+        #endregion
+
 
 
         /* /// <summary>

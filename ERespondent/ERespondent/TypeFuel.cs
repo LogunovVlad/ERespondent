@@ -21,14 +21,7 @@ namespace ERespondent
         {
             sqlConnection1.ConnectionString = ConfigurationManager.ConnectionStrings["ERConn"].ConnectionString;
             MainForm mainForm=this.Owner as MainForm;
-            daTypeFuel.Fill(dsTypeFuel);
-
-            E_RespondentDataContext db = new E_RespondentDataContext();
-            IQueryable<TypeFuelEnergy> energy = db.TypeFuelEnergy.Where(n=>n.CodeTypeFuel==1010).Select(n=>n);
-            foreach (var t in energy)
-            {
-                MessageBox.Show(t.CodeTypeFuel+" "+t.TypeFuel);
-            }
+            daTypeFuel.Fill(dsTypeFuel);           
         }
     }
 }

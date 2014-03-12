@@ -38,17 +38,15 @@ namespace ERespondent
                     _result.Append("Состояние подключения: " + _connectionMain.State + "; " +
                              "Источник данных: " + _connectionMain.DataSource + "; " +
                              "Версия сервера: " + _connectionMain.ServerVersion);
-                }               
+                }
             }
-            catch (Exception)
-            {
-                //result.Append(ex.Message);
-                MessageBox.Show("При установлении соединения с SQL Server произошла ошибка, связанная"+
-                    " с сетью или с определенным экземпляром. Сервер не найден или недоступен. Убедитесь, что"+
+            catch (Exception ex)
+            {                
+                MessageBox.Show("При установлении соединения с SQL Server произошла ошибка, связанная" +
+                    " с сетью или с определенным экземпляром. Сервер не найден или недоступен. Убедитесь, что" +
                     " имя экземпляра указано правильно и что на SQL Server разрешены удаленные соединения.");
-                Application.Exit();
-            }
-            //return result.ToString();
+                _connectionMain.Dispose();   
+            }                                                   
             return _connectionMain;
         }
 

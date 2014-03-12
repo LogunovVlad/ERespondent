@@ -39,12 +39,15 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -98,7 +101,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTypeFuel.xsd</DependentUpon>
     </Compile>
-    <Compile Include="E_Respondent.designer.cs">
+    <Compile Include="Entity\E_Respondent.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>E_Respondent.dbml</DependentUpon>
@@ -150,7 +153,7 @@
     <EmbeddedResource Include="DirectionEnergySave.resx">
       <DependentUpon>DirectionEnergySave.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="E_Respondent.dbml.layout">
+    <None Include="Entity\E_Respondent.dbml.layout">
       <DependentUpon>E_Respondent.dbml</DependentUpon>
     </None>
     <EmbeddedResource Include="Main.resx">
@@ -221,7 +224,7 @@
     <None Include="DataSet\okpoDataSet.xss">
       <DependentUpon>okpoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="E_Respondent.dbml">
+    <None Include="Entity\E_Respondent.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>E_Respondent.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -259,6 +262,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

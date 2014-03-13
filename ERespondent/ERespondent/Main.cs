@@ -26,26 +26,31 @@ namespace ERespondent
         private E_RespondentDataContext _db;
 
         private void MainForm_Load(object sender, EventArgs e)
-        {
-            //определяем разрешение экрана
-            ScreenResolution();
-
-            //заполянем первый комбобоксы для первого раздела            
+        {            
+            ScreenResolution();              
             try
             {
+                //заполянем комбобоксы для раздела 1 
                 FillComboBox(Section1_dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
                 FillComboBox(Section1_dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
                 FillComboBox(Section1_dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+
+                //заполянем комбобоксы для раздела 2
+                FillComboBoxLinq(Section2_dataGrid1ColumnV, "DestinationSave");
+                FillComboBoxLinq(Section2_dataGrid2ColumnV, "DestinationSave");
+                FillComboBoxLinq(Section2_dataGrid3ColumnV, "DestinationSave");
+
+                FillComboBoxLinq(Section2_dataGrid1ColumnD, "TypeFuelEnergy");
+                FillComboBoxLinq(Section2_dataGrid1ColumnE, "TypeFuelEnergy");
+                FillComboBoxLinq(Section2_dataGrid2ColumnD, "TypeFuelEnergy");
+                FillComboBoxLinq(Section2_dataGrid2ColumnE, "TypeFuelEnergy");
+                FillComboBoxLinq(Section2_dataGrid3ColumnD, "TypeFuelEnergy");
+                FillComboBoxLinq(Section2_dataGrid3ColumnE, "TypeFuelEnergy");
+
             }
             catch (SqlException)
-            { MessageBox.Show("Ошибка сервера!"); }
-            //заполянем первый комбобоксы для второго раздела 
-
-            /*четные нечетные строки разными цветами
-             * dataGridView1.RowsDefaultCellStyle.BackColor = Color.LightBlue;//Color.Bisque;
-            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightCyan;//Color.Beige;*/
-            // dataGridView1.Rows.Add();  
-
+            { MessageBox.Show("Ошибка сервера!"); }            
+          
             //для первого раздела
             Section1_dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridView1_ColumnWidthChanged);
 
@@ -54,7 +59,7 @@ namespace ERespondent
             Section2_dataGridViewHeader2_2.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
             Section2_dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
             Section2_dataGridView2.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
-            Section2_dataGridView3.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);           
+            Section2_dataGridView3.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
         }
 
         /// <summary>
@@ -65,7 +70,7 @@ namespace ERespondent
             int heightScreen = Screen.PrimaryScreen.WorkingArea.Height;
             int widthScreen = Screen.PrimaryScreen.WorkingArea.Width;
             this.Location = new Point(0, 0);
-            this.Height = heightScreen;// 728;
+            this.Height = heightScreen;
             this.Width = 1380;// widthScreen;
         }
 
@@ -82,14 +87,12 @@ namespace ERespondent
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             grid = (DataGridView)sender;
-
             //если текстБокс, чтобы не вызывать DropDown. (проверка для поля итого)
             string tt = grid.CurrentCell.EditType.ToString();
             if (tt.Equals("System.Windows.Forms.DataGridViewComboBoxEditingControl"))
             {
                 if (grid.Columns[e.ColumnIndex].Index == 2)
                 {
-                    // grid.BeginEdit(true);
                     ((ComboBox)grid.EditingControl).DroppedDown = true;
                     ((ComboBox)grid.EditingControl).SelectedIndexChanged += new EventHandler(method);
                 }
@@ -113,7 +116,6 @@ namespace ERespondent
             {
                 grid = Section1_dataGridView2;
             }
-
             if (grid.RowCount > 1)
             {
                 if (grid != null)
@@ -127,17 +129,15 @@ namespace ERespondent
                         {
                             _newRow.Cells.Add(new DataGridViewTextBoxCell());
                         }
+                        _newRow.ReadOnly = true;
                         grid.Rows.InsertRange(_rowCount, _newRow);
                         _rowCount = grid.RowCount;
 
                         grid[2, _rowCount - 1].Value = "Итого";
-                        grid[2, _rowCount - 1].ReadOnly = true;
-                        grid[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopRight;
-                        FillTextBoxX(grid, _rowCount, 3, 6);
-
-                        //сумму Итого по подразделу вычисляем автоматически
-                        AutoTotalSumm.TotalSumm(grid);
-                        AutoTotalSumm.FillTotalRow(grid);
+                        StyleTotalCells(grid);
+                        FillRowValue_X(grid, grid.RowCount - 1, 3, 5);                        
+                        AutoTotalSumm.TotalSumm(grid, 6); //6 - потому что расчет Итого ведется начиная с 6 колонки таблицы (графа 2 - Экономия ТЭР) 
+                        AutoTotalSumm.FillTotalRow(grid, 6);
                     }
                     else
                     {
@@ -166,7 +166,7 @@ namespace ERespondent
         }
 
         /// <summary>
-        /// Вызываем пересчет итого
+        /// Вызываем пересчет ИТОГО
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -176,22 +176,29 @@ namespace ERespondent
             grid.EndEdit();
             if (grid.Name.Equals("Section1_dataGridView1"))
             {
-                AutoTotalSumm.TotalSumm(grid); //1 - потому что строка итого является последней в таблице 1  
+                AutoTotalSumm.TotalSumm(grid, 6); //6 - потому что расчет Итого ведется начиная с 6 колонки таблицы (графа 2 - Экономия ТЭР) 
                 if (checkBoxTable1.Checked)
                 {
-                    AutoTotalSumm.FillTotalRow(grid);
+                    AutoTotalSumm.FillTotalRow(grid,6);
                 }
             }
             else
             {
                 if (grid.Name.Equals("Section1_dataGridView2"))
                 {
-                    AutoTotalSumm.TotalSumm(grid); //1 - потому что строка итого является последней в таблице 2   
+                    AutoTotalSumm.TotalSumm(grid, 6); //6 - потому что расчет Итого ведется начиная с 6 колонки таблицы (графа 2 - Экономия ТЭР) 
                     if (checkBoxTable2.Checked)
                     {
-                        AutoTotalSumm.FillTotalRow(grid);
+                        AutoTotalSumm.FillTotalRow(grid, 6);
                     }
                 }
+            }
+            //Пересчитать всего по разделу, если изменились значения
+            if (checkBoxTable3.Checked)
+            {
+                AutoTotalSumm.TotalSummGrid3(Section1_dataGridView3);
+                AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3);
+                AutoTotalSumm.FillGrid3(Section1_dataGridView3);
             }
         }
 
@@ -268,16 +275,16 @@ namespace ERespondent
                     {
                         _newRow.Cells.Add(new DataGridViewTextBoxCell());
                     }
+                    _newRow.ReadOnly = true;
                     grid.Rows.InsertRange(_rowCount, _newRow);
                     _rowCount = grid.RowCount;
+
                     grid[2, _rowCount - 1].Value = "Итого";
-                    grid[2, _rowCount - 1].ReadOnly = true;
-                    grid[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopRight;
+                    StyleTotalCells(grid);
+                    FillRowValue_X(grid, grid.RowCount - 1, 3, 5);
+                    FillRowValue_X(grid, grid.RowCount - 1, 7, 14);                    
 
-                    FillTextBoxX(grid, _rowCount, 3, 6);
-                    FillTextBoxX(grid, _rowCount, 7, 15);
-
-                    //добавим строку итого по разделу
+                    //добавим строку ИТОГО ПО РАЗДЕЛУ 1
                     _rowCount = grid.RowCount;
                     _newRow = new DataGridViewRow();
                     for (int i = 0; i < grid.ColumnCount; i++)
@@ -290,7 +297,7 @@ namespace ERespondent
                     grid[2, _rowCount - 1].ReadOnly = true;
                     grid[2, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.TopLeft;
                     grid[2, _rowCount - 1].Style.BackColor = Color.LightGray;
-                    FillTextBoxX(grid, _rowCount, 3, 6);
+                    FillRowValue_X(grid, grid.RowCount - 1, 3, 5);
                     //end                   
 
                     AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3);
@@ -398,7 +405,7 @@ namespace ERespondent
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void method(object sender, EventArgs e)
-        {       
+        {
             SqlConnection _conn = new ConnectionDB().CreateConnection();
             SqlDataAdapter _daMain;
 
@@ -464,7 +471,7 @@ namespace ERespondent
                     MessageBox.Show("Проверьте строку\n" + ex.StackTrace);
                 }
                 //grid.SendToBack();                       
-            }                        
+            }
         }
 
         /// <summary>
@@ -498,14 +505,14 @@ namespace ERespondent
         /// <param name="_rowCount">Количество строк в таблице</param>
         /// <param name="from">От какой ячейки заполнять</param>
         /// <param name="to">До какой ячейки заполнять</param>
-        private static void FillTextBoxX(DataGridView grid, int _rowCount, int from, int to)
+        private static void FillRowValue_X(DataGridView grid, int _numberRow, int from, int to)
         {
-            for (int colInd = from; colInd < to; colInd++)
+            for (int colInd = from; colInd < to + 1; colInd++)
             {
-                grid[colInd, _rowCount - 1].Value = "X";
-                grid[colInd, _rowCount - 1].ReadOnly = true;
-                grid[colInd, _rowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                grid[colInd, _rowCount - 1].Style.BackColor = Color.LightGray;
+                grid[colInd, _numberRow].Value = "X";
+                grid[colInd, _numberRow].ReadOnly = true;
+                grid[colInd, _numberRow].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grid[colInd, _numberRow].Style.BackColor = Color.LightGray;
             }
         }
         #endregion
@@ -586,7 +593,192 @@ namespace ERespondent
         #endregion
 
 
-        #region РАЗДЕЛ 2(tab2)
+        #region РАЗДЕЛ 2(tab2)      
+
+        #region Таблица 1 и 2 и 3
+        /// <summary>
+        /// Метод для заполнения comboBox для 1 и 2 таблицы (раздел 2)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FillComboBoxLinq(DataGridViewComboBoxColumn boxColumn, string nameTable)
+        {
+            /*BindingSource bs = new BindingSource();
+            bs.DataSource = packFill;*/
+            _db = new E_RespondentDataContext();
+
+            switch (nameTable)
+            {
+                case "DestinationSave":
+                    var save = from c in _db.DestinationSave
+                               select c;
+                    boxColumn.DataSource = save;
+                    boxColumn.DisplayMember="DestinationsSave";
+                    boxColumn.ValueMember = "Coderecord";
+                    break;
+                case "TypeFuelEnergy":
+                    var energy = from c in _db.TypeFuelEnergy
+                                 select c;
+                    boxColumn.DataSource = energy;
+                    boxColumn.DisplayMember = "CodeTypeFuel";
+                    boxColumn.ValueMember = "CodeRecord";
+                    break;
+            }                        
+            boxColumn.DropDownWidth = 1200;
+        }
+
+        private DataGridView _gridSection2;
+        /// <summary>
+        /// Событие, которое происходит по нажатию на ячейку dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Section2_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            if ("System.Windows.Forms.DataGridViewComboBoxEditingControl".Equals(_gridSection2.CurrentCell.EditType.ToString()))
+            {               
+                if (e.ColumnIndex == 2)
+                {
+                    ((ComboBox)_gridSection2.EditingControl).DroppedDown = true;
+                    ((ComboBox)_gridSection2.EditingControl).SelectionChangeCommitted += new EventHandler(Section2_SelectedIndexChanged);
+                }
+                else
+                {
+                    ((ComboBox)_gridSection2.EditingControl).DroppedDown = true;
+                    ((ComboBox)_gridSection2.EditingControl).SelectionChangeCommitted -= new EventHandler(Section2_SelectedIndexChanged);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Подстановка "Код" и "Единицы измерения" при выборе из ComboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Section2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _db = new E_RespondentDataContext();
+            int index = Convert.ToInt32(((ComboBox)sender).SelectedValue);
+            DestinationSave row = (from c in _db.DestinationSave
+                                   where c.CodeRecord == index
+                                   select c).Single<DestinationSave>();
+            _gridSection2.CurrentRow.Cells[0].Value = row.CodeDirection;
+            if (!_gridSection2.Tag.Equals("Section2_T3"))
+            {
+                _gridSection2.CurrentRow.Cells[6].Value = row.Unit;
+            }
+            _gridSection2.EndEdit();
+        }
+        #endregion
+
+        #region Section2_checkBoxTable
+        /// <summary>
+        /// Событие для обработки нажатия CheckBox (Для добавления строки итого)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Section2_checkBoxTable_Click(object sender, EventArgs e)
+        {
+            switch (((CheckBox)sender).Tag.ToString())
+            {
+                case "Section2_chB1":
+                    Activate_1and2_CheckBox(sender, Section2_dataGridView1);
+                    break;
+                case "Section2_chB2":
+                    Activate_1and2_CheckBox(sender, Section2_dataGridView2);
+                    break;
+                case "Section2_chB3":
+                    Activate_3_CheckBox(sender, Section2_dataGridView3);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Для добавления строки итого для 1 и 2 таблицы
+        /// </summary>
+        /// <param name="sender"></param>
+        private void Activate_1and2_CheckBox(object sender, DataGridView grid)
+        {
+            //когда нажата, добавляем строку
+            if (((CheckBox)sender).Checked)
+            {
+                InsertTextRow(grid);
+                grid[2, grid.RowCount - 1].Value = "Итого";
+                grid[2, grid.RowCount - 1].Selected = true;
+                StyleTotalCells(grid);
+                FillRowValue_X(grid, grid.RowCount - 1, 3, 7);
+                AutoTotalSumm.TotalSumm(grid, 8);
+                AutoTotalSumm.FillTotalRow(grid,8);
+            }
+            //когда отжата - удаляем строку итого
+            else
+            {
+                grid.Rows.RemoveAt(grid.Rows.Count - 1);
+                grid.AllowUserToAddRows = true;
+            }
+        }
+
+        /// <summary>
+        /// Для добавления строки "Итого" и "Всего по разделу" для 3 талблицы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="grid"></param>
+        private void Activate_3_CheckBox(object sender, DataGridView grid)
+        {
+            if (((CheckBox)sender).Checked)
+            {
+                InsertTextRow(grid);
+                grid[2, grid.RowCount - 1].Value = "Итого";
+                StyleTotalCells(grid);
+                FillRowValue_X(grid, grid.RowCount - 1, 3, 7);
+                FillRowValue_X(grid, grid.RowCount - 1, 9, 16);
+                AutoTotalSumm.TotalSumm(grid, 8);
+                AutoTotalSumm.FillTotalRow(grid,8);
+
+                InsertTextRow(grid);
+                grid[2, grid.RowCount - 1].Value = "Всего по разделу 2";
+                StyleTotalCells(grid);
+                FillRowValue_X(grid, grid.RowCount - 1, 3, 7);                
+            }
+            else
+            {
+                grid.Rows.RemoveAt(grid.Rows.Count - 1);
+                grid.Rows.RemoveAt(grid.Rows.Count - 1);
+                grid.AllowUserToAddRows = true;
+            }
+
+        }
+
+        /// <summary>
+        /// Изменение стиля ячеек для строки Итого
+        /// </summary>
+        /// <param name="grid"></param>
+        private static void StyleTotalCells(DataGridView grid)
+        {
+            grid[2, grid.RowCount - 1].ReadOnly = true;
+            grid[2, grid.RowCount - 1].Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            grid[2, grid.RowCount - 1].Style.BackColor = Color.LightGray;
+        }
+
+        #endregion      
+
+        #region Определяем текущую таблицу
+        private void Section2_dataGridView1_Click(object sender, EventArgs e)
+        {
+            _gridSection2 = Section2_dataGridView1;
+        }
+
+        private void Section2_dataGridView2_Click(object sender, EventArgs e)
+        {
+            _gridSection2 = Section2_dataGridView2;
+        }
+
+        private void Section2_dataGridView3_Click(object sender, EventArgs e)
+        {
+            _gridSection2 = Section2_dataGridView3;
+        }
+        #endregion
+
         /// <summary>
         /// Собатие, которое происходит при изменении размера столбца,
         /// при этом все связанные с этой колонкой столбцы тоже меняют размер
@@ -605,64 +797,44 @@ namespace ERespondent
             Section2_dataGridView3.Columns[indexCol].Width = newWidth;
         }
 
-        #region Таблица 1
         /// <summary>
-        /// Событие происходит когда выбрали вторую кладку (РАЗДЕЛ 2)
+        /// Активировать элемент управления (checkBox) для Итого
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Section2_dataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            if (((TabControl)sender).SelectedIndex == 1)
+            switch (((DataGridView)sender).Tag.ToString())
             {
-                /*BindingSource bs = new BindingSource();
-                bs.DataSource = packFill;*/
-                _db = new E_RespondentDataContext();
-                var packFill = from c in _db.DestinationSave
-                               select c;
-                Section2_dataGrid1ColumnV.DataSource = packFill;
-                Section2_dataGrid1ColumnV.DisplayMember = "DestinationsSave";
-                Section2_dataGrid1ColumnV.ValueMember = "Coderecord";
-                Section2_dataGrid1ColumnV.DropDownWidth = 1200;
-
+                case "Section2_T1":
+                    Section2_checkBoxTable1.Enabled = true;
+                    break;
+                case "Section2_T2":
+                    Section2_checkBoxTable2.Enabled = true;
+                    break;
+                case "Section2_T3":
+                    FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.CurrentRow.Index, 6, 7);
+                    FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.CurrentRow.Index, 9, 16);
+                    Section2_checkBoxTable3.Enabled = true;
+                    break;
             }
         }
 
-        private DataGridView _gridSection2;
         /// <summary>
-        /// Событие, которое происходит по нажатию на ячейку dataGridView
+        /// Создает строку c текстовыми полями и вставляет в конец (для поля "Итого" и "Всего по разделу")
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Section2_dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        /// <param name="grid"></param>
+        private void InsertTextRow(DataGridView grid)
         {
-            _gridSection2 = ((DataGridView)sender);
-            if (e.ColumnIndex == 2)
+            grid.AllowUserToAddRows = false;
+            DataGridViewRow _newRow = new DataGridViewRow();
+            for (int i = 0; i < Section2_dataGridView1.ColumnCount; i++)
             {
-                ((ComboBox)_gridSection2.EditingControl).DroppedDown = true;
-                ((ComboBox)_gridSection2.EditingControl).SelectionChangeCommitted += new EventHandler(Section2_SelectedIndexChanged);
+                _newRow.Cells.Add(new DataGridViewTextBoxCell());
             }
-        }
-        
-        /// <summary>
-        /// Подстановка "Код" и "Единицы измерения" при выборе из ComboBox
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Section2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _db = new E_RespondentDataContext();
-            int index = Convert.ToInt32(((ComboBox)sender).SelectedValue);
-            DestinationSave row = (from c in _db.DestinationSave
-                                   where c.CodeRecord == index
-                                   select c).Single<DestinationSave>();
-            _gridSection2.CurrentRow.Cells[0].Value = row.CodeDirection;
-            _gridSection2.CurrentRow.Cells[6].Value = row.Unit;
+            grid.Rows.InsertRange(grid.Rows.Count, _newRow);
         }
         #endregion
-
-        #endregion
-
 
 
         /* /// <summary>

@@ -8,5 +8,11 @@
         <elementListCompartment Id="1408d2b8-0795-4f6d-b674-dc9dc605bc78" absoluteBounds="0.515, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="4004551b-779c-457d-834b-81b86a4505c5" absoluteBounds="3.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/E_RespondentDataContext/TypeFuelEnergy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0398c005-9f80-4f9c-9e7d-f717206c0945" absoluteBounds="3.5149999999999997, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

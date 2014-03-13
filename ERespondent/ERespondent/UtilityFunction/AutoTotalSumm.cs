@@ -9,21 +9,20 @@ namespace ERespondent.UtilityFunction
     class AutoTotalSumm
     {
         public static List<double> listTotalSummPoint;
-        ///
-        ///Методы вычисляющие итого по подразделу 1 и 2
-        ///
-        #region
+        #region По разделу 1
+        
+        #region Методы вычисляющие итого по подразделам 1 и 2
         /// <summary>
         /// Метод вычисляющий сумму строки итого по подразделам
         /// </summary>
-        /// <param name="grid">Текущая таблица</param>
-        /// <param name="varSub">value "1" - если это таблица 1 или 2. Иначе value "2"</param>
-        public static void TotalSumm(DataGridView grid)
+        /// <param name="grid">Текущая таблица</param>  
+        /// <param name="startColumn">Столбец, с которого начинается расчет ИТОГО</param> 
+        public static void TotalSumm(DataGridView grid, int startColumn)
         {
             listTotalSummPoint = new List<double>();
             double summTotal;
 
-            for (int indexCol = 6; indexCol < grid.ColumnCount; indexCol++)
+            for (int indexCol = startColumn; indexCol < grid.ColumnCount; indexCol++)
             {
                 try
                 {
@@ -47,19 +46,21 @@ namespace ERespondent.UtilityFunction
         /// <summary>
         /// Заполнение строки Итого подсчитанными значениями
         /// </summary>
-        /// <param name="grid">Текущая таблица</param>
-        /// <param name="varSub">>value "1" - если это таблица 1 или 2. Иначе value "2"</param>
-        public static void FillTotalRow(DataGridView grid)
-        {
-            //пишем с 6-го столбца, т.к. начиная с него ведется расчет "Итого"
-            int i = 6;
+        /// <param name="grid">Текущая таблица</param>     
+        /// <param name="startColumn">Столбец, с которого начинаем заполнение</param> 
+        public static void FillTotalRow(DataGridView grid, int startColumn)
+        {                        
             foreach (double point in listTotalSummPoint)
             {
                 if (point != 0)
                 {
-                    grid[i, grid.RowCount - 1].Value = point;
+                    grid[startColumn, grid.RowCount - 1].Value = point;
                 }
-                i++;
+                else
+                {
+                    grid[startColumn, grid.RowCount - 1].Value = 0;
+                }
+                startColumn++;
             }
         }
         #endregion
@@ -81,8 +82,9 @@ namespace ERespondent.UtilityFunction
         /// <summary>
         /// Всего по разделу 1
         /// </summary>
-        /// <param name="grid1"></param>
-        /// <param name="grid2"></param>
+        /// <param name="grid1">таблица 1 (раздел1)</param>
+        /// <param name="grid2">таблица 2 (раздел1)</param>
+        /// <param name="grid3">таблица 3 (раздел1)</param>
         public static void TotalAll1Section(DataGridView grid1, DataGridView grid2, DataGridView grid3)
         {
             listTotalSummPoint = new List<double>();                 
@@ -117,7 +119,7 @@ namespace ERespondent.UtilityFunction
                 i++;
             }
         }
-            
+        #endregion      
 
     }
 }

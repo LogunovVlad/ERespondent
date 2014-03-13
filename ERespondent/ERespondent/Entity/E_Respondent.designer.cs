@@ -33,6 +33,9 @@ namespace ERespondent.Entity
     partial void InsertDestinationSave(DestinationSave instance);
     partial void UpdateDestinationSave(DestinationSave instance);
     partial void DeleteDestinationSave(DestinationSave instance);
+    partial void InsertTypeFuelEnergy(TypeFuelEnergy instance);
+    partial void UpdateTypeFuelEnergy(TypeFuelEnergy instance);
+    partial void DeleteTypeFuelEnergy(TypeFuelEnergy instance);
     #endregion
 		
 		public E_RespondentDataContext() : 
@@ -70,6 +73,14 @@ namespace ERespondent.Entity
 			get
 			{
 				return this.GetTable<DestinationSave>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TypeFuelEnergy> TypeFuelEnergy
+		{
+			get
+			{
+				return this.GetTable<TypeFuelEnergy>();
 			}
 		}
 	}
@@ -183,6 +194,116 @@ namespace ERespondent.Entity
 					this._Unit = value;
 					this.SendPropertyChanged("Unit");
 					this.OnUnitChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TypeFuelEnergy")]
+	public partial class TypeFuelEnergy : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CodeRecord;
+		
+		private System.Nullable<int> _CodeTypeFuel;
+		
+		private string _TypeFuel;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCodeRecordChanging(int value);
+    partial void OnCodeRecordChanged();
+    partial void OnCodeTypeFuelChanging(System.Nullable<int> value);
+    partial void OnCodeTypeFuelChanged();
+    partial void OnTypeFuelChanging(string value);
+    partial void OnTypeFuelChanged();
+    #endregion
+		
+		public TypeFuelEnergy()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeRecord", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CodeRecord
+		{
+			get
+			{
+				return this._CodeRecord;
+			}
+			set
+			{
+				if ((this._CodeRecord != value))
+				{
+					this.OnCodeRecordChanging(value);
+					this.SendPropertyChanging();
+					this._CodeRecord = value;
+					this.SendPropertyChanged("CodeRecord");
+					this.OnCodeRecordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeTypeFuel", DbType="Int")]
+		public System.Nullable<int> CodeTypeFuel
+		{
+			get
+			{
+				return this._CodeTypeFuel;
+			}
+			set
+			{
+				if ((this._CodeTypeFuel != value))
+				{
+					this.OnCodeTypeFuelChanging(value);
+					this.SendPropertyChanging();
+					this._CodeTypeFuel = value;
+					this.SendPropertyChanged("CodeTypeFuel");
+					this.OnCodeTypeFuelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypeFuel", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string TypeFuel
+		{
+			get
+			{
+				return this._TypeFuel;
+			}
+			set
+			{
+				if ((this._TypeFuel != value))
+				{
+					this.OnTypeFuelChanging(value);
+					this.SendPropertyChanging();
+					this._TypeFuel = value;
+					this.SendPropertyChanged("TypeFuel");
+					this.OnTypeFuelChanged();
 				}
 			}
 		}

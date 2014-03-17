@@ -11,28 +11,31 @@ namespace ERespondent.CheckData
 {
     public partial class CheckProtocol : Form
     {
-        List<string> list;
-        public CheckProtocol(List<String> listError)
+        public static Dictionary<string, List<string>> ErrorForAllSection;
+        public CheckProtocol()
         {
             InitializeComponent();
-            list = listError;
+            ErrorForAllSection = new Dictionary<string, List<string>>();
         }
 
         private void CheckProtocol_Load(object sender, EventArgs e)
         {
             richTextBox1.ReadOnly = true;
             richTextBox1.Text += "Список ошибок:\n";
-            richTextBox1.Text += "РАЗДЕЛ 1: ВЫПОЛНЕНИЕ МЕРОПРИЯТИЙ ПО ЭКОНОМИИ ТОПЛИВНО-ЭНЕРГЕТИЧЕСКИХ РЕСУРСОВ (ТЭР)\n";
-            if (list.Count!=0)
+            for (int i = 0; i < ErrorForAllSection.Count; i++)
             {
-                foreach (string itemError in list)
+                richTextBox1.Text += ErrorForAllSection.ElementAt(i).Key;
+                if (ErrorForAllSection.ElementAt(i).Value.Count > 0)
                 {
-                    richTextBox1.Text +=itemError + "\n";
+                    foreach (string itemError in ErrorForAllSection.ElementAt(i).Value)
+                    {
+                        richTextBox1.Text += itemError + "\n";
+                    }
                 }
-            }
-            else
-            {                
-                richTextBox1.Text = "Ошибки не найдены!";
+                else
+                {
+                    richTextBox1.Text += "Ошибок не найдено!";
+                }
             }
         }
     }

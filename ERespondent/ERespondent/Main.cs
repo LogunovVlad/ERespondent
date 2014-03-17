@@ -26,8 +26,8 @@ namespace ERespondent
         private E_RespondentDataContext _db;
 
         private void MainForm_Load(object sender, EventArgs e)
-        {            
-            ScreenResolution();              
+        {
+            ScreenResolution();
             try
             {
                 //заполянем комбобоксы для раздела 1 
@@ -49,8 +49,8 @@ namespace ERespondent
 
             }
             catch (SqlException)
-            { MessageBox.Show("Ошибка сервера!"); }            
-          
+            { MessageBox.Show("Ошибка сервера!"); }
+
             //для первого раздела
             Section1_dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridView1_ColumnWidthChanged);
 
@@ -135,7 +135,7 @@ namespace ERespondent
 
                         grid[2, _rowCount - 1].Value = "Итого";
                         StyleTotalCells(grid);
-                        FillRowValue_X(grid, grid.RowCount - 1, 3, 5);                        
+                        FillRowValue_X(grid, grid.RowCount - 1, 3, 5);
                         AutoTotalSumm.TotalSumm(grid, 6); //6 - потому что расчет Итого ведется начиная с 6 колонки таблицы (графа 2 - Экономия ТЭР) 
                         AutoTotalSumm.FillTotalRow(grid, 6);
                     }
@@ -179,7 +179,7 @@ namespace ERespondent
                 AutoTotalSumm.TotalSumm(grid, 6); //6 - потому что расчет Итого ведется начиная с 6 колонки таблицы (графа 2 - Экономия ТЭР) 
                 if (checkBoxTable1.Checked)
                 {
-                    AutoTotalSumm.FillTotalRow(grid,6);
+                    AutoTotalSumm.FillTotalRow(grid, 6);
                 }
             }
             else
@@ -196,9 +196,9 @@ namespace ERespondent
             //Пересчитать всего по разделу, если изменились значения
             if (checkBoxTable3.Checked)
             {
-                AutoTotalSumm.TotalSummGrid3(Section1_dataGridView3);
-                AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3);
-                AutoTotalSumm.FillGrid3(Section1_dataGridView3);
+                AutoTotalSumm.TotalSummGrid3(Section1_dataGridView3, 6);
+                AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3, 6);
+                AutoTotalSumm.FillGrid3(Section1_dataGridView3, 6);
             }
         }
 
@@ -227,7 +227,8 @@ namespace ERespondent
         private void dataGridView3_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             DataGridView grid = ((DataGridView)sender);
-            int _rowNumber = grid.CurrentRow.Index;
+            //int _rowNumber = grid.CurrentRow.Index;
+            int _rowNumber = grid.RowCount - 2;
             checkBoxTable3.Enabled = true;
 
             //!!!!!!!!!!!!!Пустить по циклу
@@ -249,7 +250,7 @@ namespace ERespondent
                 grid.Rows[_rowNumber].Cells[cellInd].Style.BackColor = Color.LightGray;
             }
 
-            grid.CurrentCell.Selected = false;
+            grid.ClearSelection();
             grid.Focus();
         }
 
@@ -282,7 +283,7 @@ namespace ERespondent
                     grid[2, _rowCount - 1].Value = "Итого";
                     StyleTotalCells(grid);
                     FillRowValue_X(grid, grid.RowCount - 1, 3, 5);
-                    FillRowValue_X(grid, grid.RowCount - 1, 7, 14);                    
+                    FillRowValue_X(grid, grid.RowCount - 1, 7, 14);
 
                     //добавим строку ИТОГО ПО РАЗДЕЛУ 1
                     _rowCount = grid.RowCount;
@@ -299,9 +300,10 @@ namespace ERespondent
                     grid[2, _rowCount - 1].Style.BackColor = Color.LightGray;
                     FillRowValue_X(grid, grid.RowCount - 1, 3, 5);
                     //end                   
+                    AutoTotalSumm.TotalSummGrid3(Section1_dataGridView3, 6);
+                    AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3, 6);
+                    AutoTotalSumm.FillGrid3(grid, 6);
 
-                    AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3);
-                    AutoTotalSumm.FillGrid3(grid);
                 }
                 else
                 {
@@ -323,9 +325,9 @@ namespace ERespondent
             grid.EndEdit();
             if (checkBoxTable3.Checked)
             {
-                AutoTotalSumm.TotalSummGrid3(grid);
-                AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3);
-                AutoTotalSumm.FillGrid3(grid);
+                AutoTotalSumm.TotalSummGrid3(grid, 6);
+                AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3, 6);
+                AutoTotalSumm.FillGrid3(grid, 6);
             }
         }
         #endregion
@@ -385,15 +387,15 @@ namespace ERespondent
         /// <param name="e"></param>
         private void контрольныеФункцииToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Section1_dataGridView1.EndEdit();
-            Section1_dataGridView2.EndEdit();
-            Section1_dataGridView3.EndEdit();
+            Section1_dataGridView1.CurrentCell = null;
+            Section1_dataGridView2.CurrentCell = null;
+            Section1_dataGridView3.CurrentCell = null;
 
             ControlFunction controlObj = new ControlFunction();
-            controlObj.CheckTable(Section1_dataGridView1);
-            controlObj.CheckTable(Section1_dataGridView2);
-            controlObj.CheckTotalForSection1(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3);
+            controlObj.CheckSection(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3,
+                "РАЗДЕЛ 1: ВЫПОЛНЕНИЕ МЕРОПРИЯТИЙ ПО ЭКОНОМИИ ТОПЛИВНО-ЭНЕРГЕТИЧЕСКИХ РЕСУРСОВ (ТЭР)\n");
             controlObj.ShowListError();
+
         }
         #endregion
 
@@ -593,7 +595,7 @@ namespace ERespondent
         #endregion
 
 
-        #region РАЗДЕЛ 2(tab2)      
+        #region РАЗДЕЛ 2(tab2)
 
         #region Таблица 1 и 2 и 3
         /// <summary>
@@ -613,7 +615,7 @@ namespace ERespondent
                     var save = from c in _db.DestinationSave
                                select c;
                     boxColumn.DataSource = save;
-                    boxColumn.DisplayMember="DestinationsSave";
+                    boxColumn.DisplayMember = "DestinationsSave";
                     boxColumn.ValueMember = "Coderecord";
                     break;
                 case "TypeFuelEnergy":
@@ -623,7 +625,7 @@ namespace ERespondent
                     boxColumn.DisplayMember = "CodeTypeFuel";
                     boxColumn.ValueMember = "CodeRecord";
                     break;
-            }                        
+            }
             boxColumn.DropDownWidth = 1200;
         }
 
@@ -634,9 +636,9 @@ namespace ERespondent
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Section2_dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {            
+        {
             if ("System.Windows.Forms.DataGridViewComboBoxEditingControl".Equals(_gridSection2.CurrentCell.EditType.ToString()))
-            {               
+            {
                 if (e.ColumnIndex == 2)
                 {
                     ((ComboBox)_gridSection2.EditingControl).DroppedDown = true;
@@ -708,13 +710,16 @@ namespace ERespondent
                 StyleTotalCells(grid);
                 FillRowValue_X(grid, grid.RowCount - 1, 3, 7);
                 AutoTotalSumm.TotalSumm(grid, 8);
-                AutoTotalSumm.FillTotalRow(grid,8);
+                AutoTotalSumm.FillTotalRow(grid, 8);
             }
             //когда отжата - удаляем строку итого
             else
             {
-                grid.Rows.RemoveAt(grid.Rows.Count - 1);
-                grid.AllowUserToAddRows = true;
+                if (grid.Rows.Count > 0)
+                {
+                    grid.Rows.RemoveAt(grid.Rows.Count - 1);
+                    grid.AllowUserToAddRows = true;
+                }
             }
         }
 
@@ -732,13 +737,19 @@ namespace ERespondent
                 StyleTotalCells(grid);
                 FillRowValue_X(grid, grid.RowCount - 1, 3, 7);
                 FillRowValue_X(grid, grid.RowCount - 1, 9, 16);
-                AutoTotalSumm.TotalSumm(grid, 8);
-                AutoTotalSumm.FillTotalRow(grid,8);
 
                 InsertTextRow(grid);
                 grid[2, grid.RowCount - 1].Value = "Всего по разделу 2";
                 StyleTotalCells(grid);
-                FillRowValue_X(grid, grid.RowCount - 1, 3, 7);                
+                FillRowValue_X(grid, grid.RowCount - 1, 3, 7);
+
+                AutoTotalSumm.TotalSummGrid3(grid, 8);
+                AutoTotalSumm.TotalAll1Section(Section2_dataGridView1, Section2_dataGridView2, Section2_dataGridView3, 8);
+                AutoTotalSumm.FillGrid3(grid, 8);
+
+                /*AutoTotalSumm.TotalSummGrid3(Section1_dataGridView3, 6);
+                AutoTotalSumm.TotalAll1Section(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3, 6);
+                AutoTotalSumm.FillGrid3(Section1_dataGridView3, 6);*/
             }
             else
             {
@@ -760,7 +771,7 @@ namespace ERespondent
             grid[2, grid.RowCount - 1].Style.BackColor = Color.LightGray;
         }
 
-        #endregion      
+        #endregion
 
         #region Определяем текущую таблицу
         private void Section2_dataGridView1_Click(object sender, EventArgs e)
@@ -818,6 +829,7 @@ namespace ERespondent
                     Section2_checkBoxTable3.Enabled = true;
                     break;
             }
+            // ((DataGridView)sender).ClearSelection();
         }
 
         /// <summary>
@@ -832,10 +844,42 @@ namespace ERespondent
             {
                 _newRow.Cells.Add(new DataGridViewTextBoxCell());
             }
+            _newRow.ReadOnly = true;
             grid.Rows.InsertRange(grid.Rows.Count, _newRow);
         }
-        #endregion
 
+        /// <summary>
+        /// Пересчет значений ИТОГО при изменении значения ячейки
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Section2_dataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (((DataGridView)sender).Name)
+            {
+                case "Section2_dataGridView1":
+                    AutoTotalSumm.TotalSumm(((DataGridView)sender), 8);
+                    if (Section2_checkBoxTable1.Checked)
+                    {
+                        AutoTotalSumm.FillTotalRow(((DataGridView)sender), 8);
+                    }
+                    break;
+                case "Section2_dataGridView2":
+                    AutoTotalSumm.TotalSumm(((DataGridView)sender), 8);
+                    if (Section2_checkBoxTable2.Checked)
+                    {
+                        AutoTotalSumm.FillTotalRow(((DataGridView)sender), 8);
+                    }
+                    break;
+            }
+            if (Section2_checkBoxTable3.Checked)
+            {
+                AutoTotalSumm.TotalSummGrid3(Section2_dataGridView3, 8);
+                AutoTotalSumm.TotalAll1Section(Section2_dataGridView1, Section2_dataGridView2, Section2_dataGridView3, 8);
+                AutoTotalSumm.FillGrid3(Section2_dataGridView3, 8);
+            }
+        }
+        #endregion            
 
         /* /// <summary>
        /// Проверка правильности ввода в ячейки

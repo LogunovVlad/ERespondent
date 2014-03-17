@@ -13,7 +13,7 @@ namespace ERespondent.UtilityFunction
         
         #region Методы вычисляющие итого по подразделам 1 и 2
         /// <summary>
-        /// Метод вычисляющий сумму строки итого по подразделам
+        /// Метод вычисляющий сумму строки итого по пунктам
         /// </summary>
         /// <param name="grid">Текущая таблица</param>  
         /// <param name="startColumn">Столбец, с которого начинается расчет ИТОГО</param> 
@@ -56,10 +56,10 @@ namespace ERespondent.UtilityFunction
                 {
                     grid[startColumn, grid.RowCount - 1].Value = point;
                 }
-                else
+              /*  else
                 {
                     grid[startColumn, grid.RowCount - 1].Value = 0;
-                }
+                }*/
                 startColumn++;
             }
         }
@@ -69,14 +69,14 @@ namespace ERespondent.UtilityFunction
         /// Считает "Итого" в третьей таблице
         /// </summary>
         /// <param name="grid"></param>
-        public static void TotalSummGrid3(DataGridView grid)
+        public static void TotalSummGrid3(DataGridView grid, int columnTotal)
         {
             double summTotal = 0;
             for (int i = 0; i < grid.RowCount - 2; i++)
             {
-                summTotal += Convert.ToDouble(grid[6, i].Value);
+                summTotal += Convert.ToDouble(grid[columnTotal, i].Value);
             }
-            grid[6, grid.RowCount - 2].Value = summTotal;
+            grid[columnTotal, grid.RowCount - 2].Value = summTotal;
         }
 
         /// <summary>
@@ -85,17 +85,18 @@ namespace ERespondent.UtilityFunction
         /// <param name="grid1">таблица 1 (раздел1)</param>
         /// <param name="grid2">таблица 2 (раздел1)</param>
         /// <param name="grid3">таблица 3 (раздел1)</param>
-        public static void TotalAll1Section(DataGridView grid1, DataGridView grid2, DataGridView grid3)
+        public static void TotalAll1Section(DataGridView grid1, DataGridView grid2, DataGridView grid3, int startColumn)
         {
             listTotalSummPoint = new List<double>();                 
             grid3.EndEdit();
 
             //ячейка итого по подразделу 3
-            double s2 = Convert.ToDouble(grid3[6, grid3.RowCount - 2].Value);
+            //double s2 = Convert.ToDouble(grid3[6, grid3.RowCount - 2].Value);
+            double s2 = Convert.ToDouble(grid3[startColumn, grid3.RowCount - 2].Value);
 
-            for (int i = 6; i < grid1.ColumnCount; i++)
+            for (int i = startColumn; i < grid1.ColumnCount; i++)
             {
-                double s=Convert.ToDouble(grid1[i, grid1.RowCount - 1].Value);
+                double s = Convert.ToDouble(grid1[i, grid1.RowCount - 1].Value);
                 double s1 = Convert.ToDouble(grid2[i, grid2.RowCount - 1].Value);
                
                 listTotalSummPoint.Add(s+s1+s2);
@@ -107,16 +108,15 @@ namespace ERespondent.UtilityFunction
         /// Заполнение таблицы 3
         /// </summary>
         /// <param name="grid"></param>
-        public static void FillGrid3(DataGridView grid)
-        {
-            int i = 6;            
+        public static void FillGrid3(DataGridView grid, int columnFill)
+        {                    
             foreach (double point in listTotalSummPoint)
             {
                 if (point != 0)
                 {
-                    grid[i, grid.RowCount - 1].Value = point;
+                    grid[columnFill, grid.RowCount - 1].Value = point;
                 }
-                i++;
+                columnFill++;
             }
         }
         #endregion      

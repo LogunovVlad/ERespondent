@@ -29,12 +29,12 @@ namespace ERespondent
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,16 +141,67 @@ namespace ERespondent
             this.Section2LayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Section2PanelGrid1 = new System.Windows.Forms.Panel();
             this.Section2_dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Section2_dataGrid1ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid1ColumnG = new ClassLibrary1.CalendarColumn();
+            this.Section2_dataGrid1ColumnD = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid1ColumnE = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid1ColumnJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid1Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Section2Panel1 = new System.Windows.Forms.Panel();
             this.Section2_checkBoxTable1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Section2PanelGrid2 = new System.Windows.Forms.Panel();
             this.Section2_dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Section2_dataGrid2ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid2ColumnG = new ClassLibrary1.CalendarColumn();
+            this.Section2_dataGrid2ColumnD = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid2ColumnE = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid2ColumnJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid2Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Section2Panel2 = new System.Windows.Forms.Panel();
             this.Section2_checkBoxTable2 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Section2PanelGrid3 = new System.Windows.Forms.Panel();
             this.Section2_dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.Section2_dataGrid3ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid3ColumnG = new ClassLibrary1.CalendarColumn();
+            this.Section2_dataGrid3ColumnD = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid3ColumnE = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Section2_dataGrid3ColumnJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section2_dataGrid3Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Section3Panel3 = new System.Windows.Forms.Panel();
             this.Section2_checkBoxTable3 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -192,57 +243,14 @@ namespace ERespondent
             this.ColumnSectionH1_9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSectionH1_10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabSection3 = new System.Windows.Forms.TabPage();
-            this.Section2_dataGrid3ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid3ColumnG = new ClassLibrary1.CalendarColumn();
-            this.Section2_dataGrid3ColumnD = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid3ColumnE = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid3ColumnJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid3Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid1ColumnG = new ClassLibrary1.CalendarColumn();
-            this.Section2_dataGrid1ColumnD = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid1ColumnE = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid1ColumnJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid1Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2ColumnV = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid2ColumnG = new ClassLibrary1.CalendarColumn();
-            this.Section2_dataGrid2ColumnD = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid2ColumnE = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Section2_dataGrid2ColumnJ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Section2_dataGrid2Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Section3_ColumnA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section3_ColumnB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section3_ColumnV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section3_Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section3_Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Section3_Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -278,6 +286,9 @@ namespace ERespondent
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Section2_dataGridViewHeader2_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Section2_dataGridViewHeader2_1)).BeginInit();
+            this.TabSection3.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -641,8 +652,8 @@ namespace ERespondent
             // 
             // Section1_dataGrid1ColumnV
             // 
-            dataGridViewCellStyle31.NullValue = null;
-            this.Section1_dataGrid1ColumnV.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.NullValue = null;
+            this.Section1_dataGrid1ColumnV.DefaultCellStyle = dataGridViewCellStyle1;
             this.Section1_dataGrid1ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.Section1_dataGrid1ColumnV.HeaderText = "В";
             this.Section1_dataGrid1ColumnV.Name = "Section1_dataGrid1ColumnV";
@@ -1245,8 +1256,124 @@ namespace ERespondent
             this.Section2_dataGridView1.TabIndex = 12;
             this.Section2_dataGridView1.Tag = "Section2_T1";
             this.Section2_dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Section2_dataGridView_CellClick);
+            this.Section2_dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Section2_dataGridView_CellEndEdit);
             this.Section2_dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Section2_dataGridView_RowsAdded);
             this.Section2_dataGridView1.Click += new System.EventHandler(this.Section2_dataGridView1_Click);
+            // 
+            // Section2_dataGrid1ColumnA
+            // 
+            this.Section2_dataGrid1ColumnA.HeaderText = "А";
+            this.Section2_dataGrid1ColumnA.Name = "Section2_dataGrid1ColumnA";
+            this.Section2_dataGrid1ColumnA.ReadOnly = true;
+            this.Section2_dataGrid1ColumnA.Width = 72;
+            // 
+            // Section2_dataGrid1ColumnB
+            // 
+            this.Section2_dataGrid1ColumnB.HeaderText = "Б";
+            this.Section2_dataGrid1ColumnB.Name = "Section2_dataGrid1ColumnB";
+            this.Section2_dataGrid1ColumnB.Width = 48;
+            // 
+            // Section2_dataGrid1ColumnV
+            // 
+            this.Section2_dataGrid1ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid1ColumnV.HeaderText = "В";
+            this.Section2_dataGrid1ColumnV.Name = "Section2_dataGrid1ColumnV";
+            this.Section2_dataGrid1ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid1ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid1ColumnV.Width = 150;
+            // 
+            // Section2_dataGrid1ColumnG
+            // 
+            this.Section2_dataGrid1ColumnG.HeaderText = "Г";
+            this.Section2_dataGrid1ColumnG.Name = "Section2_dataGrid1ColumnG";
+            this.Section2_dataGrid1ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid1ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid1ColumnG.Width = 62;
+            // 
+            // Section2_dataGrid1ColumnD
+            // 
+            this.Section2_dataGrid1ColumnD.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid1ColumnD.HeaderText = "Д";
+            this.Section2_dataGrid1ColumnD.Name = "Section2_dataGrid1ColumnD";
+            this.Section2_dataGrid1ColumnD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid1ColumnD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid1ColumnD.Width = 74;
+            // 
+            // Section2_dataGrid1ColumnE
+            // 
+            this.Section2_dataGrid1ColumnE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid1ColumnE.HeaderText = "Е";
+            this.Section2_dataGrid1ColumnE.Name = "Section2_dataGrid1ColumnE";
+            this.Section2_dataGrid1ColumnE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid1ColumnE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid1ColumnE.Width = 75;
+            // 
+            // Section2_dataGrid1ColumnJ
+            // 
+            this.Section2_dataGrid1ColumnJ.HeaderText = "Ж";
+            this.Section2_dataGrid1ColumnJ.Name = "Section2_dataGrid1ColumnJ";
+            this.Section2_dataGrid1ColumnJ.ReadOnly = true;
+            this.Section2_dataGrid1ColumnJ.Width = 67;
+            // 
+            // Section2_dataGrid1Column1
+            // 
+            this.Section2_dataGrid1Column1.HeaderText = "1";
+            this.Section2_dataGrid1Column1.Name = "Section2_dataGrid1Column1";
+            this.Section2_dataGrid1Column1.Width = 70;
+            // 
+            // Section2_dataGrid1Column2
+            // 
+            this.Section2_dataGrid1Column2.HeaderText = "2";
+            this.Section2_dataGrid1Column2.Name = "Section2_dataGrid1Column2";
+            this.Section2_dataGrid1Column2.Width = 85;
+            // 
+            // Section2_dataGrid1Column3
+            // 
+            this.Section2_dataGrid1Column3.HeaderText = "3";
+            this.Section2_dataGrid1Column3.Name = "Section2_dataGrid1Column3";
+            this.Section2_dataGrid1Column3.Width = 96;
+            // 
+            // Section2_dataGrid1Column4
+            // 
+            this.Section2_dataGrid1Column4.HeaderText = "4";
+            this.Section2_dataGrid1Column4.Name = "Section2_dataGrid1Column4";
+            this.Section2_dataGrid1Column4.Width = 105;
+            // 
+            // Section2_dataGrid1Column5
+            // 
+            this.Section2_dataGrid1Column5.HeaderText = "5";
+            this.Section2_dataGrid1Column5.Name = "Section2_dataGrid1Column5";
+            this.Section2_dataGrid1Column5.Width = 95;
+            // 
+            // Section2_dataGrid1Column6
+            // 
+            this.Section2_dataGrid1Column6.HeaderText = "6";
+            this.Section2_dataGrid1Column6.Name = "Section2_dataGrid1Column6";
+            this.Section2_dataGrid1Column6.Width = 103;
+            // 
+            // Section2_dataGrid1Column7
+            // 
+            this.Section2_dataGrid1Column7.HeaderText = "7";
+            this.Section2_dataGrid1Column7.Name = "Section2_dataGrid1Column7";
+            this.Section2_dataGrid1Column7.Width = 55;
+            // 
+            // Section2_dataGrid1Column8
+            // 
+            this.Section2_dataGrid1Column8.HeaderText = "8";
+            this.Section2_dataGrid1Column8.Name = "Section2_dataGrid1Column8";
+            this.Section2_dataGrid1Column8.Width = 73;
+            // 
+            // Section2_dataGrid1Column9
+            // 
+            this.Section2_dataGrid1Column9.HeaderText = "9";
+            this.Section2_dataGrid1Column9.Name = "Section2_dataGrid1Column9";
+            this.Section2_dataGrid1Column9.Width = 52;
+            // 
+            // Section2_dataGrid1Column10
+            // 
+            this.Section2_dataGrid1Column10.HeaderText = "10";
+            this.Section2_dataGrid1Column10.Name = "Section2_dataGrid1Column10";
+            this.Section2_dataGrid1Column10.Width = 60;
             // 
             // Section2Panel1
             // 
@@ -1326,8 +1453,124 @@ namespace ERespondent
             this.Section2_dataGridView2.TabIndex = 13;
             this.Section2_dataGridView2.Tag = "Section2_T2";
             this.Section2_dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Section2_dataGridView_CellClick);
+            this.Section2_dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Section2_dataGridView_CellEndEdit);
             this.Section2_dataGridView2.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Section2_dataGridView_RowsAdded);
             this.Section2_dataGridView2.Click += new System.EventHandler(this.Section2_dataGridView2_Click);
+            // 
+            // Section2_dataGrid2ColumnA
+            // 
+            this.Section2_dataGrid2ColumnA.HeaderText = "А";
+            this.Section2_dataGrid2ColumnA.Name = "Section2_dataGrid2ColumnA";
+            this.Section2_dataGrid2ColumnA.ReadOnly = true;
+            this.Section2_dataGrid2ColumnA.Width = 72;
+            // 
+            // Section2_dataGrid2ColumnB
+            // 
+            this.Section2_dataGrid2ColumnB.HeaderText = "Б";
+            this.Section2_dataGrid2ColumnB.Name = "Section2_dataGrid2ColumnB";
+            this.Section2_dataGrid2ColumnB.Width = 48;
+            // 
+            // Section2_dataGrid2ColumnV
+            // 
+            this.Section2_dataGrid2ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid2ColumnV.HeaderText = "В";
+            this.Section2_dataGrid2ColumnV.Name = "Section2_dataGrid2ColumnV";
+            this.Section2_dataGrid2ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid2ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid2ColumnV.Width = 150;
+            // 
+            // Section2_dataGrid2ColumnG
+            // 
+            this.Section2_dataGrid2ColumnG.HeaderText = "Г";
+            this.Section2_dataGrid2ColumnG.Name = "Section2_dataGrid2ColumnG";
+            this.Section2_dataGrid2ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid2ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid2ColumnG.Width = 62;
+            // 
+            // Section2_dataGrid2ColumnD
+            // 
+            this.Section2_dataGrid2ColumnD.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid2ColumnD.HeaderText = "Д";
+            this.Section2_dataGrid2ColumnD.Name = "Section2_dataGrid2ColumnD";
+            this.Section2_dataGrid2ColumnD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid2ColumnD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid2ColumnD.Width = 74;
+            // 
+            // Section2_dataGrid2ColumnE
+            // 
+            this.Section2_dataGrid2ColumnE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid2ColumnE.HeaderText = "Е";
+            this.Section2_dataGrid2ColumnE.Name = "Section2_dataGrid2ColumnE";
+            this.Section2_dataGrid2ColumnE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid2ColumnE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid2ColumnE.Width = 75;
+            // 
+            // Section2_dataGrid2ColumnJ
+            // 
+            this.Section2_dataGrid2ColumnJ.HeaderText = "Ж";
+            this.Section2_dataGrid2ColumnJ.Name = "Section2_dataGrid2ColumnJ";
+            this.Section2_dataGrid2ColumnJ.ReadOnly = true;
+            this.Section2_dataGrid2ColumnJ.Width = 67;
+            // 
+            // Section2_dataGrid2Column1
+            // 
+            this.Section2_dataGrid2Column1.HeaderText = "1";
+            this.Section2_dataGrid2Column1.Name = "Section2_dataGrid2Column1";
+            this.Section2_dataGrid2Column1.Width = 70;
+            // 
+            // Section2_dataGrid2Column2
+            // 
+            this.Section2_dataGrid2Column2.HeaderText = "2";
+            this.Section2_dataGrid2Column2.Name = "Section2_dataGrid2Column2";
+            this.Section2_dataGrid2Column2.Width = 85;
+            // 
+            // Section2_dataGrid2Column3
+            // 
+            this.Section2_dataGrid2Column3.HeaderText = "3";
+            this.Section2_dataGrid2Column3.Name = "Section2_dataGrid2Column3";
+            this.Section2_dataGrid2Column3.Width = 96;
+            // 
+            // Section2_dataGrid2Column4
+            // 
+            this.Section2_dataGrid2Column4.HeaderText = "4";
+            this.Section2_dataGrid2Column4.Name = "Section2_dataGrid2Column4";
+            this.Section2_dataGrid2Column4.Width = 105;
+            // 
+            // Section2_dataGrid2Column5
+            // 
+            this.Section2_dataGrid2Column5.HeaderText = "5";
+            this.Section2_dataGrid2Column5.Name = "Section2_dataGrid2Column5";
+            this.Section2_dataGrid2Column5.Width = 95;
+            // 
+            // Section2_dataGrid2Column6
+            // 
+            this.Section2_dataGrid2Column6.HeaderText = "6";
+            this.Section2_dataGrid2Column6.Name = "Section2_dataGrid2Column6";
+            this.Section2_dataGrid2Column6.Width = 103;
+            // 
+            // Section2_dataGrid2Column7
+            // 
+            this.Section2_dataGrid2Column7.HeaderText = "7";
+            this.Section2_dataGrid2Column7.Name = "Section2_dataGrid2Column7";
+            this.Section2_dataGrid2Column7.Width = 55;
+            // 
+            // Section2_dataGrid2Column8
+            // 
+            this.Section2_dataGrid2Column8.HeaderText = "8";
+            this.Section2_dataGrid2Column8.Name = "Section2_dataGrid2Column8";
+            this.Section2_dataGrid2Column8.Width = 73;
+            // 
+            // Section2_dataGrid2Column9
+            // 
+            this.Section2_dataGrid2Column9.HeaderText = "9";
+            this.Section2_dataGrid2Column9.Name = "Section2_dataGrid2Column9";
+            this.Section2_dataGrid2Column9.Width = 52;
+            // 
+            // Section2_dataGrid2Column10
+            // 
+            this.Section2_dataGrid2Column10.HeaderText = "10";
+            this.Section2_dataGrid2Column10.Name = "Section2_dataGrid2Column10";
+            this.Section2_dataGrid2Column10.Width = 60;
             // 
             // Section2Panel2
             // 
@@ -1407,8 +1650,124 @@ namespace ERespondent
             this.Section2_dataGridView3.TabIndex = 14;
             this.Section2_dataGridView3.Tag = "Section2_T3";
             this.Section2_dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Section2_dataGridView_CellClick);
+            this.Section2_dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Section2_dataGridView_CellEndEdit);
             this.Section2_dataGridView3.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.Section2_dataGridView_RowsAdded);
             this.Section2_dataGridView3.Click += new System.EventHandler(this.Section2_dataGridView3_Click);
+            // 
+            // Section2_dataGrid3ColumnA
+            // 
+            this.Section2_dataGrid3ColumnA.HeaderText = "А";
+            this.Section2_dataGrid3ColumnA.Name = "Section2_dataGrid3ColumnA";
+            this.Section2_dataGrid3ColumnA.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Section2_dataGrid3ColumnA.Width = 72;
+            // 
+            // Section2_dataGrid3ColumnB
+            // 
+            this.Section2_dataGrid3ColumnB.HeaderText = "Б";
+            this.Section2_dataGrid3ColumnB.Name = "Section2_dataGrid3ColumnB";
+            this.Section2_dataGrid3ColumnB.Width = 48;
+            // 
+            // Section2_dataGrid3ColumnV
+            // 
+            this.Section2_dataGrid3ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid3ColumnV.HeaderText = "В";
+            this.Section2_dataGrid3ColumnV.Name = "Section2_dataGrid3ColumnV";
+            this.Section2_dataGrid3ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid3ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid3ColumnV.Width = 150;
+            // 
+            // Section2_dataGrid3ColumnG
+            // 
+            this.Section2_dataGrid3ColumnG.HeaderText = "Г";
+            this.Section2_dataGrid3ColumnG.Name = "Section2_dataGrid3ColumnG";
+            this.Section2_dataGrid3ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid3ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid3ColumnG.Width = 62;
+            // 
+            // Section2_dataGrid3ColumnD
+            // 
+            this.Section2_dataGrid3ColumnD.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid3ColumnD.HeaderText = "Д";
+            this.Section2_dataGrid3ColumnD.Name = "Section2_dataGrid3ColumnD";
+            this.Section2_dataGrid3ColumnD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid3ColumnD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid3ColumnD.Width = 74;
+            // 
+            // Section2_dataGrid3ColumnE
+            // 
+            this.Section2_dataGrid3ColumnE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Section2_dataGrid3ColumnE.HeaderText = "Е";
+            this.Section2_dataGrid3ColumnE.Name = "Section2_dataGrid3ColumnE";
+            this.Section2_dataGrid3ColumnE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGrid3ColumnE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Section2_dataGrid3ColumnE.Width = 75;
+            // 
+            // Section2_dataGrid3ColumnJ
+            // 
+            this.Section2_dataGrid3ColumnJ.HeaderText = "Ж";
+            this.Section2_dataGrid3ColumnJ.Name = "Section2_dataGrid3ColumnJ";
+            this.Section2_dataGrid3ColumnJ.ReadOnly = true;
+            this.Section2_dataGrid3ColumnJ.Width = 67;
+            // 
+            // Section2_dataGrid3Column1
+            // 
+            this.Section2_dataGrid3Column1.HeaderText = "1";
+            this.Section2_dataGrid3Column1.Name = "Section2_dataGrid3Column1";
+            this.Section2_dataGrid3Column1.Width = 70;
+            // 
+            // Section2_dataGrid3Column2
+            // 
+            this.Section2_dataGrid3Column2.HeaderText = "2";
+            this.Section2_dataGrid3Column2.Name = "Section2_dataGrid3Column2";
+            this.Section2_dataGrid3Column2.Width = 85;
+            // 
+            // Section2_dataGrid3Column3
+            // 
+            this.Section2_dataGrid3Column3.HeaderText = "3";
+            this.Section2_dataGrid3Column3.Name = "Section2_dataGrid3Column3";
+            this.Section2_dataGrid3Column3.Width = 96;
+            // 
+            // Section2_dataGrid3Column4
+            // 
+            this.Section2_dataGrid3Column4.HeaderText = "4";
+            this.Section2_dataGrid3Column4.Name = "Section2_dataGrid3Column4";
+            this.Section2_dataGrid3Column4.Width = 105;
+            // 
+            // Section2_dataGrid3Column5
+            // 
+            this.Section2_dataGrid3Column5.HeaderText = "5";
+            this.Section2_dataGrid3Column5.Name = "Section2_dataGrid3Column5";
+            this.Section2_dataGrid3Column5.Width = 95;
+            // 
+            // Section2_dataGrid3Column6
+            // 
+            this.Section2_dataGrid3Column6.HeaderText = "6";
+            this.Section2_dataGrid3Column6.Name = "Section2_dataGrid3Column6";
+            this.Section2_dataGrid3Column6.Width = 103;
+            // 
+            // Section2_dataGrid3Column7
+            // 
+            this.Section2_dataGrid3Column7.HeaderText = "7";
+            this.Section2_dataGrid3Column7.Name = "Section2_dataGrid3Column7";
+            this.Section2_dataGrid3Column7.Width = 55;
+            // 
+            // Section2_dataGrid3Column8
+            // 
+            this.Section2_dataGrid3Column8.HeaderText = "8";
+            this.Section2_dataGrid3Column8.Name = "Section2_dataGrid3Column8";
+            this.Section2_dataGrid3Column8.Width = 73;
+            // 
+            // Section2_dataGrid3Column9
+            // 
+            this.Section2_dataGrid3Column9.HeaderText = "9";
+            this.Section2_dataGrid3Column9.Name = "Section2_dataGrid3Column9";
+            this.Section2_dataGrid3Column9.Width = 52;
+            // 
+            // Section2_dataGrid3Column10
+            // 
+            this.Section2_dataGrid3Column10.HeaderText = "10";
+            this.Section2_dataGrid3Column10.Name = "Section2_dataGrid3Column10";
+            this.Section2_dataGrid3Column10.Width = 60;
             // 
             // Section3Panel3
             // 
@@ -1463,14 +1822,14 @@ namespace ERespondent
             this.Section2_dataGridViewHeader2_2.AllowUserToDeleteRows = false;
             this.Section2_dataGridViewHeader2_2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.Section2_dataGridViewHeader2_2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGridViewHeader2_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGridViewHeader2_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Section2_dataGridViewHeader2_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Section2_dataGridViewHeader2_2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnSectionH2_A,
@@ -1623,14 +1982,14 @@ namespace ERespondent
             this.Section2_dataGridViewHeader2_1.AllowUserToAddRows = false;
             this.Section2_dataGridViewHeader2_1.AllowUserToDeleteRows = false;
             this.Section2_dataGridViewHeader2_1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGridViewHeader2_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGridViewHeader2_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Section2_dataGridViewHeader2_1.ColumnHeadersHeight = 100;
             this.Section2_dataGridViewHeader2_1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnSectionH1_A,
@@ -1650,26 +2009,26 @@ namespace ERespondent
             this.ColumnSectionH1_8,
             this.ColumnSectionH1_9,
             this.ColumnSectionH1_10});
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGridViewHeader2_1.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Section2_dataGridViewHeader2_1.DefaultCellStyle = dataGridViewCellStyle5;
             this.Section2_dataGridViewHeader2_1.Dock = System.Windows.Forms.DockStyle.Top;
             this.Section2_dataGridViewHeader2_1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.Section2_dataGridViewHeader2_1.Location = new System.Drawing.Point(0, 0);
             this.Section2_dataGridViewHeader2_1.Name = "Section2_dataGridViewHeader2_1";
             this.Section2_dataGridViewHeader2_1.ReadOnly = true;
-            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.NullValue = null;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Section2_dataGridViewHeader2_1.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Section2_dataGridViewHeader2_1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Section2_dataGridViewHeader2_1.RowHeadersVisible = false;
             this.Section2_dataGridViewHeader2_1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Section2_dataGridViewHeader2_1.Size = new System.Drawing.Size(1356, 101);
@@ -1677,9 +2036,9 @@ namespace ERespondent
             // 
             // ColumnSectionH1_A
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnSectionH1_A.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnSectionH1_A.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnSectionH1_A.HeaderText = "Код основных направлений энерго- сбережения";
             this.ColumnSectionH1_A.Name = "ColumnSectionH1_A";
             this.ColumnSectionH1_A.ReadOnly = true;
@@ -1801,6 +2160,7 @@ namespace ERespondent
             // TabSection3
             // 
             this.TabSection3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TabSection3.Controls.Add(this.panel7);
             this.TabSection3.Location = new System.Drawing.Point(4, 22);
             this.TabSection3.Name = "TabSection3";
             this.TabSection3.Size = new System.Drawing.Size(1362, 672);
@@ -1808,344 +2168,68 @@ namespace ERespondent
             this.TabSection3.Text = "РАЗДЕЛ III";
             this.TabSection3.ToolTipText = "ХОД ВЫПОЛНЕНИЯ ПРОГРАММЫ (ПЛАНА МЕРОПРИЯТИЙ) ПО ЭНЕРГОСБЕРЕЖЕНИЮ";
             // 
-            // Section2_dataGrid3ColumnA
-            // 
-            this.Section2_dataGrid3ColumnA.HeaderText = "А";
-            this.Section2_dataGrid3ColumnA.Name = "Section2_dataGrid3ColumnA";
-            this.Section2_dataGrid3ColumnA.Width = 72;
-            // 
-            // Section2_dataGrid3ColumnB
-            // 
-            this.Section2_dataGrid3ColumnB.HeaderText = "Б";
-            this.Section2_dataGrid3ColumnB.Name = "Section2_dataGrid3ColumnB";
-            this.Section2_dataGrid3ColumnB.Width = 48;
-            // 
-            // Section2_dataGrid3ColumnV
-            // 
-            this.Section2_dataGrid3ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid3ColumnV.HeaderText = "В";
-            this.Section2_dataGrid3ColumnV.Name = "Section2_dataGrid3ColumnV";
-            this.Section2_dataGrid3ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid3ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid3ColumnV.Width = 150;
-            // 
-            // Section2_dataGrid3ColumnG
-            // 
-            this.Section2_dataGrid3ColumnG.HeaderText = "Г";
-            this.Section2_dataGrid3ColumnG.Name = "Section2_dataGrid3ColumnG";
-            this.Section2_dataGrid3ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid3ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid3ColumnG.Width = 62;
-            // 
-            // Section2_dataGrid3ColumnD
-            // 
-            this.Section2_dataGrid3ColumnD.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid3ColumnD.HeaderText = "Д";
-            this.Section2_dataGrid3ColumnD.Name = "Section2_dataGrid3ColumnD";
-            this.Section2_dataGrid3ColumnD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid3ColumnD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid3ColumnD.Width = 74;
-            // 
-            // Section2_dataGrid3ColumnE
-            // 
-            this.Section2_dataGrid3ColumnE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid3ColumnE.HeaderText = "Е";
-            this.Section2_dataGrid3ColumnE.Name = "Section2_dataGrid3ColumnE";
-            this.Section2_dataGrid3ColumnE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid3ColumnE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid3ColumnE.Width = 75;
-            // 
-            // Section2_dataGrid3ColumnJ
-            // 
-            this.Section2_dataGrid3ColumnJ.HeaderText = "Ж";
-            this.Section2_dataGrid3ColumnJ.Name = "Section2_dataGrid3ColumnJ";
-            this.Section2_dataGrid3ColumnJ.Width = 67;
-            // 
-            // Section2_dataGrid3Column1
-            // 
-            this.Section2_dataGrid3Column1.HeaderText = "1";
-            this.Section2_dataGrid3Column1.Name = "Section2_dataGrid3Column1";
-            this.Section2_dataGrid3Column1.Width = 70;
-            // 
-            // Section2_dataGrid3Column2
-            // 
-            this.Section2_dataGrid3Column2.HeaderText = "2";
-            this.Section2_dataGrid3Column2.Name = "Section2_dataGrid3Column2";
-            this.Section2_dataGrid3Column2.Width = 85;
-            // 
-            // Section2_dataGrid3Column3
-            // 
-            this.Section2_dataGrid3Column3.HeaderText = "3";
-            this.Section2_dataGrid3Column3.Name = "Section2_dataGrid3Column3";
-            this.Section2_dataGrid3Column3.Width = 96;
-            // 
-            // Section2_dataGrid3Column4
-            // 
-            this.Section2_dataGrid3Column4.HeaderText = "4";
-            this.Section2_dataGrid3Column4.Name = "Section2_dataGrid3Column4";
-            this.Section2_dataGrid3Column4.Width = 105;
-            // 
-            // Section2_dataGrid3Column5
-            // 
-            this.Section2_dataGrid3Column5.HeaderText = "5";
-            this.Section2_dataGrid3Column5.Name = "Section2_dataGrid3Column5";
-            this.Section2_dataGrid3Column5.Width = 95;
-            // 
-            // Section2_dataGrid3Column6
-            // 
-            this.Section2_dataGrid3Column6.HeaderText = "6";
-            this.Section2_dataGrid3Column6.Name = "Section2_dataGrid3Column6";
-            this.Section2_dataGrid3Column6.Width = 103;
-            // 
-            // Section2_dataGrid3Column7
-            // 
-            this.Section2_dataGrid3Column7.HeaderText = "7";
-            this.Section2_dataGrid3Column7.Name = "Section2_dataGrid3Column7";
-            this.Section2_dataGrid3Column7.Width = 55;
-            // 
-            // Section2_dataGrid3Column8
-            // 
-            this.Section2_dataGrid3Column8.HeaderText = "8";
-            this.Section2_dataGrid3Column8.Name = "Section2_dataGrid3Column8";
-            this.Section2_dataGrid3Column8.Width = 73;
-            // 
-            // Section2_dataGrid3Column9
-            // 
-            this.Section2_dataGrid3Column9.HeaderText = "9";
-            this.Section2_dataGrid3Column9.Name = "Section2_dataGrid3Column9";
-            this.Section2_dataGrid3Column9.Width = 52;
-            // 
-            // Section2_dataGrid3Column10
-            // 
-            this.Section2_dataGrid3Column10.HeaderText = "10";
-            this.Section2_dataGrid3Column10.Name = "Section2_dataGrid3Column10";
-            this.Section2_dataGrid3Column10.Width = 60;
-            // 
-            // Section2_dataGrid1ColumnA
-            // 
-            this.Section2_dataGrid1ColumnA.HeaderText = "А";
-            this.Section2_dataGrid1ColumnA.Name = "Section2_dataGrid1ColumnA";
-            this.Section2_dataGrid1ColumnA.Width = 72;
-            // 
-            // Section2_dataGrid1ColumnB
-            // 
-            this.Section2_dataGrid1ColumnB.HeaderText = "Б";
-            this.Section2_dataGrid1ColumnB.Name = "Section2_dataGrid1ColumnB";
-            this.Section2_dataGrid1ColumnB.Width = 48;
-            // 
-            // Section2_dataGrid1ColumnV
-            // 
-            this.Section2_dataGrid1ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid1ColumnV.HeaderText = "В";
-            this.Section2_dataGrid1ColumnV.Name = "Section2_dataGrid1ColumnV";
-            this.Section2_dataGrid1ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid1ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid1ColumnV.Width = 150;
-            // 
-            // Section2_dataGrid1ColumnG
-            // 
-            this.Section2_dataGrid1ColumnG.HeaderText = "Г";
-            this.Section2_dataGrid1ColumnG.Name = "Section2_dataGrid1ColumnG";
-            this.Section2_dataGrid1ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid1ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid1ColumnG.Width = 62;
-            // 
-            // Section2_dataGrid1ColumnD
-            // 
-            this.Section2_dataGrid1ColumnD.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid1ColumnD.HeaderText = "Д";
-            this.Section2_dataGrid1ColumnD.Name = "Section2_dataGrid1ColumnD";
-            this.Section2_dataGrid1ColumnD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid1ColumnD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid1ColumnD.Width = 74;
-            // 
-            // Section2_dataGrid1ColumnE
-            // 
-            this.Section2_dataGrid1ColumnE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid1ColumnE.HeaderText = "Е";
-            this.Section2_dataGrid1ColumnE.Name = "Section2_dataGrid1ColumnE";
-            this.Section2_dataGrid1ColumnE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid1ColumnE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid1ColumnE.Width = 75;
-            // 
-            // Section2_dataGrid1ColumnJ
-            // 
-            this.Section2_dataGrid1ColumnJ.HeaderText = "Ж";
-            this.Section2_dataGrid1ColumnJ.Name = "Section2_dataGrid1ColumnJ";
-            this.Section2_dataGrid1ColumnJ.Width = 67;
-            // 
-            // Section2_dataGrid1Column1
-            // 
-            this.Section2_dataGrid1Column1.HeaderText = "1";
-            this.Section2_dataGrid1Column1.Name = "Section2_dataGrid1Column1";
-            this.Section2_dataGrid1Column1.Width = 70;
-            // 
-            // Section2_dataGrid1Column2
-            // 
-            this.Section2_dataGrid1Column2.HeaderText = "2";
-            this.Section2_dataGrid1Column2.Name = "Section2_dataGrid1Column2";
-            this.Section2_dataGrid1Column2.Width = 85;
-            // 
-            // Section2_dataGrid1Column3
-            // 
-            this.Section2_dataGrid1Column3.HeaderText = "3";
-            this.Section2_dataGrid1Column3.Name = "Section2_dataGrid1Column3";
-            this.Section2_dataGrid1Column3.Width = 96;
-            // 
-            // Section2_dataGrid1Column4
-            // 
-            this.Section2_dataGrid1Column4.HeaderText = "4";
-            this.Section2_dataGrid1Column4.Name = "Section2_dataGrid1Column4";
-            this.Section2_dataGrid1Column4.Width = 105;
-            // 
-            // Section2_dataGrid1Column5
-            // 
-            this.Section2_dataGrid1Column5.HeaderText = "5";
-            this.Section2_dataGrid1Column5.Name = "Section2_dataGrid1Column5";
-            this.Section2_dataGrid1Column5.Width = 95;
-            // 
-            // Section2_dataGrid1Column6
-            // 
-            this.Section2_dataGrid1Column6.HeaderText = "6";
-            this.Section2_dataGrid1Column6.Name = "Section2_dataGrid1Column6";
-            this.Section2_dataGrid1Column6.Width = 103;
-            // 
-            // Section2_dataGrid1Column7
-            // 
-            this.Section2_dataGrid1Column7.HeaderText = "7";
-            this.Section2_dataGrid1Column7.Name = "Section2_dataGrid1Column7";
-            this.Section2_dataGrid1Column7.Width = 55;
-            // 
-            // Section2_dataGrid1Column8
-            // 
-            this.Section2_dataGrid1Column8.HeaderText = "8";
-            this.Section2_dataGrid1Column8.Name = "Section2_dataGrid1Column8";
-            this.Section2_dataGrid1Column8.Width = 73;
-            // 
-            // Section2_dataGrid1Column9
-            // 
-            this.Section2_dataGrid1Column9.HeaderText = "9";
-            this.Section2_dataGrid1Column9.Name = "Section2_dataGrid1Column9";
-            this.Section2_dataGrid1Column9.Width = 52;
-            // 
-            // Section2_dataGrid1Column10
-            // 
-            this.Section2_dataGrid1Column10.HeaderText = "10";
-            this.Section2_dataGrid1Column10.Name = "Section2_dataGrid1Column10";
-            this.Section2_dataGrid1Column10.Width = 60;
-            // 
-            // Section2_dataGrid2ColumnA
-            // 
-            this.Section2_dataGrid2ColumnA.HeaderText = "А";
-            this.Section2_dataGrid2ColumnA.Name = "Section2_dataGrid2ColumnA";
-            this.Section2_dataGrid2ColumnA.Width = 72;
-            // 
-            // Section2_dataGrid2ColumnB
-            // 
-            this.Section2_dataGrid2ColumnB.HeaderText = "Б";
-            this.Section2_dataGrid2ColumnB.Name = "Section2_dataGrid2ColumnB";
-            this.Section2_dataGrid2ColumnB.Width = 48;
-            // 
-            // Section2_dataGrid2ColumnV
-            // 
-            this.Section2_dataGrid2ColumnV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid2ColumnV.HeaderText = "В";
-            this.Section2_dataGrid2ColumnV.Name = "Section2_dataGrid2ColumnV";
-            this.Section2_dataGrid2ColumnV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid2ColumnV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid2ColumnV.Width = 150;
-            // 
-            // Section2_dataGrid2ColumnG
-            // 
-            this.Section2_dataGrid2ColumnG.HeaderText = "Г";
-            this.Section2_dataGrid2ColumnG.Name = "Section2_dataGrid2ColumnG";
-            this.Section2_dataGrid2ColumnG.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid2ColumnG.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid2ColumnG.Width = 62;
-            // 
-            // Section2_dataGrid2ColumnD
-            // 
-            this.Section2_dataGrid2ColumnD.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid2ColumnD.HeaderText = "Д";
-            this.Section2_dataGrid2ColumnD.Name = "Section2_dataGrid2ColumnD";
-            this.Section2_dataGrid2ColumnD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid2ColumnD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid2ColumnD.Width = 74;
-            // 
-            // Section2_dataGrid2ColumnE
-            // 
-            this.Section2_dataGrid2ColumnE.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Section2_dataGrid2ColumnE.HeaderText = "Е";
-            this.Section2_dataGrid2ColumnE.Name = "Section2_dataGrid2ColumnE";
-            this.Section2_dataGrid2ColumnE.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Section2_dataGrid2ColumnE.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Section2_dataGrid2ColumnE.Width = 75;
-            // 
-            // Section2_dataGrid2ColumnJ
-            // 
-            this.Section2_dataGrid2ColumnJ.HeaderText = "Ж";
-            this.Section2_dataGrid2ColumnJ.Name = "Section2_dataGrid2ColumnJ";
-            this.Section2_dataGrid2ColumnJ.Width = 67;
-            // 
-            // Section2_dataGrid2Column1
-            // 
-            this.Section2_dataGrid2Column1.HeaderText = "1";
-            this.Section2_dataGrid2Column1.Name = "Section2_dataGrid2Column1";
-            this.Section2_dataGrid2Column1.Width = 70;
-            // 
-            // Section2_dataGrid2Column2
-            // 
-            this.Section2_dataGrid2Column2.HeaderText = "2";
-            this.Section2_dataGrid2Column2.Name = "Section2_dataGrid2Column2";
-            this.Section2_dataGrid2Column2.Width = 85;
-            // 
-            // Section2_dataGrid2Column3
-            // 
-            this.Section2_dataGrid2Column3.HeaderText = "3";
-            this.Section2_dataGrid2Column3.Name = "Section2_dataGrid2Column3";
-            this.Section2_dataGrid2Column3.Width = 96;
-            // 
-            // Section2_dataGrid2Column4
-            // 
-            this.Section2_dataGrid2Column4.HeaderText = "4";
-            this.Section2_dataGrid2Column4.Name = "Section2_dataGrid2Column4";
-            this.Section2_dataGrid2Column4.Width = 105;
-            // 
-            // Section2_dataGrid2Column5
-            // 
-            this.Section2_dataGrid2Column5.HeaderText = "5";
-            this.Section2_dataGrid2Column5.Name = "Section2_dataGrid2Column5";
-            this.Section2_dataGrid2Column5.Width = 95;
-            // 
-            // Section2_dataGrid2Column6
-            // 
-            this.Section2_dataGrid2Column6.HeaderText = "6";
-            this.Section2_dataGrid2Column6.Name = "Section2_dataGrid2Column6";
-            this.Section2_dataGrid2Column6.Width = 103;
-            // 
-            // Section2_dataGrid2Column7
-            // 
-            this.Section2_dataGrid2Column7.HeaderText = "7";
-            this.Section2_dataGrid2Column7.Name = "Section2_dataGrid2Column7";
-            this.Section2_dataGrid2Column7.Width = 55;
-            // 
-            // Section2_dataGrid2Column8
-            // 
-            this.Section2_dataGrid2Column8.HeaderText = "8";
-            this.Section2_dataGrid2Column8.Name = "Section2_dataGrid2Column8";
-            this.Section2_dataGrid2Column8.Width = 73;
-            // 
-            // Section2_dataGrid2Column9
-            // 
-            this.Section2_dataGrid2Column9.HeaderText = "9";
-            this.Section2_dataGrid2Column9.Name = "Section2_dataGrid2Column9";
-            this.Section2_dataGrid2Column9.Width = 52;
-            // 
-            // Section2_dataGrid2Column10
-            // 
-            this.Section2_dataGrid2Column10.HeaderText = "10";
-            this.Section2_dataGrid2Column10.Name = "Section2_dataGrid2Column10";
-            this.Section2_dataGrid2Column10.Width = 60;
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.dataGridView1);
+            this.panel7.Location = new System.Drawing.Point(8, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(841, 332);
+            this.panel7.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Section3_ColumnA,
+            this.Section3_ColumnB,
+            this.Section3_ColumnV,
+            this.Section3_Column1,
+            this.Section3_Column2,
+            this.Section3_Column3});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(841, 84);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Section3_ColumnA
+            // 
+            this.Section3_ColumnA.HeaderText = "Наименование показателя";
+            this.Section3_ColumnA.Name = "Section3_ColumnA";
+            this.Section3_ColumnA.ReadOnly = true;
+            // 
+            // Section3_ColumnB
+            // 
+            this.Section3_ColumnB.HeaderText = "Код строки";
+            this.Section3_ColumnB.Name = "Section3_ColumnB";
+            this.Section3_ColumnB.ReadOnly = true;
+            // 
+            // Section3_ColumnV
+            // 
+            this.Section3_ColumnV.HeaderText = "Единица измерения";
+            this.Section3_ColumnV.Name = "Section3_ColumnV";
+            this.Section3_ColumnV.ReadOnly = true;
+            // 
+            // Section3_Column1
+            // 
+            this.Section3_Column1.HeaderText = "По плану";
+            this.Section3_Column1.Name = "Section3_Column1";
+            this.Section3_Column1.ReadOnly = true;
+            // 
+            // Section3_Column2
+            // 
+            this.Section3_Column2.HeaderText = "Фактически";
+            this.Section3_Column2.Name = "Section3_Column2";
+            this.Section3_Column2.ReadOnly = true;
+            // 
+            // Section3_Column3
+            // 
+            this.Section3_Column3.HeaderText = "Процент выполнения (гр.2:гр.1х100)";
+            this.Section3_Column3.Name = "Section3_Column3";
+            this.Section3_Column3.ReadOnly = true;
             // 
             // MainForm
             // 
@@ -2207,6 +2291,9 @@ namespace ERespondent
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Section2_dataGridViewHeader2_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Section2_dataGridViewHeader2_1)).EndInit();
+            this.TabSection3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2371,23 +2458,6 @@ namespace ERespondent
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSectionH1_8;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSectionH1_9;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSectionH1_10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnB;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnV;
-        private CalendarColumn Section2_dataGrid3ColumnG;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnD;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnJ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid1ColumnA;
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid1ColumnB;
         private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid1ColumnV;
@@ -2422,6 +2492,31 @@ namespace ERespondent
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid2Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid2Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid2Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnB;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnV;
+        private CalendarColumn Section2_dataGrid3ColumnG;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnD;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column10;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section3_ColumnA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section3_ColumnB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section3_ColumnV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section3_Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section3_Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section3_Column3;
     }
 }
 

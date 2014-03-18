@@ -10,17 +10,21 @@ namespace ERespondent.CheckData
     class ControlFunction
     {
         CheckProtocol formProtocol;
+        private List<string> listError;// = new List<string>();
+
         public ControlFunction()
         {
             formProtocol = new CheckProtocol();
+            listError = new List<string>();
         }
-
-        private List<string> listError = new List<string>();
+       
         /// <summary>
         /// Функция контроля суммы строки по бюджету
         /// </summary>
         /// <param name="grid"></param>
-        private void AllBudgetRow(DataGridView grid)
+        /// item = 8(для первого раздела)
+        /// item = 10(для второго раздела)
+        private void AllBudgetRow(DataGridView grid, int item)
         {
             //grid.CurrentCell.Selected = false;
             grid.EndEdit();
@@ -30,16 +34,29 @@ namespace ERespondent.CheckData
             {
                 for (int i = 0; i < _rowCount; i++)
                 {
-                    double allSumm = Convert.ToDouble(grid.Rows[i].Cells[7].Value);
+                    double allSumm = Convert.ToDouble(grid.Rows[i].Cells[item-1].Value);
                     double summItem = 0;
-                    for (int iItem = 8; iItem < 15; iItem++)
+                    for (int iItem = item; iItem < _columnCount; iItem++)
                     {
                         summItem += Convert.ToDouble(grid.Rows[i].Cells[iItem].Value);
                     }
                     if (allSumm != summItem)
                     {
-                        listError.Add("\n<<" + grid.Tag.ToString() + ">>");
                         string stError = null;
+                        switch (grid.Tag.ToString())
+                        {
+                            case "T1":
+                                stError = "1. По плану мероприятий отчетного года";
+                                break;
+                            case "T2":
+                                stError = "2. Дополнительные мероприятия";
+                                break;
+                            case "T3":
+                                stError = "3. По мероприятиям предшествующего года внедрения";
+                                break;
+                        }
+                        listError.Add("\n<<" + stError + ">>");
+                        
                         if (i == _rowCount - 1)
                         {
                             stError = "Ошибка: В строке " + (i + 1) +
@@ -51,25 +68,18 @@ namespace ERespondent.CheckData
                                + grid[0, i].Value + ") сумма столбцов {4-10} не равна значению в столбце <3>! Проверьте данные!";
                         }
                         listError.Add(stError);
-                        grid.Rows[i].Cells[7].Style.BackColor = Color.Red;
-                        grid.Rows[i].Cells[8].Style.BackColor = Color.Yellow;
-                        grid.Rows[i].Cells[9].Style.BackColor = Color.Yellow;
-                        grid.Rows[i].Cells[10].Style.BackColor = Color.Yellow;
-                        grid.Rows[i].Cells[11].Style.BackColor = Color.Yellow;
-                        grid.Rows[i].Cells[12].Style.BackColor = Color.Yellow;
-                        grid.Rows[i].Cells[13].Style.BackColor = Color.Yellow;
-                        grid.Rows[i].Cells[14].Style.BackColor = Color.Yellow;
+                        grid.Rows[i].Cells[item-1].Style.BackColor = Color.Red;
+                        for (int indexRow = item; indexRow < _columnCount; indexRow++)
+                        {
+                            grid.Rows[i].Cells[indexRow].Style.BackColor = Color.Yellow;
+                        }                    
                     }
                     else
                     {
-                        grid.Rows[i].Cells[7].Style.BackColor = Color.White;
-                        grid.Rows[i].Cells[8].Style.BackColor = Color.White;
-                        grid.Rows[i].Cells[9].Style.BackColor = Color.White;
-                        grid.Rows[i].Cells[10].Style.BackColor = Color.White;
-                        grid.Rows[i].Cells[11].Style.BackColor = Color.White;
-                        grid.Rows[i].Cells[12].Style.BackColor = Color.White;
-                        grid.Rows[i].Cells[13].Style.BackColor = Color.White;
-                        grid.Rows[i].Cells[14].Style.BackColor = Color.White;
+                        for (int indexRow = item; indexRow < _columnCount; indexRow++)
+                        {
+                            grid.Rows[i].Cells[indexRow-1].Style.BackColor = Color.White;
+                        }                     
                     }
                 }
             }
@@ -85,7 +95,8 @@ namespace ERespondent.CheckData
         /// <param name="grid1">1. По плану мероприятий отчетного года</param>
         /// <param name="grid2">2. Дополнительные мероприятия</param>
         /// <param name="grid3">3. По мероприятиям предшествующего года внедрения</param>
-        private void CheckTotalForSection1(DataGridView grid1, DataGridView grid2, DataGridView grid3)
+        /// <param name="columnTotal">Индекс колонки всего (6 - для первого раздела ("Экономия ТЭР"); 8 - для второго раздела ("Увеличение МВТ"))</param>
+        private void CheckTotalForSection1(DataGridView grid1, DataGridView grid2, DataGridView grid3, int columnTotal)
         {
             int _rowCount = grid3.RowCount;
             //проверка запускается, если в таблице есть записи
@@ -94,34 +105,34 @@ namespace ERespondent.CheckData
                 double _summ = 0;
                 for (int i = 0; i < _rowCount - 2; i++)
                 {
-                    _summ += Convert.ToDouble(grid3[6, i].Value);
+                    _summ += Convert.ToDouble(grid3[columnTotal, i].Value);
                 }
                 //итого по подраздеру 3 раздела 1
-                if (Convert.ToDouble(grid3[6, _rowCount - 2].Value) != _summ)
+                if (Convert.ToDouble(grid3[columnTotal, _rowCount - 2].Value) != _summ)
                 {
                     listError.Add("\n<<" + grid3.Tag.ToString() + ">>");
                     listError.Add("Ошибка: В строке <Итого> сумма не соответствует сумме по соответствующим столбцам!");
-                    grid3[6, _rowCount - 2].Style.BackColor = Color.Red;
+                    grid3[columnTotal, _rowCount - 2].Style.BackColor = Color.Red;
                 }
                 else
                 {
-                    grid3[6, _rowCount - 2].Style.BackColor = Color.White;
+                    grid3[columnTotal, _rowCount - 2].Style.BackColor = Color.White;
                 }
                 //end
 
                 //итого по разделу 1 - Экономия ТЭР              
-                _summ = Convert.ToDouble(grid3[6, grid3.RowCount - 1].Value);
-                double total1 = Convert.ToDouble(grid1[6, grid1.RowCount - 1].Value);
-                double total2 = Convert.ToDouble(grid2[6, grid2.RowCount - 1].Value);
-                double total3 = Convert.ToDouble(grid3[6, grid2.RowCount - 2].Value);
+                _summ = Convert.ToDouble(grid3[columnTotal, grid3.RowCount - 1].Value);
+                double total1 = Convert.ToDouble(grid1[columnTotal, grid1.RowCount - 1].Value);
+                double total2 = Convert.ToDouble(grid2[columnTotal, grid2.RowCount - 1].Value);
+                double total3 = Convert.ToDouble(grid3[columnTotal, grid3.RowCount - 2].Value);
                 if (_summ != (total1 + total2 + total3))
                 {
-                    listError.Add("Ошибка: Сумма данных <Всего по разделу 1> по столбцу " + grid3.Columns[6].HeaderText + " не равна сумме данных строк <Итого> по каждому из подразделов.");
-                    grid3[6, grid3.RowCount - 1].Style.BackColor = Color.Red;
+                    listError.Add("Ошибка: Сумма данных <Всего по разделу> по столбцу " + grid3.Columns[columnTotal].HeaderText + " не равна сумме данных строк <Итого> по каждому из подразделов.");
+                    grid3[columnTotal, grid3.RowCount - 1].Style.BackColor = Color.Red;
                 }
                 else
                 {
-                    grid3[6, grid3.RowCount - 1].Style.BackColor = Color.White;
+                    grid3[columnTotal, grid3.RowCount - 1].Style.BackColor = Color.White;
                 }
             }
         }
@@ -133,12 +144,14 @@ namespace ERespondent.CheckData
         /// <param name="grid2">Таблица 2 подраздела</param>
         /// <param name="grid3">Таблица 3 подраздела</param>
         /// <param name="section">Название раздела</param>
-        public void CheckSection(DataGridView grid1, DataGridView grid2, DataGridView grid3, string section)
+        /// <param name="columnTotal">Номер столбца ВСЕГО. Для 1 раздела - 8; для второго - 10</param>
+        public void CheckSection(DataGridView grid1, DataGridView grid2, DataGridView grid3, string section, int columnTotal)
         {
-            AllBudgetRow(grid1);
-            AllBudgetRow(grid2);
-            CheckTotalForSection1(grid1, grid2, grid3);
-            CheckProtocol.ErrorForAllSection.Add(section, listError);
+            AllBudgetRow(grid1, columnTotal);
+            AllBudgetRow(grid2, columnTotal);
+            //  убрал, т.к. сделал автоматическую подстановку для ВСЕГО ПО РАЗДЕЛУ.
+            //  CheckTotalForSection1(grid1, grid2, grid3, columnTotal-2);
+            CheckProtocol.ErrorForAllSection.Add(section, listError);            
         }
 
         /// <summary>

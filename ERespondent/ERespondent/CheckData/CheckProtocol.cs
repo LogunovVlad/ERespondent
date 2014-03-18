@@ -11,11 +11,10 @@ namespace ERespondent.CheckData
 {
     public partial class CheckProtocol : Form
     {
-        public static Dictionary<string, List<string>> ErrorForAllSection;
+        public static Dictionary<string, List<string>> ErrorForAllSection = new Dictionary<string, List<string>>();
         public CheckProtocol()
         {
             InitializeComponent();
-            ErrorForAllSection = new Dictionary<string, List<string>>();
         }
 
         private void CheckProtocol_Load(object sender, EventArgs e)

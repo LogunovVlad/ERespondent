@@ -31,9 +31,9 @@ namespace ERespondent
             try
             {
                 //заполянем комбобоксы для раздела 1 
-                FillComboBox(Section1_dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
-                FillComboBox(Section1_dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
-                FillComboBox(Section1_dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+                /*  FillComboBox(Section1_dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+                  FillComboBox(Section1_dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+                  FillComboBox(Section1_dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");*/
 
                 //заполянем комбобоксы для раздела 2
                 FillComboBoxLinq(Section2_dataGrid1ColumnV, "DestinationSave");
@@ -47,9 +47,15 @@ namespace ERespondent
                 FillComboBoxLinq(Section2_dataGrid3ColumnD, "TypeFuelEnergy");
                 FillComboBoxLinq(Section2_dataGrid3ColumnE, "TypeFuelEnergy");
 
+                FillSection3Table1();
+                statusStrip1.Items[0].Text = "Соединение установлено!";
+
             }
             catch (SqlException)
-            { MessageBox.Show("Ошибка сервера!"); }
+            {
+                MessageBox.Show("Ошибка сервера!");
+                statusStrip1.Items[0].Text = "Отсутствует подключение к базе данных!";
+            }
 
             //для первого раздела
             Section1_dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridView1_ColumnWidthChanged);
@@ -74,7 +80,7 @@ namespace ERespondent
             this.Width = 1380;// widthScreen;
         }
 
-        #region РАЗДЕЛ 1(tab1)
+        #region РАЗДЕЛ 1 (tab1)
 
         #region datagridView1 - По плану мероприятий отчетного года; datagridView2 - Дополнительные мероприятия
         /// <summary>
@@ -94,7 +100,12 @@ namespace ERespondent
                 if (grid.Columns[e.ColumnIndex].Index == 2)
                 {
                     ((ComboBox)grid.EditingControl).DroppedDown = true;
-                    ((ComboBox)grid.EditingControl).SelectedIndexChanged += new EventHandler(method);
+                    ((ComboBox)grid.EditingControl).SelectionChangeCommitted += new EventHandler(method);
+                }
+                else
+                {
+                    ((ComboBox)grid.EditingControl).DroppedDown = true;
+                    ((ComboBox)grid.EditingControl).SelectionChangeCommitted -= new EventHandler(method);
                 }
             }
         }
@@ -157,7 +168,7 @@ namespace ERespondent
         {
             var grid = ((DataGridView)sender);
 
-            if (grid.Tag.Equals("Пункт \"По плану мероприятий отчетного года\""))
+            if (grid.Tag.Equals("T1"))
                 checkBoxTable1.Enabled = true;
             else
                 checkBoxTable2.Enabled = true;
@@ -363,16 +374,15 @@ namespace ERespondent
         private void соединитьСБазойДанныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConnectionDB connection = new ConnectionDB();
-            string result = null;
-            try
+            SqlConnection conn = connection.CreateConnection();
+            if (conn != null)
             {
-                //5result = connection.CreateConnection();
+                statusStrip1.Items[0].Text = "Соединение установлено!";
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Ошибка подключения", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                statusStrip1.Items[0].Text = "Ошибка соединения!";
             }
-            statusStrip1.Items[0].Text = result;
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -390,10 +400,15 @@ namespace ERespondent
             Section1_dataGridView1.CurrentCell = null;
             Section1_dataGridView2.CurrentCell = null;
             Section1_dataGridView3.CurrentCell = null;
-
+            CheckProtocol.ErrorForAllSection.Clear();
             ControlFunction controlObj = new ControlFunction();
             controlObj.CheckSection(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3,
-                "РАЗДЕЛ 1: ВЫПОЛНЕНИЕ МЕРОПРИЯТИЙ ПО ЭКОНОМИИ ТОПЛИВНО-ЭНЕРГЕТИЧЕСКИХ РЕСУРСОВ (ТЭР)\n");
+                "РАЗДЕЛ 1: ВЫПОЛНЕНИЕ МЕРОПРИЯТИЙ ПО ЭКОНОМИИ ТОПЛИВНО-ЭНЕРГЕТИЧЕСКИХ РЕСУРСОВ (ТЭР)\n", 8);
+
+            controlObj = new ControlFunction();
+            controlObj.CheckSection(Section2_dataGridView1, Section2_dataGridView2, Section2_dataGridView3, "\n\nРАЗДЕЛ 2: ВЫПОЛНЕНИЕ МЕРОПРИЯТИЙ ПО" +
+            "УВЕЛИЧЕНИЮ ИСПОЛЬЗОВАНИЯ МЕСТНЫХ ВИДОВ ТОПЛИВА, ОТХОДОВ ПРОИЗВОДСТВА И ДРУГИХ ВТОРИЧНЫХ И ВОЗОБНОВЛЯЕМЫХ ЭНЕРГОРЕСУРСОВ (МВТ)\n", 10);
+
             controlObj.ShowListError();
 
         }
@@ -595,7 +610,7 @@ namespace ERespondent
         #endregion
 
 
-        #region РАЗДЕЛ 2(tab2)
+        #region РАЗДЕЛ 2 (tab2)
 
         #region Таблица 1 и 2 и 3
         /// <summary>
@@ -665,7 +680,7 @@ namespace ERespondent
                                    where c.CodeRecord == index
                                    select c).Single<DestinationSave>();
             _gridSection2.CurrentRow.Cells[0].Value = row.CodeDirection;
-            if (!_gridSection2.Tag.Equals("Section2_T3"))
+            if (!_gridSection2.Tag.Equals("T3"))
             {
                 _gridSection2.CurrentRow.Cells[6].Value = row.Unit;
             }
@@ -817,13 +832,13 @@ namespace ERespondent
         {
             switch (((DataGridView)sender).Tag.ToString())
             {
-                case "Section2_T1":
+                case "T1":
                     Section2_checkBoxTable1.Enabled = true;
                     break;
-                case "Section2_T2":
+                case "T2":
                     Section2_checkBoxTable2.Enabled = true;
                     break;
-                case "Section2_T3":
+                case "T3":
                     FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.CurrentRow.Index, 6, 7);
                     FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.CurrentRow.Index, 9, 16);
                     Section2_checkBoxTable3.Enabled = true;
@@ -879,7 +894,93 @@ namespace ERespondent
                 AutoTotalSumm.FillGrid3(Section2_dataGridView3, 8);
             }
         }
-        #endregion            
+        #endregion
+
+        #region Раздел 3 (tab3)
+
+    
+        /// <summary>
+        /// Заполнение таблицы 3
+        /// </summary>
+        private void FillSection3Table1()
+        {
+            #region Таблица 3
+            Section3_T3.Rows.Add(5);
+            Section3_T3[0, 0].Value = "А";
+            Section3_T3[1, 0].Value = "Б";
+            Section3_T3[2, 0].Value = "В";
+            Section3_T3[3, 0].Value = "1";
+            Section3_T3[4, 0].Value = "2";
+            Section3_T3[5, 0].Value = "3";
+
+            for (int i = 0; i < 6; i++)
+            {
+                Section3_T3[i, 0].ReadOnly = true;
+                Section3_T3[i, 0].Style.BackColor = Color.FromArgb(181, 181, 181);
+                Section3_T3[i, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            Section3_T3[0, 1].Value = "Количество мероприятий";
+            Section3_T3[1, 1].Value = "1";
+            Section3_T3[2, 1].Value = "ед.";
+
+            Section3_T3[0, 2].Value = "Экономия ТЭР";
+            Section3_T3[1, 2].Value = "2";
+            Section3_T3[2, 2].Value = "т усл. топл.";
+
+            Section3_T3[0, 3].Value = "Увеличение использования МВТ";
+            Section3_T3[1, 3].Value = "3";
+            Section3_T3[2, 3].Value = "т усл. топл.";
+
+            Section3_T3[0, 4].Value = "Затраты на внедрение  мероприятий";
+            Section3_T3[1, 4].Value = "4";
+            Section3_T3[2, 4].Value = "млн.руб.";
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 1; j < 5; j++)
+                {
+                    Section3_T3[i, j].ReadOnly = true;
+                    Section3_T3[i, j].Style.BackColor = Color.FromArgb(240, 240, 240);
+                    Section3_T3[i, j].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                }
+            }
+            #endregion
+
+            #region Таблица 4
+            Section3_T4.Rows.Add();
+            Section3_T4[0, 0].Value = "A";
+            Section3_T4[1, 0].Value = "1";
+            Section3_T4[2, 0].Value = "2";
+            for (int i = 0; i < 3; i++)
+            {
+                Section3_T4[i, 0].ReadOnly = true;
+                Section3_T4[i, 0].Style.BackColor = Color.FromArgb(181, 181, 181);
+                Section3_T4[i, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            Section3_T4.Rows.Add();
+            Section3_T4[0, 1].Value = "5";
+            Section3_T4[0, 1].ReadOnly = true;
+            Section3_T4[0, 1].Style.BackColor = Color.FromArgb(240, 240, 240);
+            Section3_T4[0, 1].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            #endregion
+
+            #region Таблица 5
+            Section3_T5.Rows.Add();
+            Section3_T5[0, 0].Value = "А";
+            Section3_T5[1, 0].Value = "Б";
+            Section3_T5[2, 0].Value = "В";
+
+            for (int i = 0; i < 3; i++)
+            {
+                Section3_T5[i, 0].ReadOnly = true;
+                Section3_T5[i, 0].Style.BackColor = Color.FromArgb(181, 181, 181);
+                Section3_T5[i, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            #endregion
+
+        }
+        #endregion
 
         /* /// <summary>
        /// Проверка правильности ввода в ячейки
@@ -900,5 +1001,4 @@ namespace ERespondent
 
     }
 }
-
 

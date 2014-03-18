@@ -25,7 +25,7 @@ namespace ERespondent
         /// </summary>
         public SqlConnection CreateConnection()
         {
-            _connectionMain = new SqlConnection();
+            SqlConnection _connectionMain=null;
             //берем из конфига строку подключения
             _settings = ConfigurationManager.ConnectionStrings["ERConn"];
             _result = new StringBuilder();
@@ -33,6 +33,7 @@ namespace ERespondent
             {
                 if (_settings != null)
                 {
+                    _connectionMain = new SqlConnection();
                     _connectionMain.ConnectionString = _settings.ConnectionString;
                     _connectionMain.Open();
                     _result.Append("Состояние подключения: " + _connectionMain.State + "; " +
@@ -45,7 +46,7 @@ namespace ERespondent
                 MessageBox.Show("При установлении соединения с SQL Server произошла ошибка, связанная" +
                     " с сетью или с определенным экземпляром. Сервер не найден или недоступен. Убедитесь, что" +
                     " имя экземпляра указано правильно и что на SQL Server разрешены удаленные соединения.");
-                _connectionMain.Dispose();   
+                _connectionMain.Dispose();                  
             }                                                   
             return _connectionMain;
         }

@@ -36,6 +36,6 @@ namespace ERespondent.CheckData
                     richTextBox1.Text += "Ошибок не найдено!";
                 }
             }
-        }
+        }           
     }
 }

@@ -68,7 +68,7 @@ namespace ERespondent
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Section3_TabControl = new System.Windows.Forms.TabControl();
             this.TabSection1 = new System.Windows.Forms.TabPage();
             this.BacktableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -247,8 +247,14 @@ namespace ERespondent
             this.ColumnSectionH1_10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabSection3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.Section3_labelT5 = new System.Windows.Forms.Label();
+            this.Section3_labelT4 = new System.Windows.Forms.Label();
+            this.Section3_labelT3 = new System.Windows.Forms.Label();
             this.Section3_PanelT4 = new System.Windows.Forms.Panel();
             this.Section3_T4 = new System.Windows.Forms.DataGridView();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Section3_PanelT5 = new System.Windows.Forms.Panel();
             this.Section3_T5 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -262,12 +268,9 @@ namespace ERespondent
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MainMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.Section3_TabControl.SuspendLayout();
             this.TabSection1.SuspendLayout();
             this.BacktableLayout.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -522,20 +525,20 @@ namespace ERespondent
             this.Column15.Name = "Column15";
             this.Column15.Width = 65;
             // 
-            // tabControl1
+            // Section3_TabControl
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Section3_TabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.TabSection1);
-            this.tabControl1.Controls.Add(this.TabSection2);
-            this.tabControl1.Controls.Add(this.TabSection3);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.ShowToolTips = true;
-            this.tabControl1.Size = new System.Drawing.Size(1370, 698);
-            this.tabControl1.TabIndex = 2;
+            this.Section3_TabControl.Controls.Add(this.TabSection1);
+            this.Section3_TabControl.Controls.Add(this.TabSection2);
+            this.Section3_TabControl.Controls.Add(this.TabSection3);
+            this.Section3_TabControl.Location = new System.Drawing.Point(0, 27);
+            this.Section3_TabControl.Name = "Section3_TabControl";
+            this.Section3_TabControl.SelectedIndex = 0;
+            this.Section3_TabControl.ShowToolTips = true;
+            this.Section3_TabControl.Size = new System.Drawing.Size(1370, 698);
+            this.Section3_TabControl.TabIndex = 2;
             // 
             // TabSection1
             // 
@@ -778,7 +781,7 @@ namespace ERespondent
             this.checkBoxTable1.TabIndex = 2;
             this.checkBoxTable1.Text = "Добавить строку \"Итого\"";
             this.checkBoxTable1.UseVisualStyleBackColor = false;
-            this.checkBoxTable1.Click += new System.EventHandler(this.checkBoxTable1_Click);
+            this.checkBoxTable1.CheckedChanged += new System.EventHandler(this.checkBoxTable1_Click);
             // 
             // label1
             // 
@@ -965,7 +968,7 @@ namespace ERespondent
             this.checkBoxTable2.TabIndex = 3;
             this.checkBoxTable2.Text = "Добавить строку \"Итого\"";
             this.checkBoxTable2.UseVisualStyleBackColor = false;
-            this.checkBoxTable2.Click += new System.EventHandler(this.checkBoxTable1_Click);
+            this.checkBoxTable2.CheckedChanged += new System.EventHandler(this.checkBoxTable1_Click);
             // 
             // label4
             // 
@@ -1160,7 +1163,7 @@ namespace ERespondent
             this.checkBoxTable3.TabIndex = 4;
             this.checkBoxTable3.Text = "Добавить строку \"Итого\"";
             this.checkBoxTable3.UseVisualStyleBackColor = false;
-            this.checkBoxTable3.Click += new System.EventHandler(this.checkBoxTable3_Click);
+            this.checkBoxTable3.CheckedChanged += new System.EventHandler(this.checkBoxTable3_Click);
             // 
             // label2
             // 
@@ -1418,7 +1421,7 @@ namespace ERespondent
             this.Section2_checkBoxTable1.Tag = "Section2_chB1";
             this.Section2_checkBoxTable1.Text = "Добавить строку \"Итого\"";
             this.Section2_checkBoxTable1.UseVisualStyleBackColor = false;
-            this.Section2_checkBoxTable1.Click += new System.EventHandler(this.Section2_checkBoxTable_Click);
+            this.Section2_checkBoxTable1.CheckedChanged += new System.EventHandler(this.Section2_checkBoxTable_Click);
             // 
             // label3
             // 
@@ -1616,7 +1619,7 @@ namespace ERespondent
             this.Section2_checkBoxTable2.Tag = "Section2_chB2";
             this.Section2_checkBoxTable2.Text = "Добавить строку \"Итого\"";
             this.Section2_checkBoxTable2.UseVisualStyleBackColor = false;
-            this.Section2_checkBoxTable2.Click += new System.EventHandler(this.Section2_checkBoxTable_Click);
+            this.Section2_checkBoxTable2.CheckedChanged += new System.EventHandler(this.Section2_checkBoxTable_Click);
             // 
             // label5
             // 
@@ -1733,6 +1736,7 @@ namespace ERespondent
             // 
             this.Section2_dataGrid3Column1.HeaderText = "1";
             this.Section2_dataGrid3Column1.Name = "Section2_dataGrid3Column1";
+            this.Section2_dataGrid3Column1.ReadOnly = true;
             this.Section2_dataGrid3Column1.Width = 79;
             // 
             // Section2_dataGrid3Column2
@@ -1745,48 +1749,56 @@ namespace ERespondent
             // 
             this.Section2_dataGrid3Column3.HeaderText = "3";
             this.Section2_dataGrid3Column3.Name = "Section2_dataGrid3Column3";
+            this.Section2_dataGrid3Column3.ReadOnly = true;
             this.Section2_dataGrid3Column3.Width = 79;
             // 
             // Section2_dataGrid3Column4
             // 
             this.Section2_dataGrid3Column4.HeaderText = "4";
             this.Section2_dataGrid3Column4.Name = "Section2_dataGrid3Column4";
+            this.Section2_dataGrid3Column4.ReadOnly = true;
             this.Section2_dataGrid3Column4.Width = 80;
             // 
             // Section2_dataGrid3Column5
             // 
             this.Section2_dataGrid3Column5.HeaderText = "5";
             this.Section2_dataGrid3Column5.Name = "Section2_dataGrid3Column5";
+            this.Section2_dataGrid3Column5.ReadOnly = true;
             this.Section2_dataGrid3Column5.Width = 79;
             // 
             // Section2_dataGrid3Column6
             // 
             this.Section2_dataGrid3Column6.HeaderText = "6";
             this.Section2_dataGrid3Column6.Name = "Section2_dataGrid3Column6";
+            this.Section2_dataGrid3Column6.ReadOnly = true;
             this.Section2_dataGrid3Column6.Width = 79;
             // 
             // Section2_dataGrid3Column7
             // 
             this.Section2_dataGrid3Column7.HeaderText = "7";
             this.Section2_dataGrid3Column7.Name = "Section2_dataGrid3Column7";
+            this.Section2_dataGrid3Column7.ReadOnly = true;
             this.Section2_dataGrid3Column7.Width = 79;
             // 
             // Section2_dataGrid3Column8
             // 
             this.Section2_dataGrid3Column8.HeaderText = "8";
             this.Section2_dataGrid3Column8.Name = "Section2_dataGrid3Column8";
+            this.Section2_dataGrid3Column8.ReadOnly = true;
             this.Section2_dataGrid3Column8.Width = 80;
             // 
             // Section2_dataGrid3Column9
             // 
             this.Section2_dataGrid3Column9.HeaderText = "9";
             this.Section2_dataGrid3Column9.Name = "Section2_dataGrid3Column9";
+            this.Section2_dataGrid3Column9.ReadOnly = true;
             this.Section2_dataGrid3Column9.Width = 79;
             // 
             // Section2_dataGrid3Column10
             // 
             this.Section2_dataGrid3Column10.HeaderText = "10";
             this.Section2_dataGrid3Column10.Name = "Section2_dataGrid3Column10";
+            this.Section2_dataGrid3Column10.ReadOnly = true;
             this.Section2_dataGrid3Column10.Width = 79;
             // 
             // Section3Panel3
@@ -1813,7 +1825,7 @@ namespace ERespondent
             this.Section2_checkBoxTable3.Tag = "Section2_chB3";
             this.Section2_checkBoxTable3.Text = "Добавить строку \"Итого\"";
             this.Section2_checkBoxTable3.UseVisualStyleBackColor = false;
-            this.Section2_checkBoxTable3.Click += new System.EventHandler(this.Section2_checkBoxTable_Click);
+            this.Section2_checkBoxTable3.CheckedChanged += new System.EventHandler(this.Section2_checkBoxTable_Click);
             // 
             // label6
             // 
@@ -2190,6 +2202,9 @@ namespace ERespondent
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.Section3_labelT5);
+            this.panel7.Controls.Add(this.Section3_labelT4);
+            this.panel7.Controls.Add(this.Section3_labelT3);
             this.panel7.Controls.Add(this.Section3_PanelT4);
             this.panel7.Controls.Add(this.Section3_PanelT5);
             this.panel7.Controls.Add(this.Section3_PanelT3);
@@ -2199,15 +2214,47 @@ namespace ERespondent
             this.panel7.Size = new System.Drawing.Size(1362, 672);
             this.panel7.TabIndex = 0;
             // 
+            // Section3_labelT5
+            // 
+            this.Section3_labelT5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Section3_labelT5.ForeColor = System.Drawing.Color.Black;
+            this.Section3_labelT5.Location = new System.Drawing.Point(5, 310);
+            this.Section3_labelT5.Name = "Section3_labelT5";
+            this.Section3_labelT5.Size = new System.Drawing.Size(842, 19);
+            this.Section3_labelT5.TabIndex = 7;
+            this.Section3_labelT5.Text = "Таблица 5. Причины невыполнения мероприятий программы (плана мероприятий) по энер" +
+    "госбережению \r\n";
+            // 
+            // Section3_labelT4
+            // 
+            this.Section3_labelT4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Section3_labelT4.ForeColor = System.Drawing.Color.Black;
+            this.Section3_labelT4.Location = new System.Drawing.Point(903, 0);
+            this.Section3_labelT4.Name = "Section3_labelT4";
+            this.Section3_labelT4.Size = new System.Drawing.Size(456, 32);
+            this.Section3_labelT4.TabIndex = 6;
+            this.Section3_labelT4.Text = "Таблица 4. Выполнение установленного годового задания по экономии ТЭР.";
+            // 
+            // Section3_labelT3
+            // 
+            this.Section3_labelT3.AutoSize = true;
+            this.Section3_labelT3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Section3_labelT3.ForeColor = System.Drawing.Color.Black;
+            this.Section3_labelT3.Location = new System.Drawing.Point(4, 12);
+            this.Section3_labelT3.Name = "Section3_labelT3";
+            this.Section3_labelT3.Size = new System.Drawing.Size(633, 16);
+            this.Section3_labelT3.TabIndex = 5;
+            this.Section3_labelT3.Text = "Таблица 3. Выполнение программы (плана мероприятий) по энергосбережению.\r\n";
+            // 
             // Section3_PanelT4
             // 
             this.Section3_PanelT4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Section3_PanelT4.Controls.Add(this.Section3_T4);
-            this.Section3_PanelT4.Location = new System.Drawing.Point(906, 3);
+            this.Section3_PanelT4.Location = new System.Drawing.Point(906, 35);
             this.Section3_PanelT4.Name = "Section3_PanelT4";
-            this.Section3_PanelT4.Size = new System.Drawing.Size(448, 331);
+            this.Section3_PanelT4.Size = new System.Drawing.Size(448, 230);
             this.Section3_PanelT4.TabIndex = 3;
             // 
             // Section3_T4
@@ -2230,11 +2277,33 @@ namespace ERespondent
             this.Column22,
             this.Column23});
             this.Section3_T4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Section3_T4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.Section3_T4.Location = new System.Drawing.Point(0, 0);
             this.Section3_T4.Name = "Section3_T4";
             this.Section3_T4.RowHeadersVisible = false;
-            this.Section3_T4.Size = new System.Drawing.Size(448, 331);
+            this.Section3_T4.Size = new System.Drawing.Size(448, 230);
             this.Section3_T4.TabIndex = 0;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "Код строки";
+            this.Column21.Name = "Column21";
+            this.Column21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column21.Width = 126;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "Экономия ТЭР, т усл. топл.  (годовое  задание)";
+            this.Column22.Name = "Column22";
+            this.Column22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column22.Width = 167;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "Экономия ТЭР, т усл. топл. (фактически*)";
+            this.Column23.Name = "Column23";
+            this.Column23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column23.Width = 146;
             // 
             // Section3_PanelT5
             // 
@@ -2242,9 +2311,9 @@ namespace ERespondent
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Section3_PanelT5.Controls.Add(this.Section3_T5);
-            this.Section3_PanelT5.Location = new System.Drawing.Point(8, 340);
+            this.Section3_PanelT5.Location = new System.Drawing.Point(8, 332);
             this.Section3_PanelT5.Name = "Section3_PanelT5";
-            this.Section3_PanelT5.Size = new System.Drawing.Size(1346, 329);
+            this.Section3_PanelT5.Size = new System.Drawing.Size(1346, 337);
             this.Section3_PanelT5.TabIndex = 2;
             // 
             // Section3_T5
@@ -2267,10 +2336,11 @@ namespace ERespondent
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.Section3_T5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Section3_T5.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.Section3_T5.Location = new System.Drawing.Point(0, 0);
             this.Section3_T5.Name = "Section3_T5";
             this.Section3_T5.RowHeadersVisible = false;
-            this.Section3_T5.Size = new System.Drawing.Size(1346, 329);
+            this.Section3_T5.Size = new System.Drawing.Size(1346, 337);
             this.Section3_T5.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -2300,12 +2370,11 @@ namespace ERespondent
             // 
             // Section3_PanelT3
             // 
-            this.Section3_PanelT3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Section3_PanelT3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Section3_PanelT3.Controls.Add(this.Section3_T3);
-            this.Section3_PanelT3.Location = new System.Drawing.Point(8, 3);
+            this.Section3_PanelT3.Location = new System.Drawing.Point(8, 35);
             this.Section3_PanelT3.Name = "Section3_PanelT3";
-            this.Section3_PanelT3.Size = new System.Drawing.Size(892, 331);
+            this.Section3_PanelT3.Size = new System.Drawing.Size(892, 220);
             this.Section3_PanelT3.TabIndex = 1;
             // 
             // Section3_T3
@@ -2331,11 +2400,13 @@ namespace ERespondent
             this.Column19,
             this.Column20});
             this.Section3_T3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Section3_T3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.Section3_T3.Location = new System.Drawing.Point(0, 0);
             this.Section3_T3.Name = "Section3_T3";
             this.Section3_T3.RowHeadersVisible = false;
-            this.Section3_T3.Size = new System.Drawing.Size(892, 331);
+            this.Section3_T3.Size = new System.Drawing.Size(892, 220);
             this.Section3_T3.TabIndex = 0;
+            this.Section3_T3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Section3_T3_CellEndEdit);
             // 
             // Column1
             // 
@@ -2379,27 +2450,6 @@ namespace ERespondent
             this.Column20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column20.Width = 148;
             // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "Код строки";
-            this.Column21.Name = "Column21";
-            this.Column21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column21.Width = 126;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "Экономия ТЭР, т усл. топл.  (годовое  задание)";
-            this.Column22.Name = "Column22";
-            this.Column22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column22.Width = 167;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "Экономия ТЭР, т усл. топл. (фактически*)";
-            this.Column23.Name = "Column23";
-            this.Column23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column23.Width = 146;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2408,7 +2458,7 @@ namespace ERespondent
             this.AutoScrollMinSize = new System.Drawing.Size(1300, 600);
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1370, 750);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.Section3_TabControl);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MainMenuStrip);
             this.MinimumSize = new System.Drawing.Size(1000, 500);
@@ -2420,7 +2470,7 @@ namespace ERespondent
             this.MainMenuStrip.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.Section3_TabControl.ResumeLayout(false);
             this.TabSection1.ResumeLayout(false);
             this.BacktableLayout.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -2462,6 +2512,7 @@ namespace ERespondent
             ((System.ComponentModel.ISupportInitialize)(this.Section2_dataGridViewHeader2_1)).EndInit();
             this.TabSection3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.Section3_PanelT4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Section3_T4)).EndInit();
             this.Section3_PanelT5.ResumeLayout(false);
@@ -2505,7 +2556,7 @@ namespace ERespondent
         private System.Windows.Forms.ToolStripMenuItem функцииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem контрольныеФункцииToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem экспортВExcelToolStripMenuItem;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl Section3_TabControl;
         private System.Windows.Forms.TabPage TabSection1;
         private System.Windows.Forms.TabPage TabSection2;
         private System.Windows.Forms.TabPage TabSection3;
@@ -2666,23 +2717,6 @@ namespace ERespondent
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid2Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid2Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid2Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnB;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnV;
-        private CalendarColumn Section2_dataGrid3ColumnG;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnD;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnJ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column10;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel Section3_PanelT3;
         private System.Windows.Forms.Panel Section3_PanelT4;
@@ -2702,6 +2736,26 @@ namespace ERespondent
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnB;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnV;
+        private CalendarColumn Section2_dataGrid3ColumnG;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnD;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Section2_dataGrid3ColumnE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3ColumnJ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Section2_dataGrid3Column10;
+        private System.Windows.Forms.Label Section3_labelT3;
+        private System.Windows.Forms.Label Section3_labelT4;
+        private System.Windows.Forms.Label Section3_labelT5;
     }
 }
 

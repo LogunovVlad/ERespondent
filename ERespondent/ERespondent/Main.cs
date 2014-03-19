@@ -31,9 +31,9 @@ namespace ERespondent
             try
             {
                 //заполянем комбобоксы для раздела 1 
-                /*  FillComboBox(Section1_dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
-                  FillComboBox(Section1_dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
-                  FillComboBox(Section1_dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");*/
+                FillComboBox(Section1_dataGrid1ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+                FillComboBox(Section1_dataGrid2ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
+                FillComboBox(Section1_dataGrid3ColumnV, "SELECT DestinationsSave, CodeRecord from DestinationSave", "DestinationsSave", "Coderecord");
 
                 //заполянем комбобоксы для раздела 2
                 FillComboBoxLinq(Section2_dataGrid1ColumnV, "DestinationSave");
@@ -49,7 +49,6 @@ namespace ERespondent
 
                 FillSection3Table1();
                 statusStrip1.Items[0].Text = "Соединение установлено!";
-
             }
             catch (SqlException)
             {
@@ -66,18 +65,6 @@ namespace ERespondent
             Section2_dataGridView1.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
             Section2_dataGridView2.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
             Section2_dataGridView3.ColumnWidthChanged += new DataGridViewColumnEventHandler(dataGridViewSection2_ColumnWidthChanged);
-        }
-
-        /// <summary>
-        /// Устанавливает размер формы по размерам разрешения экрана
-        /// </summary>
-        private void ScreenResolution()
-        {
-            int heightScreen = Screen.PrimaryScreen.WorkingArea.Height;
-            int widthScreen = Screen.PrimaryScreen.WorkingArea.Width;
-            this.Location = new Point(0, 0);
-            this.Height = heightScreen;
-            this.Width = 1380;// widthScreen;
         }
 
         #region РАЗДЕЛ 1 (tab1)
@@ -160,7 +147,7 @@ namespace ERespondent
         }
 
         /// <summary>
-        /// Отменяет выделение текущей ячейки
+        /// Активирует элемент управления CheckBox для добавления строки ИТОГО
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -397,9 +384,35 @@ namespace ERespondent
         /// <param name="e"></param>
         private void контрольныеФункцииToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            #region Снимаем выделения с ячеек таблицы и активируем строку ИТОГО
             Section1_dataGridView1.CurrentCell = null;
             Section1_dataGridView2.CurrentCell = null;
             Section1_dataGridView3.CurrentCell = null;
+            Section2_dataGridView1.CurrentCell = null;
+            Section2_dataGridView2.CurrentCell = null;
+            Section2_dataGridView3.CurrentCell = null;
+            Section3_T3.CurrentCell = null;
+            Section3_T4.CurrentCell = null;
+            Section3_T5.CurrentCell = null;
+
+            if (Section1_dataGridView1.RowCount > 1)
+            { checkBoxTable1.Checked = true; }
+            if (Section1_dataGridView2.RowCount > 1)
+            { checkBoxTable2.Checked = true; }
+            /*if (Section1_dataGridView3.RowCount > 1)           
+            {*/
+            Section1_dataGridView3.AllowUserToAddRows = false;
+            Section1_dataGridView3.RowCount = 1;
+            checkBoxTable3.Checked = true;
+
+            if (Section2_dataGridView1.RowCount > 1)
+            { Section2_checkBoxTable1.Checked = true; }
+            if (Section2_dataGridView2.RowCount > 1)
+            { Section2_checkBoxTable2.Checked = true; }
+            if (Section2_dataGridView3.RowCount > 1)
+            { Section2_checkBoxTable3.Checked = true; }
+            #endregion
+
             CheckProtocol.ErrorForAllSection.Clear();
             ControlFunction controlObj = new ControlFunction();
             controlObj.CheckSection(Section1_dataGridView1, Section1_dataGridView2, Section1_dataGridView3,
@@ -408,6 +421,19 @@ namespace ERespondent
             controlObj = new ControlFunction();
             controlObj.CheckSection(Section2_dataGridView1, Section2_dataGridView2, Section2_dataGridView3, "\n\nРАЗДЕЛ 2: ВЫПОЛНЕНИЕ МЕРОПРИЯТИЙ ПО" +
             "УВЕЛИЧЕНИЮ ИСПОЛЬЗОВАНИЯ МЕСТНЫХ ВИДОВ ТОПЛИВА, ОТХОДОВ ПРОИЗВОДСТВА И ДРУГИХ ВТОРИЧНЫХ И ВОЗОБНОВЛЯЕМЫХ ЭНЕРГОРЕСУРСОВ (МВТ)\n", 10);
+            DataGridView[] massGrid = new DataGridView[] { Section1_dataGridView1, Section1_dataGridView2, Section2_dataGridView1, Section2_dataGridView2 };
+
+            //Фактическое значение из Раздела 3 таблицы 3 (строка 1)
+            controlObj.CheckSection3Table3Row1(massGrid, Section3_T3);
+
+            //Фактическое значение из Раздела 3 таблицы 3 (Строка 2)
+            controlObj.CheckSection3Table3Row2(Section1_dataGridView1, Section1_dataGridView2, Section3_T3);
+            
+            //Фактическое значение из Раздела 3 таблицы 3 (Строка 3)
+            controlObj.CheckSection3Table3Row3(Section2_dataGridView1, Section2_dataGridView2, Section3_T3);
+
+            //Фактическое значение из Раздела 3 таблицы 3 (Строка 4)
+            controlObj.CheckSection3Table3Row4(Section1_dataGridView3, Section2_dataGridView3, Section3_T3);
 
             controlObj.ShowListError();
 
@@ -839,8 +865,8 @@ namespace ERespondent
                     Section2_checkBoxTable2.Enabled = true;
                     break;
                 case "T3":
-                    FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.CurrentRow.Index, 6, 7);
-                    FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.CurrentRow.Index, 9, 16);
+                    FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.RowCount - 2, 6, 7);
+                    FillRowValue_X(Section2_dataGridView3, Section2_dataGridView3.RowCount - 2, 9, 16);
                     Section2_checkBoxTable3.Enabled = true;
                     break;
             }
@@ -898,9 +924,9 @@ namespace ERespondent
 
         #region Раздел 3 (tab3)
 
-    
+
         /// <summary>
-        /// Заполнение таблицы 3
+        /// Заполнение таблицы 3 (Раздел 3)
         /// </summary>
         private void FillSection3Table1()
         {
@@ -978,24 +1004,47 @@ namespace ERespondent
                 Section3_T5[i, 0].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             #endregion
-
         }
+
+
+
         #endregion
 
-        /* /// <summary>
-       /// Проверка правильности ввода в ячейки
-       /// </summary>
-       /// <param name="sender"></param>
-       /// <param name="e"></param>
-       private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-       {
-           string g=e.FormattedValue.GetType().ToString();
-           if (!e.FormattedValue.GetType().ToString().Equals("System.String"))
-           {
-               e.Cancel = true;
-               MessageBox.Show("Ошибка! Ввод отменен!");
-           }
-       }*/
+
+
+        /// <summary>
+        /// Устанавливает размер формы по размерам разрешения экрана
+        /// </summary>
+        private void ScreenResolution()
+        {
+            int heightScreen = Screen.PrimaryScreen.WorkingArea.Height;
+            int widthScreen = Screen.PrimaryScreen.WorkingArea.Width;
+            this.Location = new Point(0, 0);
+            this.Height = heightScreen;
+            this.Width = 1380;// widthScreen;
+        }
+
+        /// <summary>
+        /// Проверка правильности ввода
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Section3_T3_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (((DataGridView)sender).CurrentCell.Value != null)
+                {
+                    double.Parse(((DataGridView)sender).CurrentCell.Value.ToString());
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ошибка формата: введите число!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                ((DataGridView)sender).CurrentCell.Value = null;
+            }
+
+        }
 
 
 

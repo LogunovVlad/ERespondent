@@ -35,7 +35,10 @@ namespace ERespondent.UtilityFunction
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Ошибка формата!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    ///
+                    /// поставить проверку на endEdit таблицы
+                    /// 
+                    MessageBox.Show("Ошибка формата: введите число!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     grid.CurrentCell.Value = null;
                     break;
                 }
